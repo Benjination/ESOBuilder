@@ -4,6 +4,7 @@ import { HashRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './index.css'
 
+// ESO Build Helper - Full Version
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
