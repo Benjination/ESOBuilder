@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-eso-darker text-white font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-eso;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-eso-gold text-eso-darker font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-eso-blue text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors;
+  }
+  
+  .card {
+    @apply bg-eso-dark rounded-lg p-6 shadow-lg border border-gray-700;
+  }
+  
+  .skill-card {
+    @apply bg-eso-dark rounded-lg p-4 border border-gray-600 hover:border-eso-gold transition-colors cursor-pointer;
+  }
+}

@@ -1,0 +1,67 @@
+Detailed Feature Description: ESO Build Helper Website
+
+Core Purpose
+A web application for Elder Scrolls Online (ESO) players that provides in-depth, interactive class and build guides. The website should enable users to:
+Browse (or search) by class/subclass.
+View all available skills, their effects, and detailed benefit breakdowns.
+Understand which buffs/debuffs are applied by each skill.
+Analyze expected DPS or healing output based on selected skills.
+Build and share theorycrafted setups.
+Core Features & Structure
+1. Class/Subclass Directory
+A landing page with a navigable directory of all ESO classes and subclasses.
+Each class links to a dedicated page for that subclass.
+2. Subclass Detail Pages
+Overview: Name, description, passive class bonuses, archetype (e.g., DPS, Healer, Tank).
+Skills List: Display all active, ultimate, and passive skills for the subclass in a structured list/table.
+Name and icon of the skill.
+Full text description.
+Skill morphs/variants.
+Resource cost, cooldowns, etc.
+Buffs & Debuffs Generated:
+For each skill, show a list of buffs applied to the player or group, and debuffs placed on enemies.
+List with icon, name, and description of each buff/debuff.
+Highlight buffs and debuffs that stack.
+Link to a master glossary of buffs/debuffs for easy user reference.
+Benefit Breakdown:
+For every skill, detail:
+Stat increases (e.g., +15% weapon damage while active).
+Defensive/offensive perks (e.g., Shield, Major Sorcery).
+Utility effects (e.g., resource regen, crowd control immunity).
+3. Buff/Debuff Glossary
+Centralized reference page featuring:
+Alphabetical/filterable list of every buff and debuff in ESO.
+For each entry: name, in-game icon, duration, description, stacking rules, and which skills/classes apply it.
+4. DPS/Healing Calculators
+For each skill, display theoretical numerical output calculations:
+DPS (damage per second), HPS (healing per second), resource cost per use.
+Display calculations based on customizable assumed stat inputs (e.g., player spell power, crit, etc.).
+Option to toggle stat presets for different CP levels or gear thresholds.
+Visibility for tooltip damage numbers for each skill, auto-updated as player stats change.
+5. Build Creator/Editor
+UI for users to create, save, and share their builds:
+Select class/subclass.
+Select a combination of skills (with limiters for action bar).
+Instantly preview buffs, debuffs, total expected DPS/healing, and synergies.
+Save builds as private or public; generate unique shareable links.
+6. Search & Filtering
+Universal search box:
+Allows users to quickly filter skills, buffs, debuffs, or builds.
+Clearly indicate which subclass/skill each search result comes from.
+7. Responsive Design & UX
+Mobile, tablet, and desktop support.
+Skill icons and color-coded effects for high visual clarity.
+Tooltip hovers for complicated mechanics and math breakdowns.
+Technical/Development Guidelines
+Tech Stack: Typescript (strongly recommended), React (for UI), CSS frameworks like Tailwind or Material UI.
+Modular Data Files:
+JSON/TS files for each subclass, skills, and buffs/debuffs.
+Separate data from logic to make future updates and localization easier.
+Reusable Components:
+Skill card, Buff/Debuff tag, Build summary widget, Calculator panel.
+Extensible Architecture:
+Interfaces/typescript types for skills, buffs, subclasses, builds.
+Support for automated batch data imports or updates.
+Optional Add-ons:
+User authentication for personalized builds/profiles.
+Integration with ESO APIs for future live stat pulls.
