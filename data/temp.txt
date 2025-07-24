@@ -1,80 +1,298 @@
+Grave Lord: 
 Ultimate abilities
-The Unblinking Eye icon
-The Unblinking Eye
-Tear open the fabric of the Aurbis to summon a scion of Hermaeus Mora. This being casts forth a beam that rends asunder reality for 6 seconds and deals 1115 Magic Damage to enemies within 5 meters every 0.5 seconds. The scion's beam can be repositioned by recasting The Unblinking Eye.
+Frozen Colossus icon
+Frozen Colossus
+|ce60000CRIMINAL ACT Unleash a frostbitten Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3096 Frost Damage with each smash. Dealing damage applies Major Vulnerability to any enemy hit for 12 seconds, increasing their damage taken by 10%.
 arrow
-The Languid Eye icon
-The Languid Eye
-Tear open the fabric of the Aurbis to summon a scion of Hermaeus Mora. This being casts forth a beam that rends asunder reality for 6 seconds that deals 1115 Magic Damage to enemies within 5 meters every 0.5 seconds and snares them by 50% for 3 seconds. Every 0.5 seconds, the beam's damage increases by 7%. The scion's beam can be repositioned by recasting The Languid Eye.
-Also applies a snare to enemies hit and damage increases over time.
+Glacial Colossus icon
+Glacial Colossus
+Unleash a frostbitten Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3098 Frost Damage with each smash. The final smash stuns all enemies hit for 4 seconds. Dealing damage applies Major Vulnerability to any enemy hit for 17 seconds, increasing their damage taken by 10%.
+Increases the duration of Major Vulnerability and the final smash stuns all enemies hit.
 arrow
-The Tide King's Gaze icon
-The Tide King's Gaze
-Tear open the fabric of the Aurbis to summon a scion of Hermaeus Mora. This being casts forth a beam that rends asunder reality for 8 seconds that deals 1151 Magic Damage to enemies within 5 meters every 0.5 seconds. The scion's beam automatically follows the initial target, and hunts for a new one within 8 meters if it is slain.
-Beam duration is increased, automatically follows the initial target, and searches for new targets if it is slain.
+Pestilent Colossus icon
+Pestilent Colossus
+Unleash a pestilent Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3200 3360, and 3528 Disease Damage with the first, second, and third smash. Dealing damage applies the Diseased status effect and Major Vulnerability to any enemy hit for 12 seconds, increasing their damage taken by 10%.
+Deals Disease Damage. The Colossus deals more damage with each smash and always applies the Diseased status effect.
 Active abilities
-Runeblades icon
-Runeblades
-Craft a series of Apocryphal runes before launching them at a foe, dealing 695 Magic Damage three times and generating Crux. This ability deals 3% increased damage for each active Crux when cast.
+Flame Skull icon
+Flame Skull
+Lob an explosive skull at an enemy, dealing 2090 Flame Damage. Every third cast of this ability deals 50% increased damage and creates a corpse near the enemy.
 arrow
-Escalating Runeblades icon
-Escalating Runeblades
-Craft a series of Apocryphal runes before launching them at a foe, dealing 696 Magic Damage 766 Magic Damage, and 917 Magic Damage and generating Crux. The last rune explodes, dealing damage to all enemies within 8 meters of the target. This ability deals 3% increased damage for each active Crux when cast.
-Deals increased damage and the last rune deals damage in an area.
+Ricochet Skull icon
+Ricochet Skull
+Lob an explosive skull at an enemy, dealing 2160 Flame Damage. Every third cast of this ability deals 50% increased damage, creates a corpse near the initial enemy, and will bounce up to 2 times to other nearby enemies.
+The third cast of the skull will bounce to other nearby enemies.
 arrow
-Writhing Runeblades icon
-Writhing Runeblades
-Craft a series of Apocryphal runes before launching them at a foe, dealing 718 Magic Damage three times and generating Crux. This ability gains between 1095 and 2191 Weapon and Spell Critical rating and deals 3% increased damage for each active Crux when cast.
-Has increased Critical Chance for each active Crux.
-Fatecarver icon
-Fatecarver
-Harness pure knowledge into a beam of energy that scars the world in front of you. Channel the beam for up to 4 seconds, dealing 879 Magic Damage every 0.3 seconds to up to 6 enemies. Casting Fatecarver consumes all Crux and increases damage done by 33% per Crux spent. This ability is considered direct damage.
+Venom Skull icon
+Venom Skull
+Lob an explosive skull at an enemy, dealing 2160 Poison Damage. Every third cast of this ability deals 50% increased damage and creates a corpse near the enemy, up to once every 3 seconds. While slotted, casting any Necromancer ability while you are in combat will count towards the third cast.
+Converts into a Stamina ability and deals Poison Damage. Casting any Necromancer ability counts towards the third cast.
+Sacrificial Bones icon
+Sacrificial Bones
+|ce60000CRIMINAL ACT Summon a skeleton from the ground after 2.5 seconds. The skeleton leaps to you, sacrificing the fallen soul within and enhancing your necromantic energies for 10 seconds, increasing your damage done with Necromancer abilities and damage over time effects by 15%. Creates a corpse on death if you are in combat.
 arrow
-Exhausting Fatecarver icon
-Exhausting Fatecarver
-Harness pure knowledge into a beam of energy that scars the world in front of you. Channel the beam for up to 4 seconds, dealing 879 Magic Damage every 0.3 seconds to up to 6 enemies and snares them by 15%. Casting Exhausting Fatecarver consumes all Crux and increases damage done by 33%, duration by 0.3 seconds, and snare by 15% per Crux spent. This ability is considered direct damage.
-Applies a snare to damaged enemies. Consuming Crux also increases the duration and snare strength.
+Blighted Blastbones icon
+Blighted Blastbones
+Summon a decaying skeleton from the ground after 2.5 seconds. The skeleton runs after the target and explodes when it gets close to them, dealing 3600 Disease Damage to all enemies nearby and applying the Diseased status effect and Major Defile to them for 4 seconds, reducing their healing received and damage shield strength by 12%. Creates a corpse on death.
+Converts into a Stamina ability that deals Disease Damage to enemies instead of empowering you. Applies Major Defile and the Diseased status effect to enemies hit.
 arrow
-Pragmatic Fatecarver icon
-Pragmatic Fatecarver
-Channel a beam of energy in front of you for up to 4 seconds, dealing 879 Magic Damage every 0.3 seconds to up to 6 enemies, and gain a damage shield that absorbs up to 3137 damage and grants interrupt immunity. Casting Pragmatic Fatecarver consumes all Crux and increases damage done by 33%, and decreases cost by 16% per Crux spent. This ability is considered direct damage.
-Gain a damage shield while channeling and immunity to interrupts while the shield is active. Consuming Crux also reduces the cost.
-Abyssal Impact icon
-Abyssal Impact
-Infuse your arm with abyssal magic to form tentacles that lash out at your foes, dealing 1939 Physical Damage. Enemies are immobilized for 3 seconds and marked with Abyssal Ink for 20 seconds. You deal 5% increased damage to enemies drenched in Abyssal Ink.
+Grave Lord's Sacrifice icon
+Grave Lord's Sacrifice
+Summon a skeleton from the ground after 2.5 seconds. The skeleton leaps to you, sacrificing the fallen soul within and mastering your necromantic energies for 20 seconds, increasing your damage done with Necromancer abilities and damage over time effects by 15%. While active, your third cast of Flame Skull damages in an 6 meter area. Creates a corpse on death if you are in combat.
+Increases the duration. While active, your third Flame Skull deals damage in an area.
+Boneyard icon
+Boneyard
+Desecrate the ground at the target location, dealing 3080 Frost Damage over 10 seconds to enemies inside and applying Minor Vulnerability, increasing their damage taken by 5%. Consumes a corpse on cast to deal 30% more damage. An ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to nearby enemies and healing for the damage done.
 arrow
-Cephaliarch's Flail icon
-Cephaliarch's Flail
-Infuse your arm with abyssal magic to form tentacles that lash out at your foes dealing 1939 Physical Damage and generating Crux. Enemies are immobilized for 3 seconds and marked with Abyssal Ink for 20 seconds. If an enemy is hit, you for heal for 1000 Health, once per cast. You deal 5% increased damage to enemies drenched in Abyssal Ink.
-Generates Crux. Heals you if an enemy is damaged.
+Avid Boneyard icon
+Avid Boneyard
+Desecrate the ground at the target location, dealing 3190 Frost Damage over 10 seconds to enemies inside and applying Minor Vulnerability, increasing their damage taken by 5%. Consumes a corpse on cast to deal 30% more damage. You or an ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to enemies and healing for the damage done.
+You can use your own synergy.
 arrow
-Tentacular Dread icon
-Tentacular Dread
-Infuse your arm with abyssal magic to form tentacles that lash out at your foes, dealing 2002 Frost Damage. Enemies are immobilized for 3 seconds and marked with Abyssal Ink for 20 seconds. You deal 5% increased damage to enemies drenched in Abyssal Ink. Consume all Crux and increase Tentacular Dread damage by 33% and damage to foes drenched in Abyssal Ink by 2% per Crux spent.
-Converts into a Magicka ability and deals Frost Damage. Consume Crux to increase the base damage and Abyssal Ink strength.
-Tome-Bearer's Inspiration icon
-Tome-Bearer's Inspiration
-Etch a series of runes onto your weapon that pulse with power once every 5 seconds. Each pulse enhances your class abilities, and striking an enemy with one deals an additional 1161 Magic Damage and generates Crux if you have none. While slotted on either ability bar, gain Major Brutality and Major Sorcery, increasing your Weapon and Spell Damage by 20%.
+Unnerving Boneyard icon
+Unnerving Boneyard
+Desecrate the ground at the target location, dealing 3190 Frost Damage over 10 seconds to enemies inside and applying Major Breach and Minor Vulnerability, reducing Physical and Spell Resistance by 5948 and increasing damage taken by 5% for 4.1 seconds each tick. Consumes a corpse on cast to deal 30% more damage. An ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to nearby enemies and healing for the damage done.
+Applies Major Breach and Minor Vulnerability each tick, persisting for a duration when enemies leave the area.
+Skeletal Mage icon
+Skeletal Mage
+|ce60000CRIMINAL ACT Unearth a skeletal mage from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The mage attacks the closest enemy every 2 seconds, dealing 462 Shock Damage. Creates a corpse on death if you are in combat.
 arrow
-Inspired Scholarship icon
-Inspired Scholarship
-Etch a series of runes onto your weapon that pulse with power once every 3 seconds. Each pulse enhances your class abilities, and striking an enemy with one deals an additional 935 Magic Damage and generates Crux if you have none. While slotted on either ability bar, gain Major Brutality and Major Sorcery, increasing your Weapon and Spell Damage by 20%.
-Increases the frequency of damage.
+Skeletal Arcanist icon
+Skeletal Arcanist
+Unearth a skeletal mage from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The mage attacks the closest enemy every 2 seconds, dealing 478 Shock Damage to them and all other enemies nearby. Creates a corpse on death if you are in combat.
+The mage deals damage to all enemies around the initial target.
 arrow
-Recuperative Treatise icon
-Recuperative Treatise
-Etch a series of runes onto your weapon that pulse with power once every 5 seconds. Each pulse enhances your class abilities, and striking an enemy with one deals an additional 1161 Magic Damage, restores 600 Magicka and Stamina, and generates Crux if you have none. While slotted on either ability bar, gain Major Brutality and Major Sorcery, increasing your Weapon and Spell Damage by 20%.
-When dealing damage, restore Magicka and Stamina.
-The Imperfect Ring icon
-The Imperfect Ring
-Cost Determined by Lowest Max Resource Summon a flawed rune under an enemy that etches foes nearby with scrawled glyphs, dealing 4631 Magic Damage over 20 seconds. An ally near the initial target can activate the Runebreak synergy, dealing 2698 Frost Damage to enemies within 7 meters.
+Skeletal Archer icon
+Skeletal Archer
+Unearth a skeletal archer from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The archer attacks the closest enemy every 2 seconds, dealing 463 Physical Damage. Each time the archer deals damage, it deals 15% more damage than the previous attack. Creates a corpse on death if you are in combat.
+Converts into a Stamina ability and deals Physical Damage. The archer deals more damage with each attack.
+Shocking Siphon icon
+Shocking Siphon
+Violently drain the last spark of life from a corpse, dealing 6150 Shock Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. While slotted, your damage done is increased by 3%.
 arrow
-Fulminating Rune icon
-Fulminating Rune
-Summon an explosive rune under an enemy that etches foes nearby with scrawled glyphs, dealing 4642 Magic Damage over 20 seconds. The rune lingers on the initial target for 6 seconds before detonating, dealing 1438 Frost Damage to enemies within 7 meters. Rune detonation cannot be primed with Fulminating Rune again for 6 seconds. Up to 3 allies near the initial target can activate the Runebreak synergy, dealing 2698 Frost Damage to enemies within 7 meters.
-Deals additional area damage after a delay. Up to 3 allies can use the Runebreak synergy.
+Detonating Siphon icon
+Detonating Siphon
+Violently drain the last spark of life from a corpse, dealing 6180 Disease Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. When the siphon ends the corpse explodes, dealing an additional 1799 Disease Damage to all enemies nearby. While slotted, your damage done is increased by 3%.
+Ability now deals Disease Damage. The corpse explodes at the end of the siphon, dealing additional damage.
 arrow
-Rune of Displacement icon
-Rune of Displacement
-Summon a discharging rune under an enemy. After 2 seconds the rune pulses, pulling in foes between 2 to 10 meters and etching them with scrawled glyphs that deal 4780 Magic Damage over 18 seconds. An ally near the initial target can activate the Runebreak synergy, dealing 2698 Frost Damage to enemies within 7 meters.
-Places a rune under the target that deals damage and pulls nearby enemies after a delay.
+Mystic Siphon icon
+Mystic Siphon
+Violently drain the last spark of life from a corpse, dealing 6180 Shock Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. While siphoning the corpse you gain 150 Health, Magicka, and Stamina Recovery. While slotted, your damage done is increased by 3%.
+Your Health, Magicka, and Stamina Recovery increases while siphoning the corpse.
+Advertisement
+
+
+
+0:08
+
+
+
+Passive abilities
+Reusable Parts icon
+Reusable Parts
+When your Sacrificial Bones, Skeletal Mage, or Spirit Mender dies, the cost of your next Sacrificial Bones, Skeletal Mage, or Spirit Mender is reduced by 66%.
+Death Knell icon
+Death Knell
+WITH A GRAVE LORD ABILITY SLOTTED Increases your Critical Strike Chance against enemies under 33% Health by 20%.
+Dismember icon
+Dismember
+While a Grave Lord ability is active, your Spell and Physical Penetration are increased by 3271.
+Rapid Rot icon
+Rapid Rot
+Increases your damage done with damage over time effects by 10%.
+
+Bone Tyrant:
+Ultimate abilities
+Bone Goliath Transformation icon
+Bone Goliath Transformation
+|ce60000CRIMINAL ACT Become a horrific Bone Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. This ability scales off your Max Health.
+arrow
+Pummeling Goliath icon
+Pummeling Goliath
+Become a destructive Pummeling Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. This ability scales off your Max Health. Your Bash attacks can hit multiple targets in front of you and deal 1799 Physical Damage.
+While transformed your Bash attack now scales off your offensive stats and deals damage in a cone in front of you.
+arrow
+Ravenous Goliath icon
+Ravenous Goliath
+Become a horrific Ravenous Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. You deal 826 Magic Damage to nearby enemies every second and heal for that amount. These abilities scale off your Max Health.
+Adds damage in an area around you that damages enemies and heals you while transformed.
+Active abilities
+Death Scythe icon
+Death Scythe
+Slice into your enemy's life force, dealing 1742 Magic Damage. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy hit, up to five times. The healing of this ability scales off your Max Health.
+arrow
+Hungry Scythe icon
+Hungry Scythe
+Slice into your enemy's life force, dealing 1742 Magic Damage. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy, up to five times. After dealing damage, you heal for 991 Health every 2 seconds over 10 seconds. The healing of this ability scales off your Max Health.
+Gain a heal over time and reduces the cost as the ability ranks up.
+arrow
+Ruinous Scythe icon
+Ruinous Scythe
+Slice into your enemy's life force, dealing 1799 Bleed Damage, applying the Hemorrhaging status effect, and setting them Off Balance for 7 seconds. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy, up to five times. The healing of this ability scales off your Max Health.
+Converts to a Stamina ability and deals Bleed Damage, applying the Hemorrhaging status effect. Enemies hit are set Off Balance.
+Bone Armor icon
+Bone Armor
+Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 20 seconds. Creates a corpse when the effect completes if you are in combat.
+arrow
+Beckoning Armor icon
+Beckoning Armor
+Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 20 seconds. While active, enemies that strike you with ranged attacks will be pulled toward you once every 2 seconds and become taunted for 15 seconds if they are not already taunted. Creates a corpse when the effect completes if you are in combat.
+Pulls in ranged enemies and attempts to taunt them. Reduces the cost as the ability ranks up.
+arrow
+Summoner's Armor icon
+Summoner's Armor
+Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 30 seconds. While active, reduce the cost of Blastbones, Skeletal Mage, and Spirit Mender by 15%. Creates a corpse when the effect completes if you are in combat.
+Increases the duration. While active, reduces the cost of your Necromancer summon abilities.
+Bitter Harvest icon
+Bitter Harvest
+Sap the lingering life from fresh corpses, granting you 2 Ultimate and healing 660 Health every 1 second for 2 seconds per corpse consumed. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
+arrow
+Deaden Pain icon
+Deaden Pain
+Sap the lingering life from fresh corpses, granting you 2 Ultimate and healing 682 Health every 1 second for 4 seconds per corpse consumed. While you have the heal effect, you gain Major Protection, reducing the damage you take by 10%. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
+Doubles the duration and grants Major Protection while active.
+arrow
+Necrotic Potency icon
+Necrotic Potency
+Sap the lingering life from fresh corpses, granting you 6 Ultimate and healing 682 Health every 1 second for 2 seconds per additional corpse. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
+Gain more Ultimate per corpse.
+Bone Totem icon
+Bone Totem
+Summon an effigy of bone at your feet for 11 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice, reducing their Weapon and Spell Damage by 430. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds.
+arrow
+Agony Totem icon
+Agony Totem
+Summon an effigy of bone at your feet for 13 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds. Allies can activate the Pure Agony synergy, dealing 2100 Magic Damage over 5 seconds to enemies.
+Allies can activate a synergy to damage to enemies. Increases the duration of the totem as the ability ranks up.
+arrow
+Remote Totem icon
+Remote Totem
+Summon an effigy of bone for 11 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice, reducing their Weapon and Spell Damage by 430. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds.
+The totem can be summoned up to 28 meters away, and costs less.
+Grave Grasp icon
+Grave Grasp
+Summon three patches of skeletal claws from the ground in front of you. Enemies in the first area are snared by 30% for 5 seconds, immobilized in the second area for 4 seconds, and stunned in the final area for 3 seconds. Each patch applies Minor Maim to enemies hit for 10 seconds, reducing their damage done by 5%.
+arrow
+Empowering Grasp icon
+Empowering Grasp
+Summon three patches of skeletal claws from the ground in front of you. Enemies in the first area are snared by 30% for 5 seconds, immobilized in the second area for 4 seconds, and stunned in the final area for 3 seconds. Each area applies Major Maim to enemies and Empower to your allies for 10 seconds, reducing enemy damage done by 10% and allied Heavy Attack Damage against monsters by 70%.
+Each area now also grants allies Empower and improves the Minor Maim to Major Maim against enemies.
+arrow
+Ghostly Embrace icon
+Ghostly Embrace
+Summon three patches of skeletal claws from the ground in front of you, each dealing 898 Frost Damage. The first area applies the Chilled status effect, the second area deals an additional 1635 Frost Damage over 5 seconds, and the final area creates a corpse if at least one enemy was hit.
+Deals damage in each area and applies new effects.
+Advertisement
+
+
+Passive abilities
+Death Gleaning icon
+Death Gleaning
+WITH A BONE TYRANT ABILITY SLOTTED Whenever an enemy you are in combat with dies within 28 meters of you, restore 666 Magicka and Stamina.
+Disdain Harm icon
+Disdain Harm
+Reduce the damage you take from damage over time abilities by 15% while you have a Bone Tyrant ability active.
+Health Avarice icon
+Health Avarice
+Increase your Healing Received by 3% for each Bone Tyrant ability slotted.
+Last Gasp icon
+Last Gasp
+Increase your Max Health by 2412.
+
+Living Death:
+Ultimate abilities
+Reanimate icon
+Reanimate
+Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location.
+arrow
+Animate Blastbones icon
+Animate Blastbones
+Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location. You consume up to 3 other corpses in the area and summon a Blighted Blastbones for each corpse consumed.
+You consume other corpses in the area and summon Blastbones.
+arrow
+Renewing Animation icon
+Renewing Animation
+Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location. You restore 5300 Magicka and Stamina for each ally you successfully resurrect.
+You restore Magicka and Stamina for each ally you resurrect.
+Active abilities
+Render Flesh icon
+Render Flesh
+Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3486 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%.
+arrow
+Blood Sacrifice icon
+Blood Sacrifice
+Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3600 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%. Consumes a corpse near you when cast to heal a second target.
+Consumes a corpse to heal a second target.
+arrow
+Resistant Flesh icon
+Resistant Flesh
+Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3600 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%. You grant the target Spell and Physical Resistance equal to half the amount healed for 3 seconds.
+Grant resistances to the target equal to half the amount healed.
+Expunge icon
+Expunge
+Embrace the power of death, removing up to 2 negative effects from yourself. While slotted, the cost of all your abilities are reduced by 3%.
+arrow
+Expunge and Modify icon
+Expunge and Modify
+Embrace the power of death, removing up to 2 negative effects from yourself and restoring 515 Magicka and Stamina for each negative effect removed. While slotted, the cost of all your abilities are reduced by 3%.
+You restore Magicka and Stamina for each negative effect removed.
+arrow
+Hexproof icon
+Hexproof
+Embrace the power of death, removing up to 4 negative effects from yourself. While slotted, the cost of all your abilities are reduced by 3%.
+Reduces cost as the ability ranks up and Increases the amount of negative effects removed.
+Life amid Death icon
+Life amid Death
+Release residual fragments of fallen souls at the target location, healing you and your allies for 2323 Health. Consumes a corpse on cast to continue to heal you and your allies in the area for 2310 Health over 5 seconds.
+arrow
+Enduring Undeath icon
+Enduring Undeath
+Release residual fragments of fallen souls at the target location, healing you and your allies for 2399 Health. Consumes a corpse on cast to continue to heal you and your allies in the area for 2390 Health over 5 seconds. You can consume up to 5 additional corpses on cast, with each corpse extending the duration of the heal over time by 5 seconds.
+Can consume multiple corpses to increase the duration of the heal over time.
+arrow
+Renewing Undeath icon
+Renewing Undeath
+Release residual fragments of fallen souls at the target location, healing you and your allies for 2399 Health. Consumes a corpse on cast to immediately remove up to 3 negative effects and continue to heal you and your allies in the area for 2390 Health over 5 seconds.
+Consuming a corpse also removes negative effects.
+Spirit Mender icon
+Spirit Mender
+|ce60000CRIMINAL ACT Conjure a ghostly spirit to do your bidding and stay by your side for 16 seconds. The spirit heals you or the lowest Health ally around you every 2 seconds, restoring 695 Health. Creates a corpse on death if you are in combat.
+arrow
+Intensive Mender icon
+Intensive Mender
+Conjure a ghostly spirit to do your bidding and stay by your side for 8 seconds. The spirit heals you or lowest Health ally around you every 2 seconds, restoring 1438 Health to the target and 2 allies nearby them. Creates a corpse on death if you are in combat.
+The spirit lasts for half as long, but heals for twice the amount, heals two additional allies, and costs half as much.
+arrow
+Spirit Guardian icon
+Spirit Guardian
+Conjure a ghostly spirit to do your bidding and stay by your side for 16 seconds. The spirit heals you or the lowest Health ally around you every 2 seconds, restoring 718 Health. While active 10% of the damage you take is transferred to the spirit instead. Creates a corpse on death if you are in combat.
+Some of the damage you take is transferred to the spirit instead.
+Restoring Tether icon
+Restoring Tether
+Siphon the last remnants of life from a corpse, healing for 5544 Health over 12 seconds to yourself and all allies between you and the corpse. While slotted, your healing done is increased by 3%.
+arrow
+Braided Tether icon
+Braided Tether
+Siphon the last remnants of life from a corpse, healing for 5742 Health over 12 seconds to yourself, all allies around you, and all allies between you and the corpse. While slotted, your healing done is increased by 3%.
+Also heals allies in a radius around you.
+arrow
+Mortal Coil icon
+Mortal Coil
+Siphon the last remnants of life from a corpse, healing for 5562 Health over 12 seconds to yourself and all allies between you and the corpse. You also restore 170 Magicka and Stamina every 2 seconds while siphoning the corpse. While slotted, your healing done is increased by 3%.
+Restores Magicka and Stamina while siphoning the corpse.
+Advertisement
+
+
+Passive abilities
+Curative Curse icon
+Curative Curse
+While you have a negative effect on you, your healing done is increased by 12%.
+Near-Death Experience icon
+Near-Death Experience
+While you have a Living Death ability slotted, your Critical Strike Chance with all healing abilities is increased by up to 12% in proportion to the severity of the target's wounds.
+Corpse Consumption icon
+Corpse Consumption
+When you consume a corpse, you generate 10 Ultimate. This effect can occur once every 16 seconds.
+Undead Confederate icon
+Undead Confederate
+While you have a Sacrificial Bones, Skeletal Mage, or Spirit Mender active, your Health, Magicka, and Stamina Recovery is increased by 155.
