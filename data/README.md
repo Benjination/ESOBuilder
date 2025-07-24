@@ -11,7 +11,11 @@ data/
 ├── dragonknight-skills.ts  # Complete Dragonknight skills (Ardent Flame, Draconic Power, Earthen Heart)
 ├── sorcerer-skills.ts      # Complete Sorcerer skills (Dark Magic, Daedric Summoning, Storm Calling)  
 ├── nightblade-skills.ts    # Complete Nightblade skills (Assassination, Shadow, Siphoning)
-├── placeholder-skills.ts   # Empty skill arrays for remaining classes
+├── templar-skills.ts       # Complete Templar skills (Aedric Spear, Dawn's Wrath, Restoring Light)
+├── warden-skills.ts        # Complete Warden skills (Animal Companions, Green Balance, Winter's Embrace)
+├── necromancer-skills.ts   # Complete Necromancer skills (Grave Lord, Bone Tyrant, Living Death)
+├── arcanist-skills.ts      # Complete Arcanist skills (Herald of the Tome, Curative Runeforms, Soldier of Apocrypha)
+├── guild-world-skills.ts   # Guild and World skill lines
 └── README.md              # This file
 ```
 
@@ -73,14 +77,13 @@ Each class has its own dedicated skills file with complete skill definitions inc
 
 ## Adding New Skills
 
-### For Existing Classes (Dragonknight, Sorcerer, Nightblade)
+### For Existing Classes
 Edit the respective `*-skills.ts` file and add to the appropriate skill line array.
 
-### For New Classes (Templar, Warden, Necromancer, Arcanist)
-1. Create a new `classname-skills.ts` file
-2. Follow the pattern from existing skill files
-3. Update `placeholder-skills.ts` to import real skills
-4. Update `classes.ts` imports
+### For New Classes or Skill Lines
+1. Create a new `classname-skills.ts` file following the existing pattern
+2. Update import statements in `classes.ts` and other relevant files
+3. Ensure proper export structure with all three skill lines
 
 ### Skill Definition Template
 ```typescript

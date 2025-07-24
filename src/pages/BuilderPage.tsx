@@ -3,7 +3,10 @@ import { esoClasses, ESOClass } from '../../data/classes';
 import { dragonknightSkills } from '../../data/dragonknight-skills';
 import { sorcererSkills } from '../../data/sorcerer-skills';
 import { nightbladeSkills } from '../../data/nightblade-skills';
-import { templarSkills, wardenSkills, necromancerSkills, arcanistSkills } from '../../data/placeholder-skills';
+import { templarSkills } from '../../data/templar-skills';
+import { wardenSkills } from '../../data/warden-skills';
+import { necromancerSkills } from '../../data/necromancer-skills';
+import { arcanistSkills } from '../../data/arcanist-skills';
 import { guildAndWorldSkillLines } from '../../data/guild-world-skills';
 import { calculateBuildScores, PlayerBuild, BuildAnalysis } from '../../data/build-system';
 import { 
