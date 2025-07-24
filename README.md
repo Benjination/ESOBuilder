@@ -35,6 +35,29 @@ npm run dev
 
 4. Open your browser and go to `http://localhost:3000`
 
+## 🚀 Live Demo
+
+**Live Site**: https://benjination.github.io/ESOBuilder/
+
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+
+## Deployment
+
+### GitHub Pages (Automatic)
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions:
+
+1. Push changes to the `main` branch
+2. GitHub Actions automatically builds and deploys the site
+3. Site becomes available at: https://benjination.github.io/ESOBuilder/
+
+### Manual Deployment
+To deploy manually to other platforms:
+
+```bash
+npm run build
+# Upload the contents of the 'dist' folder to your hosting provider
+```
+
 ## Project Structure
 
 ```
