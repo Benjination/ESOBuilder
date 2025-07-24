@@ -3,7 +3,8 @@ import { Skill } from './skills';
 import { dragonknightSkills } from './dragonknight-skills';
 import { sorcererSkills } from './sorcerer-skills';
 import { nightbladeSkills } from './nightblade-skills';
-import { templarSkills, necromancerSkills, arcanistSkills } from './placeholder-skills';
+import { templarSkills, necromancerSkills } from './placeholder-skills';
+import { arcanistSkills } from './arcanist-skills';
 
 export interface ESOClass {
   id: string;
