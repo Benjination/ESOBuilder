@@ -1,298 +1,302 @@
-Grave Lord: 
+Dark Magic:
 Ultimate abilities
-Frozen Colossus icon
-Frozen Colossus
-|ce60000CRIMINAL ACT Unleash a frostbitten Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3096 Frost Damage with each smash. Dealing damage applies Major Vulnerability to any enemy hit for 12 seconds, increasing their damage taken by 10%.
+Negate Magic icon
+Negate Magic
+Create a globe of magic suppression for 12 seconds, removing and preventing all enemy area of effect abilities from occurring in the area. Enemies within the globe are stunned, while enemy players will be silenced rather than stunned.
 arrow
-Glacial Colossus icon
-Glacial Colossus
-Unleash a frostbitten Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3098 Frost Damage with each smash. The final smash stuns all enemies hit for 4 seconds. Dealing damage applies Major Vulnerability to any enemy hit for 17 seconds, increasing their damage taken by 10%.
-Increases the duration of Major Vulnerability and the final smash stuns all enemies hit.
+Absorption Field icon
+Absorption Field
+Create a globe of magic suppression for 12 seconds, removing and preventing all enemy area of effect abilities from occurring in the area. Enemies within the globe are stunned, while enemy players will be silenced rather than stunned. The globe also heals you and your allies for 1038 Health every 1 second.
+The globe also heals you and your allies standing inside it.
 arrow
-Pestilent Colossus icon
-Pestilent Colossus
-Unleash a pestilent Flesh Colossus to pulverize enemies in the area. The Colossus smashes the ground three times over 3 seconds, dealing 3200 3360, and 3528 Disease Damage with the first, second, and third smash. Dealing damage applies the Diseased status effect and Major Vulnerability to any enemy hit for 12 seconds, increasing their damage taken by 10%.
-Deals Disease Damage. The Colossus deals more damage with each smash and always applies the Diseased status effect.
+Suppression Field icon
+Suppression Field
+Create a globe of magic suppression for 12 seconds, removing and preventing all enemy area of effect abilities from occurring in the area. Enemies within the globe are stunned, while enemy players will be silenced rather than stunned. The globe also damages enemies for 1038 Magic Damage every 1 second.
+The globe also damages enemies standing inside it.
 Active abilities
-Flame Skull icon
-Flame Skull
-Lob an explosive skull at an enemy, dealing 2090 Flame Damage. Every third cast of this ability deals 50% increased damage and creates a corpse near the enemy.
+Crystal Shard icon
+Crystal Shard
+Conjure dark crystals to bombard an enemy, dealing 2404 Magic Damage. Your next non-Ultimate ability cast within 3 seconds costs 10% less.
 arrow
-Ricochet Skull icon
-Ricochet Skull
-Lob an explosive skull at an enemy, dealing 2160 Flame Damage. Every third cast of this ability deals 50% increased damage, creates a corpse near the initial enemy, and will bounce up to 2 times to other nearby enemies.
-The third cast of the skull will bounce to other nearby enemies.
+Crystal Fragments icon
+Crystal Fragments
+Conjure dark crystals to bombard an enemy, dealing 2483 Magic Damage. Your next non-Ultimate ability cast within 3 seconds costs 10% less. While slotted on either bar, casting a non-Ultimate ability has a 33% chance of causing your next Crystal Fragments to be instant, deal 66% more damage, and cost half as much.
+Casting abilities has a chance to make your next Crystal Fragments instant, deal more damage, and cost less.
 arrow
-Venom Skull icon
-Venom Skull
-Lob an explosive skull at an enemy, dealing 2160 Poison Damage. Every third cast of this ability deals 50% increased damage and creates a corpse near the enemy, up to once every 3 seconds. While slotted, casting any Necromancer ability while you are in combat will count towards the third cast.
-Converts into a Stamina ability and deals Poison Damage. Casting any Necromancer ability counts towards the third cast.
-Sacrificial Bones icon
-Sacrificial Bones
-|ce60000CRIMINAL ACT Summon a skeleton from the ground after 2.5 seconds. The skeleton leaps to you, sacrificing the fallen soul within and enhancing your necromantic energies for 10 seconds, increasing your damage done with Necromancer abilities and damage over time effects by 15%. Creates a corpse on death if you are in combat.
+Crystal Weapon icon
+Crystal Weapon
+Encase your weapon in dark crystals for 6 seconds, causing your next two Light or Heavy Attacks to deal additional damage and reduce the target's Armor by 1000 for 5 seconds. The first hit deals 2091 Physical Damage and the second deals 836 Physical Damage. After casting, your next non-Ultimate ability used within 3 seconds costs 10% less.
+Converts the ability into an instant cast Stamina ability, which causes your next two Light or Heavy Attacks to deal bonus Physical Damage and reduce the enemy's Armor.
+Encase icon
+Encase
+Call forth Daedric shards from the earth to immobilize enemies in front of you for 4 seconds. Enemies hit are afflicted with Major Maim, reducing their damage done by 10% for 10 seconds.
 arrow
-Blighted Blastbones icon
-Blighted Blastbones
-Summon a decaying skeleton from the ground after 2.5 seconds. The skeleton runs after the target and explodes when it gets close to them, dealing 3600 Disease Damage to all enemies nearby and applying the Diseased status effect and Major Defile to them for 4 seconds, reducing their healing received and damage shield strength by 12%. Creates a corpse on death.
-Converts into a Stamina ability that deals Disease Damage to enemies instead of empowering you. Applies Major Defile and the Diseased status effect to enemies hit.
+Shattering Spines icon
+Shattering Spines
+Call forth Daedric shards from the earth to encase and immobilize all enemies in front of you for 4 seconds. After the effect ends the shards shatter, dealing 1979 Magic Damage to any enemy that was encased. Enemies hit are afflicted with Major Maim, reducing their damage done by 10% for 10 seconds.
+The ability no longer has a cap of how many targets it can affect, and now deals damage when the effect ends.
 arrow
-Grave Lord's Sacrifice icon
-Grave Lord's Sacrifice
-Summon a skeleton from the ground after 2.5 seconds. The skeleton leaps to you, sacrificing the fallen soul within and mastering your necromantic energies for 20 seconds, increasing your damage done with Necromancer abilities and damage over time effects by 15%. While active, your third cast of Flame Skull damages in an 6 meter area. Creates a corpse on death if you are in combat.
-Increases the duration. While active, your third Flame Skull deals damage in an area.
-Boneyard icon
-Boneyard
-Desecrate the ground at the target location, dealing 3080 Frost Damage over 10 seconds to enemies inside and applying Minor Vulnerability, increasing their damage taken by 5%. Consumes a corpse on cast to deal 30% more damage. An ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to nearby enemies and healing for the damage done.
+Vibrant Shroud icon
+Vibrant Shroud
+Call forth a Daedric shroud from the Colored Rooms to heal you and your allies and enfeeble foes in front of you. You and allies in the area are healed for 2700 Health and receive Minor Vitality, increasing your healing received and damage shield strength by 6% for 10 seconds. Enemies are afflicted with Major Maim, reducing their damage done by 10% for 10 seconds.
+The area now heals you and allies, rather than immobilizing enemies, but at an increased cost. Healed targets receive Minor Vitality.
+Rune Prison icon
+Rune Prison
+Imprison an enemy in a constricting sphere of dark magic. After a short duration they are stunned for 3 seconds. This stun cannot be blocked.
 arrow
-Avid Boneyard icon
-Avid Boneyard
-Desecrate the ground at the target location, dealing 3190 Frost Damage over 10 seconds to enemies inside and applying Minor Vulnerability, increasing their damage taken by 5%. Consumes a corpse on cast to deal 30% more damage. You or an ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to enemies and healing for the damage done.
-You can use your own synergy.
+Defensive Rune icon
+Defensive Rune
+Place a rune of protection on yourself for 2 minutes. While active, the next enemy to attack you is imprisoned in a constricting sphere of dark magic, stunning them after a short delay for 3 seconds. This stun cannot be blocked.
+Cast spell on self, stunning the next enemy who attacks you.
 arrow
-Unnerving Boneyard icon
-Unnerving Boneyard
-Desecrate the ground at the target location, dealing 3190 Frost Damage over 10 seconds to enemies inside and applying Major Breach and Minor Vulnerability, reducing Physical and Spell Resistance by 5948 and increasing damage taken by 5% for 4.1 seconds each tick. Consumes a corpse on cast to deal 30% more damage. An ally in the area can activate the Grave Robber synergy, dealing 2249 Frost Damage to nearby enemies and healing for the damage done.
-Applies Major Breach and Minor Vulnerability each tick, persisting for a duration when enemies leave the area.
-Skeletal Mage icon
-Skeletal Mage
-|ce60000CRIMINAL ACT Unearth a skeletal mage from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The mage attacks the closest enemy every 2 seconds, dealing 462 Shock Damage. Creates a corpse on death if you are in combat.
+Rune Cage icon
+Rune Cage
+Imprison an enemy in a constricting sphere of dark magic. After a short duration they are stunned for 3 seconds. Deals 1799 Magic Damage if the stun lasts the full duration. This stun cannot be blocked.
+Deals damage when effect completes.
+Dark Exchange icon
+Dark Exchange
+Bargain with darkness to restore 8000 Health and 3600 Magicka instantly, and an additional 2400 Magicka over 20 seconds. The exchange also grants you Minor Berserk for 20 seconds, increasing your damage done by 5%.
 arrow
-Skeletal Arcanist icon
-Skeletal Arcanist
-Unearth a skeletal mage from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The mage attacks the closest enemy every 2 seconds, dealing 478 Shock Damage to them and all other enemies nearby. Creates a corpse on death if you are in combat.
-The mage deals damage to all enemies around the initial target.
+Dark Conversion icon
+Dark Conversion
+Bargain with darkness to restore 10000 Health and 4500 Magicka instantly, and an additional 3000 Magicka over 20 seconds. The exchange also grants you Minor Berserk for 20 seconds, increasing your damage done by 5%.
+Increases the amount of Health and Magicka restored.
 arrow
-Skeletal Archer icon
-Skeletal Archer
-Unearth a skeletal archer from the dirt to fight by your side for 20 seconds, while granting you Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20%. The archer attacks the closest enemy every 2 seconds, dealing 463 Physical Damage. Each time the archer deals damage, it deals 15% more damage than the previous attack. Creates a corpse on death if you are in combat.
-Converts into a Stamina ability and deals Physical Damage. The archer deals more damage with each attack.
-Shocking Siphon icon
-Shocking Siphon
-Violently drain the last spark of life from a corpse, dealing 6150 Shock Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. While slotted, your damage done is increased by 3%.
+Dark Deal icon
+Dark Deal
+Bargain with darkness to restore 8000 Health and 3600 Stamina instantly, and an additional 2400 Stamina over 10 seconds. The exchange also grants you Minor Berserk and Minor Force for 10 seconds, increasing your damage done by 5% and Critical Damage by 10%.
+Converts Magicka into Health and Stamina instead. Reduces the cost, the time it takes the ability to restore resources, and the duration of Minor Berserk, but adds Minor Force.
+Daedric Mines icon
+Daedric Mines
+Surprise your foes by placing 3 volatile Daedric mines around you, which take 3 seconds to arm and last for 15 seconds. When a mine is triggered it explodes, dealing 2613 Magic Damage and immobilizing the enemy for 2 seconds. Enemies can only be damaged by your mines once every 2 seconds.
 arrow
-Detonating Siphon icon
-Detonating Siphon
-Violently drain the last spark of life from a corpse, dealing 6180 Disease Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. When the siphon ends the corpse explodes, dealing an additional 1799 Disease Damage to all enemies nearby. While slotted, your damage done is increased by 3%.
-Ability now deals Disease Damage. The corpse explodes at the end of the siphon, dealing additional damage.
+Daedric Refuge icon
+Daedric Refuge
+Carefully form 5 protective Daedric wards around you, which take 3 seconds to arm and last for 15 seconds. When a Daedric ward is triggered it grants you or the ally a damage shield that absorbs 3591 damage for 6 seconds. Targets can only be shielded by Daedric Refuge once every 2 seconds and the shield is capped at 43% of the target's Max Health.
+Converts the mines into protective wards that shield you or allies when they activate.
 arrow
-Mystic Siphon icon
-Mystic Siphon
-Violently drain the last spark of life from a corpse, dealing 6180 Shock Damage over 20 seconds to all enemies around the corpse and between you and the corpse. You also gain Major Savagery and Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629. While siphoning the corpse you gain 150 Health, Magicka, and Stamina Recovery. While slotted, your damage done is increased by 3%.
-Your Health, Magicka, and Stamina Recovery increases while siphoning the corpse.
+Daedric Tomb icon
+Daedric Tomb
+Surprise your foes by placing 3 volatile Daedric mines at a target location, which arm instantly and last for 15 seconds. When a mine is triggered it explodes, dealing 2700 Magic Damage and immobilizing the enemy for 2 seconds. Enemies can only be damaged by your mines once every 2 seconds.
+You place the mines at a target location instead of around you. The mines arm instantly.
 Advertisement
 
 
 
-0:08
+0:07
 
 
 
 Passive abilities
-Reusable Parts icon
-Reusable Parts
-When your Sacrificial Bones, Skeletal Mage, or Spirit Mender dies, the cost of your next Sacrificial Bones, Skeletal Mage, or Spirit Mender is reduced by 66%.
-Death Knell icon
-Death Knell
-WITH A GRAVE LORD ABILITY SLOTTED Increases your Critical Strike Chance against enemies under 33% Health by 20%.
-Dismember icon
-Dismember
-While a Grave Lord ability is active, your Spell and Physical Penetration are increased by 3271.
-Rapid Rot icon
-Rapid Rot
-Increases your damage done with damage over time effects by 10%.
+Unholy Knowledge icon
+Unholy Knowledge
+Reduces the Health, Magicka, and Stamina costs of your non Core Combat abilities by 6%.
+Blood Magic icon
+Blood Magic
+When you cast a Dark Magic ability with a cost, you heal for 1600. This effect scales off your Max Health.
+Persistence icon
+Persistence
+After blocking an attack, your next Health, Magicka, or Stamina ability costs 18% less.
+Exploitation icon
+Exploitation
+When you cast a Dark Magic ability you grant Minor Prophecy to you and your group, increasing your Spell Critical rating by 1314 for 20 seconds.
 
-Bone Tyrant:
+Daedric Summoning:
 Ultimate abilities
-Bone Goliath Transformation icon
-Bone Goliath Transformation
-|ce60000CRIMINAL ACT Become a horrific Bone Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. This ability scales off your Max Health.
+Summon Storm Atronach icon
+Summon Storm Atronach
+Summon an immobile storm atronach at the target location. Its arrival deals 2249 Shock Damage and stuns enemies for 3 seconds. The atronach zaps the closest enemy, dealing 1124 Shock Damage every 1 second. An ally near the atronach can activate the Charged Lightning synergy, granting nearby allies Major Berserk for 10 seconds, increasing their damage done by 10%.
 arrow
-Pummeling Goliath icon
-Pummeling Goliath
-Become a destructive Pummeling Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. This ability scales off your Max Health. Your Bash attacks can hit multiple targets in front of you and deal 1799 Physical Damage.
-While transformed your Bash attack now scales off your offensive stats and deals damage in a cone in front of you.
+Greater Storm Atronach icon
+Greater Storm Atronach
+Summon an immobile storm atronach at the target location. Its arrival deals 2249 Shock Damage and stuns enemies for 3 seconds. The atronach zaps the closest enemy, dealing 1509 Shock Damage every 1 second. An ally near the atronach can activate the Charged Lightning synergy, granting nearby allies Major Berserk for 10 seconds, increasing their damage done by 10%.
+Increases the health and damage of the atronach.
 arrow
-Ravenous Goliath icon
-Ravenous Goliath
-Become a horrific Ravenous Goliath, increasing your Max Health by 30000 for 20 seconds and immediately restoring 30000 Health. While transformed, your damaging Light Attacks restore 319 Health and your fully-charged Heavy Attacks restore 800 Health. You deal 826 Magic Damage to nearby enemies every second and heal for that amount. These abilities scale off your Max Health.
-Adds damage in an area around you that damages enemies and heals you while transformed.
+Summon Charged Atronach icon
+Summon Charged Atronach
+Summon an immobile storm atronach at the target location. Its arrival deals 2323 Shock Damage and stuns enemies for 3 seconds. The atronach calls upon a lightning storm every 2 seconds, dealing 2323 Shock Damage to enemies around it. Enemies hit are afflicted with the Concussion status effect. An ally near the atronach can activate the Charged Lightning synergy, granting nearby allies Major Berserk for 10 seconds, increasing their damage done by 10%.
+The atronach now uses a powerful area of effect attack, which always applies Concussion.
 Active abilities
-Death Scythe icon
-Death Scythe
-Slice into your enemy's life force, dealing 1742 Magic Damage. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy hit, up to five times. The healing of this ability scales off your Max Health.
+Summon Unstable Familiar icon
+Summon Unstable Familiar
+Command the powers of Oblivion to send a Daedric familiar to fight at your side. The familiar's attacks deal 347 Shock Damage. Once summoned, you can activate the familiar's special ability for 3510 Magicka, dealing 421 Shock Damage every 2 seconds for 20 seconds to enemies near them. The familiar remains until killed or unsummoned.
 arrow
-Hungry Scythe icon
-Hungry Scythe
-Slice into your enemy's life force, dealing 1742 Magic Damage. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy, up to five times. After dealing damage, you heal for 991 Health every 2 seconds over 10 seconds. The healing of this ability scales off your Max Health.
-Gain a heal over time and reduces the cost as the ability ranks up.
+Summon Unstable Clannfear icon
+Summon Unstable Clannfear
+Command the powers of Oblivion to send a Daedric clannfear to fight at your side. The clannfear's headbutt deals 358 Physical Damage, while its tail spike hits nearby enemies for 358 Physical Damage after 1 second. Once summoned, you can activate the clannfear's special ability for 4320 Magicka, healing you for 5121 and the clannfear for 2560. The clannfear remains until killed or unsummoned.
+Summons a clannfear instead of a familiar. Once summoned, you can activate the clannfear's special ability to heal you and the clannfear based on your Max Health. The clannfear's basic attacks deal Physical Damage.
 arrow
-Ruinous Scythe icon
-Ruinous Scythe
-Slice into your enemy's life force, dealing 1799 Bleed Damage, applying the Hemorrhaging status effect, and setting them Off Balance for 7 seconds. You heal for 2400 Health for the first enemy hit, and an additional 800 for each additional enemy, up to five times. The healing of this ability scales off your Max Health.
-Converts to a Stamina ability and deals Bleed Damage, applying the Hemorrhaging status effect. Enemies hit are set Off Balance.
-Bone Armor icon
-Bone Armor
-Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 20 seconds. Creates a corpse when the effect completes if you are in combat.
+Summon Volatile Familiar icon
+Summon Volatile Familiar
+Command the powers of Oblivion to send a Daedric familiar to fight at your side. The familiar's attacks deal 358 Shock Damage. Once summoned, you can activate the familiar's special ability for 3510 Magicka, dealing 435 Shock Damage every 2 seconds for 20 seconds to enemies near them. The second hit stuns enemies hit for 3 seconds. The familiar remains until killed or unsummoned.
+You summon a volatile familiar. Once summoned, you can activate the familiar's special ability to pulse area damage and stun enemies.
+Daedric Curse icon
+Daedric Curse
+Curse an enemy with a destructive rune, dealing 2904 Magic Damage to the target and all other nearby enemies after 6 seconds. You can have only one Daedric Curse active at a time.
 arrow
-Beckoning Armor icon
-Beckoning Armor
-Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 20 seconds. While active, enemies that strike you with ranged attacks will be pulled toward you once every 2 seconds and become taunted for 15 seconds if they are not already taunted. Creates a corpse when the effect completes if you are in combat.
-Pulls in ranged enemies and attempts to taunt them. Reduces the cost as the ability ranks up.
+Daedric Prey icon
+Daedric Prey
+Curse an enemy with a destructive rune, dealing 2904 Magic Damage to the target and all other nearby enemies after 6 seconds. While the curse is active, your Daedric Summoning pets prioritize the target and deal an additional 50% damage to them. You can have only one Daedric Prey active at a time.
+Reduces the cost and your Daedric Summoning pets deal additional damage to the cursed target.
 arrow
-Summoner's Armor icon
-Summoner's Armor
-Wrap yourself in hardened bone, granting you Major and Minor Resolve, increasing your Physical Resistance and Spell Resistance by 5948 and 2974 for 30 seconds. While active, reduce the cost of Blastbones, Skeletal Mage, and Spirit Mender by 15%. Creates a corpse when the effect completes if you are in combat.
-Increases the duration. While active, reduces the cost of your Necromancer summon abilities.
-Bitter Harvest icon
-Bitter Harvest
-Sap the lingering life from fresh corpses, granting you 2 Ultimate and healing 660 Health every 1 second for 2 seconds per corpse consumed. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
+Haunting Curse icon
+Haunting Curse
+Curse an enemy with a destructive rune, dealing 2999 Magic Damage to the target and all other nearby enemies after 3.5 seconds. The curse will continue to haunt the enemy and explode a second time, dealing 2999 Magic Damage to the target and all other nearby enemies after an additional 8.5 seconds. You can have only one Haunting Curse active at a time.
+The curse will continue to haunt the enemy and explode a second time.
+Summon Winged Twilight icon
+Summon Winged Twilight
+Call on Azura to send a winged twilight to fight at your side. The winged twilight's zap deals 347 Shock Damage and its kick deals 347 Shock Damage. Once summoned, you can activate the winged twilight's special ability for 4590 Magicka, causing it to heal a friendly target for 3486 and itself for 1742. The winged twilight remains until killed or unsummoned.
 arrow
-Deaden Pain icon
-Deaden Pain
-Sap the lingering life from fresh corpses, granting you 2 Ultimate and healing 682 Health every 1 second for 4 seconds per corpse consumed. While you have the heal effect, you gain Major Protection, reducing the damage you take by 10%. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
-Doubles the duration and grants Major Protection while active.
+Summon Twilight Matriarch icon
+Summon Twilight Matriarch
+Call on Azura to send a twilight matriarch to fight at your side. The twilight matriarch's zap deals 347 Shock Damage and its kick deals 347 Shock Damage. Once summoned, you can activate the twilight matriarch's special ability for 4590 Magicka, causing it to heal 2 friendly targets for 3600 and itself for 1799. The twilight matriarch remains until killed or unsummoned.
+You summon a twilight matriarch. Once summoned, you can activate the twilight's special ability to heal the matriarch and up to 2 other friendly targets.
 arrow
-Necrotic Potency icon
-Necrotic Potency
-Sap the lingering life from fresh corpses, granting you 6 Ultimate and healing 682 Health every 1 second for 2 seconds per additional corpse. This ability scales off your Max Health. While slotted, your damage taken is reduced by 3%.
-Gain more Ultimate per corpse.
-Bone Totem icon
-Bone Totem
-Summon an effigy of bone at your feet for 11 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice, reducing their Weapon and Spell Damage by 430. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds.
+Summon Twilight Tormentor icon
+Summon Twilight Tormentor
+Call on Azura to send a twilight tormentor to fight at your side. The twilight tormentor's zap deals 478 Shock Damage and its kick deals 478 Shock Damage. Once summoned, you can activate the twilight tormentor's special ability for 2700 Magicka, causing it to deal 60% more damage to enemies above 50% Health for 20 seconds. The twilight tormentor remains until killed or unsummoned.
+You summon a twilight tormentor, which deals higher damage. Once summoned, you can activate the twilight's special ability to grant it a damage bonus to high health enemies.
+Conjured Ward icon
+Conjured Ward
+Conjure globes of Daedric energy for protection, granting a damage shield for you and your pets that absorbs 5454 damage for 6 seconds. This ability scales off the higher of your Max Health or Magicka and the shield is capped at 55% of your Max Health.
 arrow
-Agony Totem icon
-Agony Totem
-Summon an effigy of bone at your feet for 13 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds. Allies can activate the Pure Agony synergy, dealing 2100 Magic Damage over 5 seconds to enemies.
-Allies can activate a synergy to damage to enemies. Increases the duration of the totem as the ability ranks up.
+Hardened Ward icon
+Hardened Ward
+Conjure globes of Daedric energy for protection, granting a damage shield for you and your pets that absorbs 7323 damage for 6 seconds. This ability scales off the higher of your Max Health or Magicka and the shield is capped at 72% of your Max Health.
+Damage shield absorbs more and has a higher capped value.
 arrow
-Remote Totem icon
-Remote Totem
-Summon an effigy of bone for 11 seconds that grants Minor Protection to you and your allies, reducing damage taken by 5%. Enemies in the area are afflicted with Major Cowardice, reducing their Weapon and Spell Damage by 430. After 2 seconds, the totem begins fearing nearby enemies every 2 seconds, causing them to cower in place for 4 seconds.
-The totem can be summoned up to 28 meters away, and costs less.
-Grave Grasp icon
-Grave Grasp
-Summon three patches of skeletal claws from the ground in front of you. Enemies in the first area are snared by 30% for 5 seconds, immobilized in the second area for 4 seconds, and stunned in the final area for 3 seconds. Each patch applies Minor Maim to enemies hit for 10 seconds, reducing their damage done by 5%.
+Regenerative Ward icon
+Regenerative Ward
+Conjure globes of Daedric energy for protection, granting a damage shield for you and your pets that absorbs 5454 damage for 10 seconds, heals you for 826 Health, and grants Minor Intellect and Minor Endurance to you and nearby allies for 10 seconds. This ability scales off the higher of your Max Health or Magicka and the shield is capped at 55% of your Max Health.
+Reduces the cost, increases the duration of the shield, and also grants you and your allies Minor Intellect and Endurance. This ability now applies a self heal.
+Bound Armor icon
+Bound Armor
+Protect yourself with the power of Oblivion, creating a suit of Daedric mail that increases your block mitigation by 36% for 3 seconds. While slotted on either ability bar, your Max Magicka is increased by 8% and you gain Minor Protection, reducing your damage taken by 5%.
 arrow
-Empowering Grasp icon
-Empowering Grasp
-Summon three patches of skeletal claws from the ground in front of you. Enemies in the first area are snared by 30% for 5 seconds, immobilized in the second area for 4 seconds, and stunned in the final area for 3 seconds. Each area applies Major Maim to enemies and Empower to your allies for 10 seconds, reducing enemy damage done by 10% and allied Heavy Attack Damage against monsters by 70%.
-Each area now also grants allies Empower and improves the Minor Maim to Major Maim against enemies.
+Bound Aegis icon
+Bound Aegis
+Protect yourself with the power of Oblivion, creating a suit of Daedric mail that increases your block mitigation by 40% for 5 seconds. While slotted on either ability bar, your Max Magicka is increased by 8% and you gain Minor Resolve and Minor Protection, increasing your Physical and Spell Resistance by 2974 and reducing your damage taken by 5%.
+Passively grants Minor Resolve while slotted. Increases the potency and duration of the block mitigation.
 arrow
-Ghostly Embrace icon
-Ghostly Embrace
-Summon three patches of skeletal claws from the ground in front of you, each dealing 898 Frost Damage. The first area applies the Chilled status effect, the second area deals an additional 1635 Frost Damage over 5 seconds, and the final area creates a corpse if at least one enemy was hit.
-Deals damage in each area and applies new effects.
+Bound Armaments icon
+Bound Armaments
+While slotted on either ability bar, your Light and Heavy Attacks summon a Bound weapon for 10 seconds, up to 8 times. Fully-charged Heavy Attacks grant two stacks. When you have one or more Bound Weapon active, you can activate the ability to arm up to four of the weapons, causing them to strike your target for 863 Physical Damage every 0.3 seconds. While slotted, your Max Stamina is increased by 8%.
+Converts into a Stamina ability. Light and Heavy attacks summon Bound weapons that can be used to attack your current target. No longer grants block mitigation.
+
+Passive abilities
+Rebate icon
+Rebate
+You restore 371 Magicka or Stamina when one of your non-Ultimate Daedric Summoning abilities end. The resource returned is dictated by the ability's cost.
+Power Stone icon
+Power Stone
+Reduces the cost of your Ultimate abilities by 15%.
+Daedric Protection icon
+Daedric Protection
+Reduce your damage taken by 5% while you have a Daedric Summoning ability active.
+Expert Summoner icon
+Expert Summoner
+Increases your Magicka and Stamina by 5%. Increases your Max Health by 5% if you have a permanent pet active.
+
+Storm Calling: 
+Ultimate abilities
+Overload icon
+Overload
+Charge your fists with the power of the storm, replacing your Light and Heavy Attacks with new, stronger abilities. Light Attacks become lightning bolts, dealing 2323 Shock Damage to an enemy up to 28 meters away. Heavy Attacks blast enemies in a 4 x 6 area for 2090 Shock Damage. Attacks deplete Ultimate until you run out, or the ability is toggled off.
+arrow
+Energy Overload icon
+Energy Overload
+Charge your fists with the power of the storm, replacing your Light and Heavy Attacks with new, stronger abilities. Light Attacks become lightning bolts, dealing 2399 Shock Damage to an enemy up to 28 meters away. Heavy Attacks blast enemies in a 4 x 6 area for 2160 Shock Damage. The attacks restore 1200 Magicka and Stamina, and deplete Ultimate until you run out, or the ability is toggled off.
+While active your Light and Heavy Attacks restore Magicka and Stamina.
+arrow
+Power Overload icon
+Power Overload
+Charge your fists with the power of the storm, replacing your Light and Heavy Attacks with new, stronger abilities. Light Attacks become lightning bolts, dealing 2640 Shock Damage to an enemy up to 32 meters away. Heavy Attacks blast enemies in a 6 x 8 area for 2375 Shock Damage. Attacks deplete Ultimate until you run out, or the ability is toggled off.
+Increase range of Light Attacks and radius of Heavy Attacks. Increases damage.
+Active abilities
+Mages' Fury icon
+Mages' Fury
+Call down lightning to strike an enemy, dealing 870 Shock Damage. If the enemy falls to or below 20% Health within 2 seconds of being struck, an explosion deals an additional 3195 Shock Damage to them and 695 Shock Damage to other enemies nearby.
+arrow
+Endless Fury icon
+Endless Fury
+Call down lightning to strike an enemy, dealing 871 Shock Damage. If the enemy falls to or below 20% Health within 2 seconds of being struck, an explosion deals an additional 3195 Shock Damage to them and 696 Shock Damage to other enemies nearby. If any enemy is killed within 5 seconds of being hit with this ability, you restore 4860 Magicka.
+Reduces the cost and restores Magicka if the target dies after this ability dealt damage to them.
+arrow
+Mages' Wrath icon
+Mages' Wrath
+Call down lightning to strike an enemy, dealing 871 Shock Damage. If the enemy falls to or below 20% Health within 2 seconds of being struck, an explosion deals an additional 3195 Shock Damage to them and all nearby enemies.
+Significantly increases the damage dealt to other enemies nearby.
+Lightning Form icon
+Lightning Form
+Manifest yourself as pure lightning, zapping nearby enemies with electricity dealing 462 Shock Damage every 2 seconds for 20 seconds. While in this form you also gain Major Resolve, increasing your Physical Resistance and Spell Resistance by 5948.
+arrow
+Boundless Storm icon
+Boundless Storm
+Manifest yourself as pure lightning, zapping nearby enemies with electricity dealing 463 Shock Damage every 2 seconds for 30 seconds. While in this form you also gain Major Resolve, increasing your Physical Resistance and Spell Resistance by 5948. Activating this grants you Major Expedition, increasing your Movement Speed by 30% for 4 seconds.
+Increases the duration, and you gain Major Expedition for brief period after activation, increasing your Movement Speed.
+arrow
+Hurricane icon
+Hurricane
+Manifest yourself as pure air, buffeting nearby enemies with wind dealing 478 Physical Damage every 2 seconds for 20 seconds. The winds grow in damage and size, increasing up to 120% more damage and up to 9 meters in size. While in this form you gain Major Resolve and Minor Expedition, increasing your Physical and Spell Resistance by 5948 and your Movement Speed by 15%.
+Converts into a Stamina ability and deals Physical Damage. Increases in size and damage the longer it is active. Grants Minor Expedition while active, increasing your Movement Speed.
+Lightning Splash icon
+Lightning Splash
+Create a nexus of storm energy at the target location, dealing 308 Shock Damage to enemies in the area every 1 second for 10 seconds. You or an ally standing within the nexus can activate the Conduit synergy, dealing 2698 Shock Damage to enemies around them.
+arrow
+Lightning Flood icon
+Lightning Flood
+Create a nexus of storm energy at the target location, dealing 415 Shock Damage to enemies in the area every 1 second for 10 seconds. You or an ally standing within the nexus can activate the Conduit synergy, dealing 2698 Shock Damage to enemies around them.
+Increases the radius and damage.
+arrow
+Liquid Lightning icon
+Liquid Lightning
+Create a nexus of storm energy at the target location, dealing 309 Shock Damage to enemies in the area every 1 second for 15 seconds. You or an ally standing within the nexus can activate the Conduit synergy, dealing 2698 Shock Damage to enemies around them.
+Increases the duration.
+Surge icon
+Surge
+Invoke Meridia's name to gain Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20% for 33 seconds. While active, dealing Critical Damage heals you for 2550 Health. This effect can occur once every 1 second.
+arrow
+Critical Surge icon
+Critical Surge
+Invoke Meridia's name to gain Major Brutality and Sorcery, increasing your Weapon and Spell Damage by 20% for 33 seconds. While active, dealing Critical Damage heals you for 3300 Health. This effect can occur once every 1 second.
+Increases the healing.
+arrow
+Power Surge icon
+Power Surge
+Invoke Meridia's name to gain Major Brutality and Major Sorcery, increasing your Weapon Damage and Spell Damage by 20% for 33 seconds. While active, activating a Critical heal causes the ability to heal you and your allies around you for 2550 Health. This effect can occur once every 3 seconds.
+The heal now heals in an area around you but with a longer cooldown, and only triggers off Critical healing.
+Bolt Escape icon
+Bolt Escape
+Transform yourself into pure energy and flash forward, stunning enemies near your final location for 3 seconds. This effect cannot be blocked. Casting again within 4 seconds costs 33% more Magicka.
+arrow
+Ball of Lightning icon
+Ball of Lightning
+Transform yourself into pure energy and flash forward. After reaching your location, you become immune to snare and immobilize effects for 2 seconds. A ball of lightning is summoned at your end point, which intercepts up to 1 projectile attack made against you every 1 second for 3 seconds. Casting again within 4 seconds costs 33% more Magicka.
+Summons a ball of lightning that protects you from projectiles, but no longer stuns enemies. Grants brief snare and immobilization immunity after casting.
+arrow
+Streak icon
+Streak
+Transform yourself into pure energy and flash forward, dealing 1438 Shock Damage to enemies in your wake and stunning them for 3 seconds. This effect cannot be blocked. Casting again within 4 seconds costs 33% more Magicka.
+Now deals damage and stuns enemies between your beginning and final location.
 Advertisement
 
 
-Passive abilities
-Death Gleaning icon
-Death Gleaning
-WITH A BONE TYRANT ABILITY SLOTTED Whenever an enemy you are in combat with dies within 28 meters of you, restore 666 Magicka and Stamina.
-Disdain Harm icon
-Disdain Harm
-Reduce the damage you take from damage over time abilities by 15% while you have a Bone Tyrant ability active.
-Health Avarice icon
-Health Avarice
-Increase your Healing Received by 3% for each Bone Tyrant ability slotted.
-Last Gasp icon
-Last Gasp
-Increase your Max Health by 2412.
 
-Living Death:
-Ultimate abilities
-Reanimate icon
-Reanimate
-Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location.
-arrow
-Animate Blastbones icon
-Animate Blastbones
-Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location. You consume up to 3 other corpses in the area and summon a Blighted Blastbones for each corpse consumed.
-You consume other corpses in the area and summon Blastbones.
-arrow
-Renewing Animation icon
-Renewing Animation
-Bring your allies back from the brink of death, resurrecting up to 3 allies at the target location. You restore 5300 Magicka and Stamina for each ally you successfully resurrect.
-You restore Magicka and Stamina for each ally you resurrect.
-Active abilities
-Render Flesh icon
-Render Flesh
-Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3486 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%.
-arrow
-Blood Sacrifice icon
-Blood Sacrifice
-Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3600 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%. Consumes a corpse near you when cast to heal a second target.
-Consumes a corpse to heal a second target.
-arrow
-Resistant Flesh icon
-Resistant Flesh
-Sacrifice your own power to repair damaged flesh, healing you or an ally in front of you for 3600 Health but applying Minor Defile to yourself for 4 seconds, reducing your healing received and damage shield strength by 6%. You grant the target Spell and Physical Resistance equal to half the amount healed for 3 seconds.
-Grant resistances to the target equal to half the amount healed.
-Expunge icon
-Expunge
-Embrace the power of death, removing up to 2 negative effects from yourself. While slotted, the cost of all your abilities are reduced by 3%.
-arrow
-Expunge and Modify icon
-Expunge and Modify
-Embrace the power of death, removing up to 2 negative effects from yourself and restoring 515 Magicka and Stamina for each negative effect removed. While slotted, the cost of all your abilities are reduced by 3%.
-You restore Magicka and Stamina for each negative effect removed.
-arrow
-Hexproof icon
-Hexproof
-Embrace the power of death, removing up to 4 negative effects from yourself. While slotted, the cost of all your abilities are reduced by 3%.
-Reduces cost as the ability ranks up and Increases the amount of negative effects removed.
-Life amid Death icon
-Life amid Death
-Release residual fragments of fallen souls at the target location, healing you and your allies for 2323 Health. Consumes a corpse on cast to continue to heal you and your allies in the area for 2310 Health over 5 seconds.
-arrow
-Enduring Undeath icon
-Enduring Undeath
-Release residual fragments of fallen souls at the target location, healing you and your allies for 2399 Health. Consumes a corpse on cast to continue to heal you and your allies in the area for 2390 Health over 5 seconds. You can consume up to 5 additional corpses on cast, with each corpse extending the duration of the heal over time by 5 seconds.
-Can consume multiple corpses to increase the duration of the heal over time.
-arrow
-Renewing Undeath icon
-Renewing Undeath
-Release residual fragments of fallen souls at the target location, healing you and your allies for 2399 Health. Consumes a corpse on cast to immediately remove up to 3 negative effects and continue to heal you and your allies in the area for 2390 Health over 5 seconds.
-Consuming a corpse also removes negative effects.
-Spirit Mender icon
-Spirit Mender
-|ce60000CRIMINAL ACT Conjure a ghostly spirit to do your bidding and stay by your side for 16 seconds. The spirit heals you or the lowest Health ally around you every 2 seconds, restoring 695 Health. Creates a corpse on death if you are in combat.
-arrow
-Intensive Mender icon
-Intensive Mender
-Conjure a ghostly spirit to do your bidding and stay by your side for 8 seconds. The spirit heals you or lowest Health ally around you every 2 seconds, restoring 1438 Health to the target and 2 allies nearby them. Creates a corpse on death if you are in combat.
-The spirit lasts for half as long, but heals for twice the amount, heals two additional allies, and costs half as much.
-arrow
-Spirit Guardian icon
-Spirit Guardian
-Conjure a ghostly spirit to do your bidding and stay by your side for 16 seconds. The spirit heals you or the lowest Health ally around you every 2 seconds, restoring 718 Health. While active 10% of the damage you take is transferred to the spirit instead. Creates a corpse on death if you are in combat.
-Some of the damage you take is transferred to the spirit instead.
-Restoring Tether icon
-Restoring Tether
-Siphon the last remnants of life from a corpse, healing for 5544 Health over 12 seconds to yourself and all allies between you and the corpse. While slotted, your healing done is increased by 3%.
-arrow
-Braided Tether icon
-Braided Tether
-Siphon the last remnants of life from a corpse, healing for 5742 Health over 12 seconds to yourself, all allies around you, and all allies between you and the corpse. While slotted, your healing done is increased by 3%.
-Also heals allies in a radius around you.
-arrow
-Mortal Coil icon
-Mortal Coil
-Siphon the last remnants of life from a corpse, healing for 5562 Health over 12 seconds to yourself and all allies between you and the corpse. You also restore 170 Magicka and Stamina every 2 seconds while siphoning the corpse. While slotted, your healing done is increased by 3%.
-Restores Magicka and Stamina while siphoning the corpse.
-Advertisement
+0:27
+
 
 
 Passive abilities
-Curative Curse icon
-Curative Curse
-While you have a negative effect on you, your healing done is increased by 12%.
-Near-Death Experience icon
-Near-Death Experience
-While you have a Living Death ability slotted, your Critical Strike Chance with all healing abilities is increased by up to 12% in proportion to the severity of the target's wounds.
-Corpse Consumption icon
-Corpse Consumption
-When you consume a corpse, you generate 10 Ultimate. This effect can occur once every 16 seconds.
-Undead Confederate icon
-Undead Confederate
-While you have a Sacrificial Bones, Skeletal Mage, or Spirit Mender active, your Health, Magicka, and Stamina Recovery is increased by 155.
+Capacitor icon
+Capacitor
+Increases your Health, Magicka, and Stamina Recovery by 141.
+Energized icon
+Energized
+Increases your Physical and Shock Damage by 5%.
+Amplitude icon
+Amplitude
+Increases your damage done against enemies by 1% for every 10% current Health they have.
+Expert Mage icon
+Expert Mage
+Increases your Weapon and Spell Damage by 108 for each Sorcerer ability slotted.
+
