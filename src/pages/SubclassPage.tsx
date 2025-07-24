@@ -66,43 +66,43 @@ interface SkillCardProps {
 const SkillCard = ({ skill }: SkillCardProps) => {
   const getResourceColor = (type: string) => {
     switch (type) {
-      case 'magicka': return 'text-blue-400'
-      case 'stamina': return 'text-green-400'
-      case 'ultimate': return 'text-yellow-400'
+      case 'magicka': return 'resource-magicka'
+      case 'stamina': return 'resource-stamina'
+      case 'ultimate': return 'resource-ultimate'
       default: return 'text-gray-400'
     }
   }
 
-  const getSkillTypeColor = (type: string) => {
+  const getSkillTypeClass = (type: string) => {
     switch (type) {
-      case 'ultimate': return 'bg-yellow-600'
-      case 'active': return 'bg-blue-600'
-      case 'passive': return 'bg-purple-600'
+      case 'ultimate': return 'skill-type-ultimate'
+      case 'active': return 'skill-type-active'
+      case 'passive': return 'skill-type-passive'
       default: return 'bg-gray-600'
     }
   }
 
-  const getDamageTypeColor = (type: string) => {
+  const getDamageTypeClass = (type: string) => {
     switch (type) {
-      case 'fire': return 'text-red-400'
-      case 'frost': return 'text-cyan-400'
-      case 'shock': return 'text-purple-400'
-      case 'magic': return 'text-blue-400'
-      case 'physical': return 'text-gray-300'
-      case 'poison': return 'text-green-400'
-      case 'disease': return 'text-yellow-600'
-      case 'bleed': return 'text-red-600'
+      case 'fire': return 'damage-fire'
+      case 'frost': return 'damage-frost'
+      case 'shock': return 'damage-shock'
+      case 'magic': return 'damage-magic'
+      case 'physical': return 'damage-physical'
+      case 'poison': return 'damage-poison'
+      case 'disease': return 'damage-disease'
+      case 'bleed': return 'damage-bleed'
       default: return 'text-gray-400'
     }
   }
 
   return (
-    <div className="card hover:border-eso-gold transition-colors">
+    <div className={`skill-card group skill-card-${skill.type}`}>
       <div className="flex items-center justify-between mb-3">
-        <h3 className="text-xl font-eso font-semibold text-eso-gold">
+        <h3 className="text-xl font-eso font-semibold glowing-text">
           {skill.name}
         </h3>
-        <span className={`text-xs px-2 py-1 rounded-full text-white ${getSkillTypeColor(skill.type)}`}>
+        <span className={`archetype-badge ${getSkillTypeClass(skill.type)}`}>
           {skill.type.toUpperCase()}
         </span>
       </div>
@@ -126,7 +126,7 @@ const SkillCard = ({ skill }: SkillCardProps) => {
         {skill.damage && (
           <div className="text-sm">
             <span className="text-gray-400">Damage: </span>
-            <span className={`font-medium ${getDamageTypeColor(skill.damage.damageType)}`}>
+            <span className={`font-medium ${getDamageTypeClass(skill.damage.damageType)}`}>
               {skill.damage.baseDamage} {skill.damage.damageType}
             </span>
           </div>
@@ -236,44 +236,50 @@ export const SubclassPage = () => {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="text-center">
-        <nav className="text-sm text-gray-400 mb-4">
+      <div className="text-center relative">
+        <nav className="breadcrumb-nav justify-center">
           <Link to="/" className="hover:text-eso-gold">Classes</Link>
-          <span className="mx-2">›</span>
+          <span className="breadcrumb-separator">›</span>
           <Link to={`/class/${classId}`} className="hover:text-eso-gold">{esoClass.name}</Link>
-          <span className="mx-2">›</span>
+          <span className="breadcrumb-separator">›</span>
           <span className="text-eso-gold">{subclass.name}</span>
         </nav>
         
-        <h1 className="text-4xl font-eso font-bold text-eso-gold mb-4">
-          {subclass.name}
-        </h1>
-        <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-4">
-          {subclass.description}
-        </p>
-        
-        <span className={`inline-block text-sm px-3 py-1 rounded-full ${
-          subclass.archetype === 'DPS' ? 'bg-red-600 text-white' :
-          subclass.archetype === 'Healer' ? 'bg-green-600 text-white' :
-          subclass.archetype === 'Tank' ? 'bg-blue-600 text-white' :
-          'bg-purple-600 text-white'
-        }`}>
-          {subclass.archetype}
-        </span>
+        <div className="magical-border inline-block mb-8">
+          <div className="bg-gradient-to-br from-eso-dark/90 to-gray-900/90 p-8 rounded-2xl backdrop-blur-sm">
+            <h1 className="text-5xl font-eso font-bold glowing-text mb-4">
+              {subclass.name}
+            </h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
+              {subclass.description}
+            </p>
+            
+            <span className={`archetype-badge text-lg px-6 py-2 ${
+              subclass.archetype === 'DPS' ? 'archetype-dps' :
+              subclass.archetype === 'Healer' ? 'archetype-healer' :
+              subclass.archetype === 'Tank' ? 'archetype-tank' :
+              'archetype-hybrid'
+            }`}>
+              {subclass.archetype} Specialization
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Passive Bonuses */}
       {subclass.passiveBonuses && subclass.passiveBonuses.length > 0 && (
-        <div className="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h2 className="text-2xl font-eso font-semibold text-eso-blue mb-4">Passive Bonuses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {subclass.passiveBonuses.map((bonus) => (
-              <div key={bonus.id} className="space-y-1">
-                <h3 className="font-medium text-eso-gold">{bonus.name}</h3>
-                <p className="text-sm text-gray-300">{bonus.description}</p>
-                <p className="text-xs text-eso-blue">{bonus.effect}</p>
-              </div>
-            ))}
+        <div className="magical-border">
+          <div className="bg-gradient-to-br from-eso-dark/90 to-gray-900/90 p-8 rounded-2xl backdrop-blur-sm border border-gray-700/50">
+            <h2 className="text-3xl font-eso font-semibold glowing-text mb-6 text-center">Innate Bonuses</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {subclass.passiveBonuses.map((bonus) => (
+                <div key={bonus.id} className="bg-gray-800/50 p-6 rounded-xl border border-gray-700/50 hover:border-eso-gold/30 transition-all duration-300">
+                  <h3 className="font-medium text-eso-gold text-lg mb-2">{bonus.name}</h3>
+                  <p className="text-sm text-gray-300 mb-3 leading-relaxed">{bonus.description}</p>
+                  <p className="text-sm text-eso-blue font-medium">{bonus.effect}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       )}
@@ -281,8 +287,12 @@ export const SubclassPage = () => {
       {/* Ultimate Abilities */}
       {ultimates.length > 0 && (
         <div>
-          <h2 className="text-2xl font-eso font-semibold text-eso-blue mb-6">Ultimate Abilities</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-eso font-semibold glowing-text mb-2">Ultimate Abilities</h2>
+            <p className="text-gray-400">Powerful abilities that consume Ultimate points</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-eso-gold to-transparent mx-auto mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {ultimates.map((skill) => (
               <SkillCard key={skill.id} skill={skill} />
             ))}
@@ -293,7 +303,11 @@ export const SubclassPage = () => {
       {/* Active Abilities */}
       {actives.length > 0 && (
         <div>
-          <h2 className="text-2xl font-eso font-semibold text-eso-blue mb-6">Active Abilities</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-eso font-semibold glowing-text mb-2">Active Abilities</h2>
+            <p className="text-gray-400">Skills that consume Magicka or Stamina to activate</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-eso-blue to-transparent mx-auto mt-4"></div>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {actives.map((skill) => (
               <SkillCard key={skill.id} skill={skill} />
@@ -305,7 +319,11 @@ export const SubclassPage = () => {
       {/* Passive Abilities */}
       {passives.length > 0 && (
         <div>
-          <h2 className="text-2xl font-eso font-semibold text-eso-blue mb-6">Passive Abilities</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-eso font-semibold glowing-text mb-2">Passive Abilities</h2>
+            <p className="text-gray-400">Permanent bonuses that enhance your character</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-eso-purple to-transparent mx-auto mt-4"></div>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
             {passives.map((skill) => (
               <SkillCard key={skill.id} skill={skill} />

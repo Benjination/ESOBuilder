@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,27 +7,398 @@
 @layer base {
   body {
     @apply bg-eso-darker text-white font-sans;
+    background-image: 
+      radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(144, 19, 254, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-eso;
   }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-eso-darker;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-eso-gold rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-yellow-500;
+  }
 }
 
 @layer components {
+  /* Fantasy Hero Background */
+  .fantasy-hero {
+    background: linear-gradient(
+      135deg,
+      rgba(15, 15, 35, 0.9) 0%,
+      rgba(26, 26, 46, 0.8) 50%,
+      rgba(22, 33, 62, 0.9) 100%
+    ),
+    url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop') center/cover;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fantasy-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(15, 15, 35, 0.7) 70%);
+    z-index: 1;
+  }
+
+  .fantasy-hero > * {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Class-specific fantasy backgrounds */
+  .class-card-dragonknight {
+    background: linear-gradient(
+      135deg,
+      rgba(220, 38, 38, 0.1) 0%,
+      rgba(239, 68, 68, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1547036967-23d11aacaee0?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-sorcerer {
+    background: linear-gradient(
+      135deg,
+      rgba(147, 51, 234, 0.1) 0%,
+      rgba(168, 85, 247, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-nightblade {
+    background: linear-gradient(
+      135deg,
+      rgba(55, 65, 81, 0.1) 0%,
+      rgba(75, 85, 99, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-templar {
+    background: linear-gradient(
+      135deg,
+      rgba(251, 191, 36, 0.1) 0%,
+      rgba(252, 211, 77, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-necromancer {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.1) 0%,
+      rgba(74, 222, 128, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-warden {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.1) 0%,
+      rgba(74, 222, 128, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2942&auto=format&fit=crop') center/cover;
+  }
+
+  .class-card-arcanist {
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.1) 0%,
+      rgba(96, 165, 250, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop') center/cover;
+  }
+
+  /* Magical skill card backgrounds */
+  .skill-card-ultimate {
+    background: linear-gradient(
+      135deg,
+      rgba(251, 191, 36, 0.1) 0%,
+      rgba(252, 211, 77, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover;
+    position: relative;
+  }
+
+  .skill-card-active {
+    background: linear-gradient(
+      135deg,
+      rgba(59, 130, 246, 0.1) 0%,
+      rgba(96, 165, 250, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover;
+    position: relative;
+  }
+
+  .skill-card-passive {
+    background: linear-gradient(
+      135deg,
+      rgba(147, 51, 234, 0.1) 0%,
+      rgba(168, 85, 247, 0.05) 100%
+    ),
+    url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3') center/cover;
+    position: relative;
+  }
+
+  /* Overlay for readability */
+  .skill-card-ultimate::before,
+  .skill-card-active::before,
+  .skill-card-passive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0.5rem;
+    z-index: 1;
+  }
+
+  .skill-card-ultimate > *,
+  .skill-card-active > *,
+  .skill-card-passive > * {
+    position: relative;
+    z-index: 2;
+  }
+
   .btn-primary {
-    @apply bg-eso-gold text-eso-darker font-semibold py-2 px-4 rounded-lg hover:bg-yellow-500 transition-colors;
+    @apply bg-gradient-to-r from-eso-gold to-yellow-500 text-eso-darker font-semibold py-3 px-6 rounded-lg 
+           hover:from-yellow-500 hover:to-eso-gold transition-all duration-300 
+           shadow-lg hover:shadow-xl hover:scale-105 transform;
   }
   
   .btn-secondary {
-    @apply bg-eso-blue text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors;
+    @apply bg-gradient-to-r from-eso-blue to-blue-600 text-white font-semibold py-3 px-6 rounded-lg 
+           hover:from-blue-600 hover:to-eso-blue transition-all duration-300 
+           shadow-lg hover:shadow-xl hover:scale-105 transform;
   }
   
   .card {
-    @apply bg-eso-dark rounded-lg p-6 shadow-lg border border-gray-700;
+    @apply bg-gradient-to-br from-eso-dark to-gray-900 rounded-xl p-6 shadow-2xl border border-gray-700
+           hover:border-eso-gold transition-all duration-300 hover:shadow-eso-gold/20 hover:shadow-2xl
+           backdrop-blur-sm relative overflow-hidden;
+  }
+  
+  .card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-eso-gold/5 to-transparent 
+           opacity-0 transition-opacity duration-300;
+  }
+  
+  .card:hover::before {
+    @apply opacity-100;
   }
   
   .skill-card {
-    @apply bg-eso-dark rounded-lg p-4 border border-gray-600 hover:border-eso-gold transition-colors cursor-pointer;
+    @apply bg-gradient-to-br from-eso-dark to-gray-900 rounded-xl p-5 border border-gray-600 
+           hover:border-eso-gold transition-all duration-300 cursor-pointer
+           shadow-lg hover:shadow-2xl hover:shadow-eso-gold/10 hover:scale-[1.02] transform
+           backdrop-blur-sm relative overflow-hidden;
   }
+  
+  .skill-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full bg-gradient-to-br from-eso-gold/5 to-transparent 
+           opacity-0 transition-opacity duration-300;
+  }
+  
+  .skill-card:hover::before {
+    @apply opacity-100;
+  }
+  
+  .hero-title {
+    @apply text-6xl md:text-7xl lg:text-8xl font-bold text-transparent 
+           bg-gradient-to-r from-eso-gold via-yellow-400 to-eso-gold bg-clip-text
+           animate-pulse drop-shadow-2xl;
+    font-family: 'Cinzel Decorative', serif;
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+  }
+  
+  .hero-subtitle {
+    @apply text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed
+           drop-shadow-lg;
+  }
+  
+  .floating-orb {
+    @apply absolute rounded-full blur-xl opacity-30 animate-pulse;
+  }
+  
+  .floating-orb-1 {
+    @apply w-32 h-32 bg-eso-gold top-20 left-10 animate-bounce;
+    animation-duration: 6s;
+  }
+  
+  .floating-orb-2 {
+    @apply w-24 h-24 bg-eso-blue top-40 right-20 animate-bounce;
+    animation-duration: 8s;
+    animation-delay: 2s;
+  }
+  
+  .floating-orb-3 {
+    @apply w-20 h-20 bg-eso-purple bottom-32 left-1/4 animate-bounce;
+    animation-duration: 7s;
+    animation-delay: 4s;
+  }
+  
+  .magical-border {
+    @apply relative;
+  }
+  
+  .magical-border::before {
+    content: '';
+    @apply absolute -inset-0.5 bg-gradient-to-r from-eso-gold via-eso-blue to-eso-purple 
+           rounded-xl blur opacity-30 animate-pulse;
+  }
+  
+  .magical-border > * {
+    @apply relative;
+  }
+  
+  .glowing-text {
+    @apply text-eso-gold;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.6);
+  }
+  
+  .breadcrumb-nav {
+    @apply text-sm text-gray-400 mb-6 flex items-center space-x-2;
+  }
+  
+  .breadcrumb-nav a {
+    @apply hover:text-eso-gold transition-colors duration-200 hover:underline;
+  }
+  
+  .breadcrumb-separator {
+    @apply text-eso-gold font-bold;
+  }
+  
+  .archetype-badge {
+    @apply text-xs px-3 py-1 rounded-full font-medium shadow-lg;
+  }
+  
+  .archetype-dps {
+    @apply bg-gradient-to-r from-red-600 to-red-500 text-white;
+  }
+  
+  .archetype-healer {
+    @apply bg-gradient-to-r from-green-600 to-green-500 text-white;
+  }
+  
+  .archetype-tank {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white;
+  }
+  
+  .archetype-hybrid {
+    @apply bg-gradient-to-r from-purple-600 to-purple-500 text-white;
+  }
+  
+  .skill-type-ultimate {
+    @apply bg-gradient-to-r from-yellow-600 to-yellow-500 text-black;
+  }
+  
+  .skill-type-active {
+    @apply bg-gradient-to-r from-blue-600 to-blue-500 text-white;
+  }
+  
+  .skill-type-passive {
+    @apply bg-gradient-to-r from-purple-600 to-purple-500 text-white;
+  }
+  
+  .resource-magicka {
+    @apply text-blue-400;
+    text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  
+  .resource-stamina {
+    @apply text-green-400;
+    text-shadow: 0 0 5px rgba(34, 197, 94, 0.5);
+  }
+  
+  .resource-ultimate {
+    @apply text-yellow-400;
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+  }
+  
+  .damage-fire {
+    @apply text-red-400;
+    text-shadow: 0 0 5px rgba(248, 113, 113, 0.5);
+  }
+  
+  .damage-frost {
+    @apply text-cyan-400;
+    text-shadow: 0 0 5px rgba(34, 211, 238, 0.5);
+  }
+  
+  .damage-shock {
+    @apply text-purple-400;
+    text-shadow: 0 0 5px rgba(196, 181, 253, 0.5);
+  }
+  
+  .damage-magic {
+    @apply text-blue-400;
+    text-shadow: 0 0 5px rgba(96, 165, 250, 0.5);
+  }
+  
+  .damage-physical {
+    @apply text-gray-300;
+    text-shadow: 0 0 5px rgba(209, 213, 219, 0.5);
+  }
+  
+  .damage-poison {
+    @apply text-green-400;
+    text-shadow: 0 0 5px rgba(74, 222, 128, 0.5);
+  }
+  
+  .damage-disease {
+    @apply text-yellow-600;
+    text-shadow: 0 0 5px rgba(202, 138, 4, 0.5);
+  }
+  
+  .damage-bleed {
+    @apply text-red-600;
+    text-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }
