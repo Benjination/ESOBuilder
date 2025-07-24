@@ -1,743 +1,744 @@
 // Templar Skills - The holy warrior class
 import { Skill } from './skills';
 
-// Aedric Spear Skills
+// AEDRIC SPEAR SKILL LINE
 const aedricSpearSkills: Skill[] = [
+  // Ultimate abilities
+  {
+    id: 'radial-sweep',
+    name: 'Radial Sweep',
+    description: 'Swing your Aedric spear around with holy vengeance, dealing 2323 Magic Damage to all nearby enemies and an additional 1161 Magic Damage every 2 seconds for 6 seconds.',
+    type: 'ultimate',
+    resourceCost: {
+      type: 'ultimate',
+      amount: 125
+    },
+    duration: 6,
+    morphs: [
+      {
+        id: 'crescent-sweep',
+        name: 'Crescent Sweep',
+        description: 'Swing your Aedric spear around with holy vengeance, dealing 2399 Magic Damage to all nearby enemies and an additional 1161 Magic Damage every 2 seconds for 6 seconds. Enemies in your path will be hit for 60% more damage.',
+        changes: 'Deals additional damage to enemies in front of you.'
+      },
+      {
+        id: 'everlasting-sweep',
+        name: 'Everlasting Sweep',
+        description: 'Swing your Aedric spear around with holy vengeance, dealing 2399 Physical Damage to all nearby enemies and an additional 1161 Physical Damage every 2 seconds for 10 seconds. The duration is extended by 2 seconds for each enemy hit.',
+        changes: 'Deals Physical Damage and increases the duration, which further increases for each enemy hit.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: [],
+    damage: {
+      baseDamage: 2323,
+      scalingFactor: 2.0,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'duration-extension',
+        type: 'other',
+        description: 'Duration extends for each enemy hit'
+      }
+    ]
+  },
+
+  // Active abilities
   {
     id: 'puncturing-strikes',
     name: 'Puncturing Strikes',
-    description: 'Launch a relentless assault, striking enemies in front of you four times.',
+    description: 'Launch a relentless assault, striking up to 6 enemies in front of you three times with your Aedric spear. The spear deals 889 Magic Damage per strike and reduces enemy Movement Speed by 40% for 0.5 seconds.',
     type: 'active',
     resourceCost: {
-      type: 'stamina',
-      amount: 2295
+      type: 'magicka',
+      amount: 2700
     },
     range: 8,
     morphs: [
       {
         id: 'biting-jabs',
         name: 'Biting Jabs',
-        description: 'Converts to stamina and deals physical damage with bleeding.',
-        changes: 'Uses stamina, deals physical damage, final hit applies bleeding.'
+        description: 'Launch a relentless assault, striking up to 6 enemies in front of you three times with your Aedric spear. The spear deals 919 Physical Damage per strike and reduces enemy Movement Speed by 40% for 0.5 seconds. Each strike has a 10% chance of applying the Sundered status effect. Activating this ability grants you Major Brutality and Major Sorcery, increasing your Weapon and Spell Damage by 20% for 10 seconds.',
+        changes: 'Converts into a Stamina ability and deals Physical Damage. Grants you Major Brutality and Sorcery after casting and has a higher chance of applying the Sundered status effect.'
       },
       {
         id: 'puncturing-sweep',
         name: 'Puncturing Sweep',
-        description: 'Heals you for a percentage of damage dealt.',
-        changes: 'Heals you for 40% of damage dealt to nearby enemies.'
+        description: 'Launch a relentless assault, striking up to 6 enemies in front of you three times with your Aedric spear. The spear deals 919 Magic Damage per strike and reduces enemy Movement Speed by 40% for 0.5 seconds. You heal for 25% of the damage done with this ability.',
+        changes: 'You heal for a percentage of the damage done.'
       }
     ],
-    buffsApplied: [],
-    debuffsApplied: [],
+    buffsApplied: ['major_brutality', 'major_sorcery'],
+    debuffsApplied: ['sundered'],
     damage: {
-      baseDamage: 290,
-      scalingFactor: 0.25,
+      baseDamage: 889,
+      scalingFactor: 1.0,
       damageType: 'magic'
-    },
-    healing: {
-      baseHealing: 116,
-      scalingFactor: 0.1
     },
     effects: [
       {
         id: 'multi-strike',
         type: 'other',
-        description: 'Four consecutive strikes that increase in damage'
+        description: 'Three consecutive strikes'
+      },
+      {
+        id: 'movement-speed-reduction',
+        type: 'crowd_control',
+        description: 'Reduces enemy movement speed by 40%',
+        value: 40,
+        percentage: true
       }
     ]
   },
+
   {
     id: 'piercing-javelin',
     name: 'Piercing Javelin',
-    description: 'Hurl a javelin of divine light that knocks down and stuns the enemy.',
+    description: 'Hurl your spear at an enemy with godlike strength, dealing 1392 Magic Damage and knocking them back 8 meters. This ability ignores the enemy\'s Resistances and cannot be blocked.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
-      amount: 3240
-    },
-    range: 28,
-    morphs: [
-      {
-        id: 'aurora-javelin',
-        name: 'Aurora Javelin',
-        description: 'Deals more damage based on distance traveled.',
-        changes: 'Damage increases up to 100% based on distance to target.'
-      },
-      {
-        id: 'binding-javelin',
-        name: 'Binding Javelin',
-        description: 'Immobilizes the target instead of knocking them down.',
-        changes: 'Applies immobilization for 8 seconds instead of knockdown.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: ['stun', 'knockdown'],
-    damage: {
-      baseDamage: 1742,
-      scalingFactor: 1.5,
-      damageType: 'magic'
-    },
-    effects: [
-      {
-        id: 'projectile-cc',
-        type: 'crowd_control',
-        description: 'Ranged projectile with knockdown and stun',
-        duration: 3
-      }
-    ]
-  },
-  {
-    id: 'focused-charge',
-    name: 'Focused Charge',
-    description: 'Charge with divine purpose to an enemy, dealing damage and stunning them.',
-    type: 'active',
-    resourceCost: {
-      type: 'stamina',
-      amount: 3780
+      amount: 2700
     },
     range: 22,
     morphs: [
       {
-        id: 'explosive-charge',
-        name: 'Explosive Charge',
-        description: 'Deals area damage around the target.',
-        changes: 'Explodes on impact, dealing damage to nearby enemies.'
-      },
-      {
-        id: 'toppling-charge',
-        name: 'Toppling Charge',
-        description: 'Knocks down multiple enemies and grants spell resistance.',
-        changes: 'Knocks down all enemies near target, grants Major Spell Resistance.'
-      }
-    ],
-    buffsApplied: ['major_spell_resistance'],
-    debuffsApplied: ['stun'],
-    damage: {
-      baseDamage: 1161,
-      scalingFactor: 1.0,
-      damageType: 'physical'
-    },
-    effects: [
-      {
-        id: 'gap-closer-stun',
-        type: 'other',
-        description: 'Gap closer that stuns target on arrival'
-      }
-    ]
-  },
-  {
-    id: 'spear-shards',
-    name: 'Spear Shards',
-    description: 'Summon spears from the ground that deal damage over time.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 2970
-    },
-    range: 28,
-    duration: 10,
-    morphs: [
-      {
-        id: 'luminous-shards',
-        name: 'Luminous Shards',
-        description: 'Allies can activate shards to restore resources.',
-        changes: 'Allies can activate for Magicka and Stamina restoration.'
-      },
-      {
-        id: 'blazing-spear',
-        name: 'Blazing Spear',
-        description: 'Deals more damage and applies burning.',
-        changes: 'Higher damage and applies burning status effect.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: ['burning'],
-    damage: {
-      baseDamage: 348,
-      scalingFactor: 0.3,
-      damageType: 'magic',
-      isDoT: true,
-      dotTicks: 10
-    },
-    effects: [
-      {
-        id: 'ground-spears',
-        type: 'other',
-        description: 'Creates area of damaging spears over time',
-        duration: 10
-      }
-    ]
-  },
-  {
-    id: 'radial-sweep',
-    name: 'Radial Sweep',
-    description: 'Spin around with divine energy, hitting all nearby enemies.',
-    type: 'ultimate',
-    resourceCost: {
-      type: 'ultimate',
-      amount: 100
-    },
-    radius: 8,
-    morphs: [
-      {
-        id: 'empowering-sweep',
-        name: 'Empowering Sweep',
-        description: 'Increases your damage done for each enemy hit.',
-        changes: 'Grants 6% damage done for each enemy hit for 30 seconds.'
-      },
-      {
-        id: 'crescent-sweep',
-        name: 'Crescent Sweep',
-        description: 'Increases damage and reduces cost based on enemies hit.',
-        changes: 'Costs less and deals more damage for each enemy hit.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: [],
-    damage: {
-      baseDamage: 1161,
-      scalingFactor: 1.0,
-      damageType: 'magic'
-    },
-    effects: [
-      {
-        id: 'radial-attack',
-        type: 'other',
-        description: 'Area attack that hits all nearby enemies'
-      }
-    ]
-  },
-  {
-    id: 'aurora-javelin',
-    name: 'Aurora Javelin',
-    description: 'Hurl a spear of pure light that pierces through enemies.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 2295
-    },
-    range: 28,
-    morphs: [
-      {
-        id: 'piercing-javelin',
-        name: 'Piercing Javelin',
-        description: 'Knocks down enemies and deals more damage at range.',
-        changes: 'Knockdown on hit, damage increases with distance.'
+        id: 'aurora-javelin',
+        name: 'Aurora Javelin',
+        description: 'Hurl your spear at an enemy with godlike strength, dealing 1438 Magic Damage and knocking them back 8 meters. This ability ignores the enemy\'s Resistances and cannot be blocked. The spear deals an additional 2% damage for every 1 meter you are away from the target, up to a maximum of 40%.',
+        changes: 'Deals additional damage based on the distance the spear travels.'
       },
       {
         id: 'binding-javelin',
         name: 'Binding Javelin',
-        description: 'Immobilizes target and spreads damage to nearby enemies.',
-        changes: 'Immobilizes for 3 seconds, damage spreads to enemies within 8 meters.'
+        description: 'Hurl your spear at an enemy with godlike strength, dealing 1393 Physical Damage and stunning them for 4 seconds. This ability ignores the enemy\'s Resistances and cannot be blocked.',
+        changes: 'Converts into a Stamina ability and deals Physical Damage. Stuns the enemy for longer instead of knocking back.'
       }
     ],
     buffsApplied: [],
-    debuffsApplied: ['knockdown', 'immobilize'],
+    debuffsApplied: ['knockback', 'stun'],
     damage: {
-      baseDamage: 1548,
-      scalingFactor: 1.3,
+      baseDamage: 1392,
+      scalingFactor: 1.2,
       damageType: 'magic'
     },
     effects: [
       {
-        id: 'piercing-light',
+        id: 'armor-ignore',
         type: 'other',
-        description: 'Pierces through all enemies in line'
-      }
-    ]
-  },
-  {
-    id: 'radial-sweep',
-    name: 'Radial Sweep',
-    description: 'Spin around with your spear extended, damaging nearby enemies.',
-    type: 'ultimate',
-    resourceCost: {
-      type: 'ultimate',
-      amount: 125
-    },
-    radius: 8,
-    morphs: [
-      {
-        id: 'empowering-sweep',
-        name: 'Empowering Sweep',
-        description: 'Grants Empower and reduces enemy damage for each enemy hit.',
-        changes: 'Grants Empower for 8 seconds, enemies deal 15% less damage.'
+        description: 'Ignores enemy resistances and cannot be blocked'
       },
       {
-        id: 'crescent-sweep',
-        name: 'Crescent Sweep',
-        description: 'Larger area and applies burning to enemies.',
-        changes: '12 meter radius, applies burning for 10 seconds.'
-      }
-    ],
-    buffsApplied: ['empower'],
-    debuffsApplied: ['burning'],
-    damage: {
-      baseDamage: 1742,
-      scalingFactor: 1.5,
-      damageType: 'physical'
-    },
-    effects: [
-      {
-        id: 'spinning-sweep',
+        id: 'distance-bonus',
         type: 'other',
-        description: 'Hits all enemies within range around you'
-      }
-    ]
-  },
-  // Passive Skills
-  {
-    id: 'balanced-warrior',
-    name: 'Balanced Warrior',
-    description: 'Increases weapon and spell damage.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'damage-bonus',
-        type: 'stat_increase',
-        description: 'Weapon and Spell Damage increased by 129',
-        value: 129
-      }
-    ]
-  },
-  {
-    id: 'piercing-spear',
-    name: 'Piercing Spear',
-    description: 'Increases critical strike chance and critical damage.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'critical-chance',
-        type: 'stat_increase',
-        description: 'Weapon and Spell Critical increased by 657',
-        value: 657
-      },
-      {
-        id: 'critical-damage',
-        type: 'stat_increase',
-        description: 'Critical Strike Damage increased by 10%',
-        value: 10,
+        description: 'Additional damage based on distance',
+        value: 40,
         percentage: true
       }
     ]
   },
-  {
-    id: 'spear-wall',
-    name: 'Spear Wall',
-    description: 'Blocking with Aedric Spear abilities active grants damage reduction.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'block-bonus',
-        type: 'stat_increase',
-        description: 'Damage reduction increased by 10% when blocking with Aedric Spear abilities active',
-        value: 10,
-        percentage: true
-      }
-    ]
-  },
-  {
-    id: 'burning-light',
-    name: 'Burning Light',
-    description: 'Aedric Spear abilities have a chance to trigger additional damage.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'bonus-damage',
-        type: 'other',
-        description: '35% chance for Aedric Spear abilities to deal 581 additional magic damage'
-      }
-    ]
-  },
-  {
-    id: 'aedric-mastery',
-    name: 'Aedric Mastery',
-    description: 'Increases max stamina for each Aedric Spear ability slotted.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'slotted-bonus',
-        type: 'stat_increase',
-        description: 'Maximum Stamina increased by 8% per Aedric Spear ability slotted',
-        value: 8,
-        percentage: true
-      }
-    ]
-  }
-];
 
-// Dawn's Wrath Skills
-const dawnsWrathSkills: Skill[] = [
   {
-    id: 'sun-fire',
-    name: 'Sun Fire',
-    description: 'Blast an enemy with solar energy, dealing immediate and damage over time.',
+    id: 'focused-charge',
+    name: 'Focused Charge',
+    description: 'Charge with your divine lance to impale an enemy, dealing 1392 Magic Damage while taunting them to attack you for 15 seconds. If the enemy hit was casting, they are interrupted, set Off Balance, and stunned for 3 seconds. You also gain Major Protection for 7 seconds, reducing your damage taken by 10%.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
-      amount: 2295
+      amount: 3780
     },
-    range: 28,
-    duration: 10,
+    range: 22,
+    duration: 15,
     morphs: [
       {
-        id: 'vampire-bane',
-        name: 'Vampire\'s Bane',
-        description: 'Deals bonus damage to vampires and werewolves.',
-        changes: '+50% damage to vampires/werewolves, spreads on death.'
+        id: 'explosive-charge',
+        name: 'Explosive Charge',
+        description: 'Charge with your divine lance to impale all enemies in the area, dealing 1799 Magic Damage while taunting the first enemy hit to attack you for 15 seconds. Any enemy hit that was casting is interrupted, set Off Balance, and stunned for 3 seconds. You also gain Major Protection for 15 seconds, reducing your damage taken by 10%.',
+        changes: 'Deals increased damage and interrupts all enemies near the point of impact. Increases duration of Major Protection.'
       },
       {
-        id: 'reflective-light',
-        name: 'Reflective Light',
-        description: 'Bounces to additional nearby enemies.',
-        changes: 'Bounces to up to 2 additional enemies within 8 meters.'
+        id: 'toppling-charge',
+        name: 'Toppling Charge',
+        description: 'Charge with your divine lance to impale an enemy, dealing 1393 Magic Damage while taunting them to attack you for 15 seconds. The enemy hit is stunned for 3 seconds, set Off Balance, and if they were casting, they are interrupted. You also gain Major Protection for 7 seconds, reducing your damage taken by 10%.',
+        changes: 'Always stuns the enemy and sets them Off Balance, regardless if they are casting. Reduces cost as the ability ranks up.'
       }
     ],
-    buffsApplied: [],
-    debuffsApplied: ['burning'],
+    buffsApplied: ['major_protection'],
+    debuffsApplied: ['taunt', 'stun', 'off_balance'],
     damage: {
-      baseDamage: 580,
-      scalingFactor: 0.5,
+      baseDamage: 1392,
+      scalingFactor: 1.2,
       damageType: 'magic'
     },
     effects: [
       {
-        id: 'solar-dot',
+        id: 'charge',
         type: 'other',
-        description: 'Solar damage with burning over time',
-        duration: 10
+        description: 'Charges to target location'
+      },
+      {
+        id: 'interrupt',
+        type: 'crowd_control',
+        description: 'Interrupts casting enemies'
       }
     ]
   },
+
   {
-    id: 'solar-flare',
-    name: 'Solar Flare',
-    description: 'Channel to build up solar energy and release a devastating blast.',
+    id: 'spear-shards',
+    name: 'Spear Shards',
+    description: 'Send your spear into the heavens to bring down a shower of divine wrath, dealing 1742 Magic Damage to enemies in the area and an additional 166 Magic Damage every 1 second for 10 seconds. An ally near the spear can activate the Blessed Shards synergy, restoring 3960 Magicka or Stamina, whichever maximum is higher.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
       amount: 2700
     },
     range: 28,
+    duration: 10,
     morphs: [
       {
-        id: 'dark-flare',
-        name: 'Dark Flare',
-        description: 'Applies Major Defile, reducing enemy healing.',
-        changes: 'Applies Major Defile for 4 seconds, reducing healing by 30%.'
+        id: 'blazing-spear',
+        name: 'Blazing Spear',
+        description: 'Send your spear into the heavens to bring down a shower of divine wrath, dealing 1742 Magic Damage to enemies in the area and an additional 276 Magic Damage every 1 second for 10 seconds. Enemies hit by the initial hit are immobilized for 4 seconds. An ally near the spear can activate the Blessed Shards synergy, restoring 3960 Magicka or Stamina, whichever maximum is higher.',
+        changes: 'Increases damage dealt of the residual effect. Initial hit immobilizes enemies.'
       },
       {
-        id: 'solar-barrage',
-        name: 'Solar Barrage',
-        description: 'Instant cast that hits multiple enemies.',
-        changes: 'Instant cast, hits up to 3 enemies in area.'
+        id: 'luminous-shards',
+        name: 'Luminous Shards',
+        description: 'Send your spear into the heavens to bring down a shower of divine wrath, dealing 1742 Magic Damage to enemies in the area and an additional 165 Magic Damage every 1 second for 10 seconds. You or an ally near the spear can activate the Holy Shards synergy, which restores 3960 Magicka and Stamina.',
+        changes: 'The synergy grants both Magicka and Stamina instead of whichever is lowest and you can use your own synergy. Reduces cost as the ability ranks up.'
       }
     ],
     buffsApplied: [],
-    debuffsApplied: ['major_defile'],
+    debuffsApplied: ['immobilize'],
     damage: {
-      baseDamage: 2030,
-      scalingFactor: 1.75,
+      baseDamage: 1742,
+      scalingFactor: 1.3,
       damageType: 'magic'
     },
     effects: [
       {
-        id: 'charged-blast',
+        id: 'synergy',
         type: 'other',
-        description: 'Channeled ability that builds up damage'
-      }
-    ]
-  },
-  {
-    id: 'backlash',
-    name: 'Backlash',
-    description: 'Mark an enemy to store damage dealt to them, then release it.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 4050
-    },
-    range: 28,
-    duration: 6,
-    morphs: [
-      {
-        id: 'purifying-light',
-        name: 'Purifying Light',
-        description: 'Heals nearby allies when it explodes.',
-        changes: 'Explosion heals you and nearby allies for 50% of stored damage.'
+        description: 'Allies can activate Blessed Shards synergy'
       },
       {
-        id: 'power-of-the-light',
-        name: 'Power of the Light',
-        description: 'Deals more damage and applies Minor Fracture.',
-        changes: 'Higher damage cap and applies Minor Fracture for 10 seconds.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: ['minor_fracture'],
-    damage: {
-      baseDamage: 2323,
-      scalingFactor: 2.0,
-      damageType: 'magic'
-    },
-    healing: {
-      baseHealing: 1161,
-      scalingFactor: 1.0
-    },
-    effects: [
-      {
-        id: 'damage-storage',
+        id: 'dot',
         type: 'other',
-        description: 'Stores damage dealt to enemy and releases as explosion',
-        duration: 6
+        description: 'Deals damage over time',
+        value: 166
       }
     ]
   },
+
   {
-    id: 'eclipse',
-    name: 'Eclipse',
-    description: 'Blind an enemy, stunning them and reflecting their spells.',
+    id: 'sun-shield',
+    name: 'Sun Shield',
+    description: 'Surround yourself with solar rays, dealing 1742 Magic Damage to nearby enemies and applying Minor Maim to them for 10 seconds, reducing their damage done by 5%. The rays then protect you, granting a damage shield that absorbs up to 4800 damage for 6 seconds, increasing by 10% for each enemy hit, up to 60%. This portion of the ability scales off your Max Health.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
       amount: 4320
     },
-    range: 28,
-    duration: 4,
+    duration: 6,
     morphs: [
       {
-        id: 'total-dark',
-        name: 'Total Dark',
-        description: 'Reflects more spells and damages nearby enemies.',
-        changes: 'Reflects 4 spells and damages nearby enemies when they end.'
+        id: 'blazing-shield',
+        name: 'Blazing Shield',
+        description: 'Surround yourself with solar rays, applying Minor Maim to nearby enemies for 10 seconds, reducing their damage done by 5%. You gain a damage shield that absorbs up to 4800 damage for 6 seconds, increasing by 10% for each enemy hit, up to 60%. This ability scales off your Max Health. When the shield expires it explodes, dealing 33% of damage absorbed as Magic Damage to nearby enemies.',
+        changes: 'No longer deals damage to enemies on activation, instead deals damage when shield expires based on the amount it absorbed, and increases the radius.'
       },
       {
-        id: 'unstable-core',
-        name: 'Unstable Core',
-        description: 'Explodes when it ends, dealing area damage.',
-        changes: 'Explodes for area damage when duration expires.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: ['stun'],
-    damage: {
-      baseDamage: 1161,
-      scalingFactor: 1.0,
-      damageType: 'magic'
-    },
-    effects: [
-      {
-        id: 'spell-reflect-stun',
-        type: 'crowd_control',
-        description: 'Stuns enemy and reflects their spells back',
-        duration: 4
-      }
-    ]
-  },
-  {
-    id: 'nova',
-    name: 'Nova',
-    description: 'Call down a solar fragment that creates a field of gravity.',
-    type: 'ultimate',
-    resourceCost: {
-      type: 'ultimate',
-      amount: 250
-    },
-    range: 28,
-    radius: 8,
-    duration: 8,
-    morphs: [
-      {
-        id: 'solar-prison',
-        name: 'Solar Prison',
-        description: 'Synergy allows ally to activate for area stun.',
-        changes: 'Allies can activate for AoE stun and damage.'
-      },
-      {
-        id: 'solar-disturbance',
-        name: 'Solar Disturbance',
-        description: 'Increases radius and applies Minor Maim.',
-        changes: 'Larger area and applies Minor Maim, reducing enemy damage.'
+        id: 'radiant-ward',
+        name: 'Radiant Ward',
+        description: 'Surround yourself with solar rays, dealing 1742 Magic Damage to nearby enemies and applying Minor Maim to them for 10 seconds, reducing their damage done by 5%. The rays then protect you, granting a damage shield that absorbs up to 4958 damage for 6 seconds, increasing by 20% for each enemy hit, up to 120%. This portion of the ability scales off your Max Health.',
+        changes: 'Has reduced cost and the shield is strengthened further for each enemy hit.'
       }
     ],
     buffsApplied: [],
     debuffsApplied: ['minor_maim'],
     damage: {
-      baseDamage: 348,
-      scalingFactor: 0.3,
-      damageType: 'magic',
-      isDoT: true,
-      dotTicks: 8
-    },
-    effects: [
-      {
-        id: 'gravity-field',
-        type: 'other',
-        description: 'Creates area that slows and damages enemies',
-        duration: 8
-      }
-    ]
-  },
-  {
-    id: 'eclipse',
-    name: 'Eclipse',
-    description: 'Envelop an enemy in darkness, stunning them and reflecting spells.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 3240
-    },
-    range: 28,
-    duration: 4,
-    morphs: [
-      {
-        id: 'total-dark',
-        name: 'Total Dark',
-        description: 'Also blinds enemy and spreads to nearby foes when it ends.',
-        changes: 'Applies blind, spreads to up to 3 nearby enemies when expiring.'
-      },
-      {
-        id: 'unstable-core',
-        name: 'Unstable Core',
-        description: 'Enemy explodes when effect ends, damaging nearby foes.',
-        changes: 'Explodes for area damage when effect expires or is purged.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: ['stun', 'blind'],
-    damage: {
-      baseDamage: 1161,
-      scalingFactor: 1.0,
+      baseDamage: 1742,
+      scalingFactor: 1.2,
       damageType: 'magic'
     },
     effects: [
       {
-        id: 'spell-reflection',
+        id: 'damage-shield',
+        type: 'shield',
+        description: 'Absorbs damage based on Max Health',
+        value: 4800
+      },
+      {
+        id: 'shield-scaling',
         type: 'other',
-        description: 'Reflects spells back at caster',
-        duration: 4
-      }
-    ]
-  },
-  // Passive Skills
-  {
-    id: 'enduring-rays',
-    name: 'Enduring Rays',
-    description: 'Dawn\'s Wrath abilities last longer and cost less.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'duration-increase',
-        type: 'stat_increase',
-        description: 'Dawn\'s Wrath ability durations increased by 15%',
-        value: 15,
-        percentage: true
-      },
-      {
-        id: 'cost-reduction',
-        type: 'stat_increase',
-        description: 'Dawn\'s Wrath ability costs reduced by 8%',
-        value: 8,
-        percentage: true
-      }
-    ]
-  },
-  {
-    id: 'prism',
-    name: 'Prism',
-    description: 'Increases spell damage and critical chance.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'spell-damage',
-        type: 'stat_increase',
-        description: 'Spell Damage increased by 258',
-        value: 258
-      },
-      {
-        id: 'critical-chance',
-        type: 'stat_increase',
-        description: 'Spell Critical increased by 657',
-        value: 657
-      }
-    ]
-  },
-  {
-    id: 'illuminate',
-    name: 'Illuminate',
-    description: 'Increases magicka recovery and reduces enemy spell resistance.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'magicka-recovery',
-        type: 'stat_increase',
-        description: 'Magicka Recovery increased by 129',
-        value: 129
-      },
-      {
-        id: 'spell-penetration',
-        type: 'stat_increase',
-        description: 'Spell Penetration increased by 1320',
-        value: 1320
-      }
-    ]
-  },
-  {
-    id: 'balanced-light',
-    name: 'Balanced Light',
-    description: 'Dawn\'s Wrath abilities restore magicka when they deal damage.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'magicka-return',
-        type: 'other',
-        description: 'Dawn\'s Wrath abilities restore 300 Magicka when dealing damage'
-      }
-    ]
-  },
-  {
-    id: 'restoring-spirit',
-    name: 'Restoring Spirit',
-    description: 'Increases max magicka for each Dawn\'s Wrath ability slotted.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'slotted-bonus',
-        type: 'stat_increase',
-        description: 'Maximum Magicka increased by 8% per Dawn\'s Wrath ability slotted',
-        value: 8,
+        description: 'Shield increases by 10% per enemy hit, up to 60%',
+        value: 60,
         percentage: true
       }
     ]
   }
 ];
 
-// Restoring Light Skills
+// Aedric Spear Passives
+const aedricSpearPassives: Skill[] = [
+  {
+    id: 'piercing-spear',
+    name: 'Piercing Spear',
+    description: 'WITH AN AEDRIC SPEAR ABILITY SLOTTED Increases your Critical Damage by 12%. Increases your damage done to blocking players by 12%.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'critical-damage-increase',
+        type: 'stat_increase',
+        description: 'Critical Damage increased by 12%',
+        value: 12,
+        percentage: true
+      },
+      {
+        id: 'blocking-damage-increase',
+        type: 'stat_increase',
+        description: 'Damage to blocking players increased by 12%',
+        value: 12,
+        percentage: true
+      }
+    ]
+  },
+
+  {
+    id: 'spear-wall',
+    name: 'Spear Wall',
+    description: 'WHEN ACTIVATING AN AEDRIC SPEAR ABILITY Gain Minor Berserk and Minor Protection for 6 seconds, increasing damage done and reducing damage taken by 5%.',
+    type: 'passive',
+    duration: 6,
+    buffsApplied: ['minor_berserk', 'minor_protection'],
+    debuffsApplied: [],
+    effects: []
+  },
+
+  {
+    id: 'burning-light',
+    name: 'Burning Light',
+    description: 'When you deal damage you generate a stack of Burning Light for 3 seconds. After reaching 4 stacks, you deal 500 Magic Damage to your target. This effect can stack once every half second and scales off the higher of your Weapon or Spell Damage.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    damage: {
+      baseDamage: 500,
+      scalingFactor: 1.0,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'stacking-damage',
+        type: 'other',
+        description: 'Deals bonus damage after 4 stacks',
+        value: 500
+      }
+    ]
+  },
+
+  {
+    id: 'balanced-warrior',
+    name: 'Balanced Warrior',
+    description: 'Increases your Weapon Damage, Spell Damage, and Armor by 6%.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'damage-armor-increase',
+        type: 'stat_increase',
+        description: 'Weapon Damage, Spell Damage, and Armor increased by 6%',
+        value: 6,
+        percentage: true
+      }
+    ]
+  }
+];
+
+// DAWN'S WRATH SKILL LINE
+const dawnsWrathSkills: Skill[] = [
+  // Ultimate abilities
+  {
+    id: 'nova',
+    name: 'Nova',
+    description: 'Call down a fragment of the sun, dealing 1161 Magic Damage every 1 second for 8 seconds to enemies in the area and afflicting them with Major Maim, reducing their damage done by 10%. An ally near the fragment can activate the Supernova synergy, dealing 2607 Magic Damage to all enemies in the area and stunning them for 3 seconds.',
+    type: 'ultimate',
+    resourceCost: {
+      type: 'ultimate',
+      amount: 200
+    },
+    duration: 8,
+    morphs: [
+      {
+        id: 'solar-disturbance',
+        name: 'Solar Disturbance',
+        description: 'Call down a fragment of the sun, dealing 1161 Magic Damage every 1 second for 8 seconds to enemies in the area and applying Major Maim to them for 10 seconds, reducing their damage done by 10%. An ally near the fragment can activate the Supernova synergy, dealing 2607 Magic Damage to all enemies in the area and stunning them for 3 seconds.',
+        changes: 'Reduces the cost and Major Maim stays on enemies after leaving the area.'
+      },
+      {
+        id: 'solar-prison',
+        name: 'Solar Prison',
+        description: 'Call down a fragment of the sun, dealing 1199 Magic Damage every 1 second for 8 seconds to enemies in the area and afflicting them with Major Maim, reducing their damage done by 10%. An ally near the fragment can activate the Gravity Crush synergy, dealing 5215 Magic Damage to all enemies in the area and stunning them for 5 seconds.',
+        changes: 'The synergy deals more damage and stuns for longer.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: ['major_maim', 'stun'],
+    damage: {
+      baseDamage: 1161,
+      scalingFactor: 1.5,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'synergy',
+        type: 'other',
+        description: 'Allies can activate Supernova synergy'
+      }
+    ]
+  },
+
+  // Active abilities
+  {
+    id: 'sun-fire',
+    name: 'Sun Fire',
+    description: 'Blast an enemy with a charge of radiant heat, dealing 1161 Flame Damage, and an additional 3470 Flame Damage over 20 seconds. Upon activation you gain Major Savagery and Major Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 2700
+    },
+    range: 28,
+    duration: 20,
+    morphs: [
+      {
+        id: 'reflective-light',
+        name: 'Reflective Light',
+        description: 'Blast up to three enemies with a charge of radiant heat, dealing 1199 Flame Damage, an additional 3470 Flame Damage over 20 seconds, and reducing their Movement Speed by 40% for 3 seconds. Upon activation you gain Major Savagery and Major Prophecy for 20 seconds, increasing your Weapon and Spell Critical rating by 2629.',
+        changes: 'Splits the projectile, allowing it to affect two additional nearby enemies. Briefly snares enemies hit.'
+      },
+      {
+        id: 'vampires-bane',
+        name: 'Vampire\'s Bane',
+        description: 'Blast an enemy with a charge of radiant heat, dealing 1161 Flame Damage, and an additional 5370 Flame Damage over 30 seconds. Upon activation you gain Major Savagery and Major Prophecy for 30 seconds, increasing your Weapon and Spell Critical rating by 2629.',
+        changes: 'Increases the duration.'
+      }
+    ],
+    buffsApplied: ['major_savagery', 'major_prophecy'],
+    debuffsApplied: [],
+    damage: {
+      baseDamage: 1161,
+      scalingFactor: 1.2,
+      damageType: 'fire'
+    },
+    effects: [
+      {
+        id: 'dot',
+        type: 'other',
+        description: 'Deals damage over time',
+        value: 3470
+      }
+    ]
+  },
+
+  {
+    id: 'solar-flare',
+    name: 'Solar Flare',
+    description: 'Conjure a ball of solar energy to heave at an enemy, dealing 2404 Magic Damage and increasing your damage done with class abilities by 5% for 10 seconds. Also grants you Empower for 10 seconds, increasing the damage of your Heavy Attacks against monsters by 70%.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 2700
+    },
+    range: 28,
+    duration: 10,
+    morphs: [
+      {
+        id: 'dark-flare',
+        name: 'Dark Flare',
+        description: 'Conjure a ball of solar energy to heave at an enemy, dealing 2483 Magic Damage and increasing your damage done with class abilities by 5% for 10 seconds. Afflicts the target and enemies within 8 meters with Major Defile, reducing their healing received and damage shield strength by 12% for 4 seconds. Also grants you Empower for 10 seconds, increasing the damage of your Heavy Attacks against monsters by 70%.',
+        changes: 'Reduces cost and applies Major Defile to the target and nearby enemies.'
+      },
+      {
+        id: 'solar-barrage',
+        name: 'Solar Barrage',
+        description: 'Conjure solar energy to blast enemies around you, dealing 435 Magic Damage every 2 seconds and increasing your damage done with class abilities by 5% for 20 seconds. While this ability is active you gain Empower, increasing the damage of your Heavy Attacks against monsters by 70%.',
+        changes: 'Deals damage in multiple blasts as damage over time around you instead of at a single enemy.'
+      }
+    ],
+    buffsApplied: ['empower'],
+    debuffsApplied: ['major_defile'],
+    damage: {
+      baseDamage: 2404,
+      scalingFactor: 1.5,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'class-damage-bonus',
+        type: 'stat_increase',
+        description: 'Class ability damage increased by 5%',
+        value: 5,
+        percentage: true
+      }
+    ]
+  },
+
+  {
+    id: 'backlash',
+    name: 'Backlash',
+    description: 'Summon an expanding beam of pure sunlight to doom an enemy, dealing 1161 Magic Damage immediately and marking them for 6 seconds. After the duration ends, the sunlight bursts, dealing 1284 Magic Damage to the enemy, which increases based on the amount of damage you dealt to them over the duration, up to 200%. You can have only one Backlash active at a time.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 2700
+    },
+    range: 28,
+    duration: 6,
+    morphs: [
+      {
+        id: 'power-of-the-light',
+        name: 'Power of the Light',
+        description: 'Summon an expanding beam of pure sunlight to doom an enemy, dealing 1161 Physical Damage immediately and marking them for 6 seconds. After the duration ends, the sunlight bursts, dealing 1285 Physical Damage to the enemy, which increases based on the amount of damage you dealt to them over the duration, up to 200%. You can have only one Power of the Light active at a time, and each hit of the ability applies the Sundered status effect.',
+        changes: 'Converts into a Stamina ability, deals Physical Damage, and always applies the Sundered status effect.'
+      },
+      {
+        id: 'purifying-light',
+        name: 'Purifying Light',
+        description: 'Summon an expanding beam of pure sunlight to doom an enemy, dealing 1161 Magic Damage immediately and marking them for 6 seconds. After the duration ends, the sunlight bursts, dealing 1285 Magic Damage, which increases based on the amount of damage you dealt to them over the duration, up to 200%. Also heals you and nearby allies in the area for 599 Health every 2 seconds, over 10 seconds. You can have only one Purifying Light at a time.',
+        changes: 'When the effect ends, a pool of sunlight remains attached to the enemy, healing you and allies.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: ['sundered'],
+    damage: {
+      baseDamage: 1161,
+      scalingFactor: 1.2,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'delayed-burst',
+        type: 'other',
+        description: 'Explodes after 6 seconds based on damage dealt',
+        value: 200,
+        percentage: true
+      }
+    ]
+  },
+
+  {
+    id: 'eclipse',
+    name: 'Eclipse',
+    description: 'Envelop an enemy in a lightless sphere for 4 seconds, that harms them with growing intensity anytime they use a direct damage attack. Limited to one. Their first attack reduces their Movement Speed by 30% for 4 seconds, their second attack immobilizes them for 3 seconds, and their third attack stuns them for 3 seconds. The effects can activate once every 1 second.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 4050
+    },
+    duration: 4,
+    morphs: [
+      {
+        id: 'living-dark',
+        name: 'Living Dark',
+        description: 'Envelop yourself in a lightless sphere for 10 seconds to protect yourself. Anytime you take direct damage, the sphere lashes back at the attacker, reducing their Movement Speed by 40% for 3 seconds and healing you for 2066 Health. These effects can occur once every half second.',
+        changes: 'You now apply the ability to yourself, healing when you take direct damage instead. Melee attackers are snared.'
+      },
+      {
+        id: 'unstable-core',
+        name: 'Unstable Core',
+        description: 'Envelop an enemy in a lightless sphere for 4 seconds, that harms them with growing intensity anytime they deal direct damage. Limited to one. Their first attack reduces their Movement Speed by 30% for 4 seconds and deals 449 Magic Damage, their second attack immobilizes them for 3 seconds and deals 898 Magic Damage, and their third attack stuns them for 3 seconds and deals 1799 Magic Damage. The effects can activate once every 1 second.',
+        changes: 'Deals damage to the attacker and anyone near them when they trigger any of the effects.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: ['immobilize', 'stun'],
+    damage: {
+      baseDamage: 449,
+      scalingFactor: 1.0,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'escalating-punishment',
+        type: 'crowd_control',
+        description: 'Effects escalate with each attack: snare, immobilize, stun'
+      }
+    ]
+  },
+
+  {
+    id: 'radiant-destruction',
+    name: 'Radiant Destruction',
+    description: 'Burn an enemy with a ray of holy fire, dealing 7248 Magic Damage over 3.8 seconds. Deals up to 500% more damage to enemies below 33% Health. This ability is considered direct damage.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 2700
+    },
+    range: 28,
+    duration: 3.8,
+    morphs: [
+      {
+        id: 'radiant-glory',
+        name: 'Radiant Glory',
+        description: 'Burn an enemy with a ray of holy fire, dealing 7482 Magic Damage over 3.8 seconds. Deals up to 500% more damage to enemies below 33% Health. You heal for 15% of the damage inflicted. This ability is considered direct damage.',
+        changes: 'Reduces the cost and you heal for a percentage of the damage inflicted.'
+      },
+      {
+        id: 'radiant-oppression',
+        name: 'Radiant Oppression',
+        description: 'Burn an enemy with a ray of holy fire, dealing 7482 Magic Damage over 3.8 seconds. Deals up to 500% more damage to enemies below 40% Health. This ability is considered direct damage.',
+        changes: 'The bonus damage against low health targets now starts at higher health.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: [],
+    damage: {
+      baseDamage: 7248,
+      scalingFactor: 2.5,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'execute-scaling',
+        type: 'other',
+        description: 'Up to 500% more damage to low health enemies',
+        value: 500,
+        percentage: true
+      },
+      {
+        id: 'channeled',
+        type: 'other',
+        description: 'Channeled ability over 3.8 seconds'
+      }
+    ]
+  }
+];
+
+// Dawn's Wrath Passives
+const dawnsWrathPassives: Skill[] = [
+  {
+    id: 'enduring-rays',
+    name: 'Enduring Rays',
+    description: 'Increases the duration of your Sun Fire, Eclipse, Solar Flare, and Nova abilities by 2 seconds.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'duration-increase',
+        type: 'other',
+        description: 'Increases duration of specific abilities by 2 seconds',
+        value: 2
+      }
+    ]
+  },
+
+  {
+    id: 'prism',
+    name: 'Prism',
+    description: 'Casting a Dawn\'s Wrath ability while in combat generates 3 Ultimate. This effect can occur once every 6 seconds.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'ultimate-generation',
+        type: 'resource_restore',
+        description: 'Generate 3 Ultimate when casting Dawn\'s Wrath abilities',
+        value: 3
+      }
+    ]
+  },
+
+  {
+    id: 'illuminate',
+    name: 'Illuminate',
+    description: 'Casting a Dawn\'s Wrath ability grants Minor Sorcery to you and your group for 20 seconds, increasing your Spell Damage by 10%.',
+    type: 'passive',
+    duration: 20,
+    buffsApplied: ['minor_sorcery'],
+    debuffsApplied: [],
+    effects: []
+  },
+
+  {
+    id: 'restoring-spirit',
+    name: 'Restoring Spirit',
+    description: 'Reduces the Health, Magicka, Stamina, and Ultimate costs of your abilities by 5%.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'cost-reduction',
+        type: 'other',
+        description: 'All ability costs reduced by 5%',
+        value: 5,
+        percentage: true
+      }
+    ]
+  }
+];
+
+// RESTORING LIGHT SKILL LINE
 const restoringLightSkills: Skill[] = [
+  // Ultimate abilities
+  {
+    id: 'rite-of-passage',
+    name: 'Rite of Passage',
+    description: 'Channel the grace of the gods, healing you and nearby allies for 2787 Health every 1 second for 4 seconds. You cannot move while channeling, but you gain immunity to all disabling effects.',
+    type: 'ultimate',
+    resourceCost: {
+      type: 'ultimate',
+      amount: 150
+    },
+    duration: 4,
+    morphs: [
+      {
+        id: 'practiced-incantation',
+        name: 'Practiced Incantation',
+        description: 'Channel the grace of the gods, healing you and nearby allies for 2788 Health every 1 second for 8 seconds. While channeling this ability, you gain immunity to all disabling effects.',
+        changes: 'Increases the duration of the channel and allows you move at a reduced rate while channeling.'
+      },
+      {
+        id: 'remembrance',
+        name: 'Remembrance',
+        description: 'Channel the grace of the gods, healing you and nearby allies for 2788 Health every 1 second for 4 seconds. Gain Major Protection, reducing damage you take by 10% for 10 seconds. You cannot move while channeling, but you gain immunity to all disabling effects.',
+        changes: 'Gain Major Protection after casting, reducing your damage taken.'
+      }
+    ],
+    buffsApplied: ['major_protection'],
+    debuffsApplied: [],
+    healing: {
+      baseHealing: 2787,
+      scalingFactor: 2.0
+    },
+    effects: [
+      {
+        id: 'cc-immunity',
+        type: 'other',
+        description: 'Immunity to all disabling effects while channeling'
+      },
+      {
+        id: 'channeled',
+        type: 'other',
+        description: 'Channeled ability'
+      }
+    ]
+  },
+
+  // Active abilities
   {
     id: 'rushed-ceremony',
     name: 'Rushed Ceremony',
-    description: 'Instantly heal yourself or a nearby ally.',
+    description: 'Beacon your inner light, healing yourself or a wounded ally in front of you for 3486 Health.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
@@ -748,375 +749,275 @@ const restoringLightSkills: Skill[] = [
       {
         id: 'breath-of-life',
         name: 'Breath of Life',
-        description: 'Heals two additional nearby allies.',
-        changes: 'Smart heals up to 3 targets, prioritizing lowest health.'
+        description: 'Beacon your inner light, healing yourself or a wounded ally in front of you for 3485 Health. Also heals one other injured target for 1199 Health.',
+        changes: 'Heals a second target for one third the amount.'
       },
       {
         id: 'honor-the-dead',
         name: 'Honor the Dead',
-        description: 'Returns Magicka if target is below 75% health.',
-        changes: 'Refunds 15% of cost if target was below 75% health.'
+        description: 'Beacon your inner light, healing yourself or a wounded ally in front of you for 3485 Health. Healing anyone who is below 75% Health restores 18% of the ability\'s cost every 2 seconds over 6 seconds as Magicka.',
+        changes: 'Refunds part of the ability\'s cost when used to heal an injured target.'
       }
     ],
     buffsApplied: [],
     debuffsApplied: [],
     healing: {
-      baseHealing: 1742,
+      baseHealing: 3486,
       scalingFactor: 1.5
     },
     effects: [
       {
-        id: 'burst-heal',
+        id: 'smart-heal',
         type: 'other',
-        description: 'Powerful instant heal ability'
+        description: 'Targets wounded ally in front of you'
       }
     ]
   },
+
   {
     id: 'healing-ritual',
     name: 'Healing Ritual',
-    description: 'Channel to heal yourself and nearby allies over time.',
+    description: 'Focus your spiritual devotion, healing you and nearby allies for 2613 Health.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
-      amount: 5130
+      amount: 6480
     },
-    radius: 12,
-    duration: 2,
     morphs: [
+      {
+        id: 'hasty-prayer',
+        name: 'Hasty Prayer',
+        description: 'Focus your spiritual devotion, healing you and nearby allies for 2614 Health. Affected targets gain Minor Expedition, increasing their Movement Speed by 15% for 10 seconds.',
+        changes: 'Healed allies gain Minor Expedition for a short duration and reduces the cost as the ability ranks up.'
+      },
       {
         id: 'ritual-of-rebirth',
         name: 'Ritual of Rebirth',
-        description: 'Resurrects allies if they die during the channel.',
-        changes: 'Automatically resurrects allies who die while channeling.'
-      },
-      {
-        id: 'lingering-ritual',
-        name: 'Lingering Ritual',
-        description: 'Continues healing after channel ends.',
-        changes: 'Leaves healing area that lasts 8 seconds after channel.'
+        description: 'Focus your spiritual devotion, healing you and nearby allies for 2614 Health. You heal a single ally outside this ability\'s radius for an additional 2700 Health.',
+        changes: 'You heal a single ally outside the ability\'s radius.'
       }
     ],
-    buffsApplied: [],
+    buffsApplied: ['minor_expedition'],
     debuffsApplied: [],
     healing: {
-      baseHealing: 580,
-      scalingFactor: 0.5,
-      isHoT: true,
-      hotTicks: 2
+      baseHealing: 2613,
+      scalingFactor: 1.2
     },
     effects: [
       {
-        id: 'group-channel-heal',
+        id: 'area-heal',
         type: 'other',
-        description: 'Channeled group healing over time',
-        duration: 2
+        description: 'Heals all nearby allies'
       }
     ]
   },
+
   {
     id: 'restoring-aura',
     name: 'Restoring Aura',
-    description: 'Share your stamina and magicka recovery with nearby allies.',
+    description: 'Champion the cause of divine glory to apply Minor Endurance, Minor Fortitude, and Minor Intellect to nearby group members for 20 seconds, increasing Health, Magicka, and Stamina Recovery by 15%. While slotted on either bar you gain these effects.',
     type: 'active',
     resourceCost: {
       type: 'magicka',
-      amount: 5994
+      amount: 6480
     },
-    radius: 12,
-    duration: 30,
+    duration: 20,
     morphs: [
       {
         id: 'radiant-aura',
         name: 'Radiant Aura',
-        description: 'Also increases spell and weapon damage.',
-        changes: 'Grants Minor Intellect and Minor Endurance to group.'
+        description: 'Champion the cause of divine glory to apply Minor Endurance, Minor Fortitude, and Minor Intellect to you and nearby group members for 1 minute, increasing your Health, Magicka, and Stamina Recovery by 15%. While slotted on either bar you gain these effects.',
+        changes: 'Increases the radius and duration.'
       },
       {
         id: 'repentance',
         name: 'Repentance',
-        description: 'Consumes corpses to restore health and stamina.',
-        changes: 'Uses corpses to restore health/stamina, grants Ultimate.'
+        description: 'Consecrate the souls of the fallen, healing you and your allies for 3000 Health and restoring 3000 Stamina to you for each corpse nearby. While slotted on either bar, you gain Minor Fortitude, Minor Endurance, and Minor Intellect, increasing your Health, Stamina, and Magicka Recovery by 15%.',
+        changes: 'No longer applies buffs to allies, instead you consume corpses to restore Health and Stamina.'
       }
     ],
-    buffsApplied: ['minor_intellect', 'minor_endurance'],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'group-recovery',
-        type: 'stat_increase',
-        description: 'Increases resource recovery for nearby allies',
-        value: 15,
-        percentage: true,
-        duration: 30
-      }
-    ]
-  },
-  {
-    id: 'cleansing-ritual',
-    name: 'Cleansing Ritual',
-    description: 'Remove negative effects from yourself and nearby allies.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 4320
-    },
-    radius: 12,
-    morphs: [
-      {
-        id: 'ritual-of-retribution',
-        name: 'Ritual of Retribution',
-        description: 'Creates area that damages enemies and heals allies.',
-        changes: 'Creates 8 second area that pulses damage and healing.'
-      },
-      {
-        id: 'extended-ritual',
-        name: 'Extended Ritual',
-        description: 'Increases radius and adds healing over time.',
-        changes: 'Larger radius and grants healing over time to cleansed allies.'
-      }
-    ],
-    buffsApplied: [],
-    debuffsApplied: [],
-    healing: {
-      baseHealing: 580,
-      scalingFactor: 0.5,
-      isHoT: true,
-      hotTicks: 8
-    },
-    effects: [
-      {
-        id: 'cleanse-effects',
-        type: 'other',
-        description: 'Removes negative effects from allies'
-      }
-    ]
-  },
-  {
-    id: 'rite-of-passage',
-    name: 'Rite of Passage',
-    description: 'Channel to become immune to damage and heal nearby allies.',
-    type: 'ultimate',
-    resourceCost: {
-      type: 'ultimate',
-      amount: 300
-    },
-    radius: 12,
-    duration: 8,
-    morphs: [
-      {
-        id: 'remembrance',
-        name: 'Remembrance',
-        description: 'Heals more and grants damage reduction to allies.',
-        changes: 'Stronger healing and allies take 30% less damage.'
-      },
-      {
-        id: 'practiced-incantation',
-        name: 'Practiced Incantation',
-        description: 'Costs less and increases movement speed.',
-        changes: 'Lower cost and grants Major Expedition while channeling.'
-      }
-    ],
-    buffsApplied: ['major_expedition'],
-    debuffsApplied: [],
-    healing: {
-      baseHealing: 870,
-      scalingFactor: 0.75,
-      isHoT: true,
-      hotTicks: 8
-    },
-    effects: [
-      {
-        id: 'immunity-channel',
-        type: 'other',
-        description: 'Immunity to damage while channeling group heal',
-        duration: 8
-      }
-    ]
-  },
-  {
-    id: 'cleansing-ritual',
-    name: 'Cleansing Ritual',
-    description: 'Cleanse yourself and nearby allies of negative effects and grant damage reduction.',
-    type: 'active',
-    resourceCost: {
-      type: 'magicka',
-      amount: 4050
-    },
-    radius: 12,
-    morphs: [
-      {
-        id: 'ritual-of-retribution',
-        name: 'Ritual of Retribution',
-        description: 'Also damages enemies in the area over time.',
-        changes: 'Deals 348 magic damage per second to enemies in area for 20 seconds.'
-      },
-      {
-        id: 'extended-ritual',
-        name: 'Extended Ritual',
-        description: 'Larger area and can be activated again to cleanse more effects.',
-        changes: '18 meter radius, can activate again within 20 seconds for additional cleanse.'
-      }
-    ],
-    buffsApplied: ['minor_mending'],
-    debuffsApplied: [],
-    damage: {
-      baseDamage: 348,
-      scalingFactor: 0.3,
-      damageType: 'magic',
-      isDoT: true,
-      dotTicks: 20
-    },
-    effects: [
-      {
-        id: 'cleanse-effects',
-        type: 'other',
-        description: 'Removes up to 5 negative effects from allies in area'
-      }
-    ]
-  },
-  {
-    id: 'rite-of-passage',
-    name: 'Rite of Passage',
-    description: 'Channel to become immune to control effects and heal nearby allies.',
-    type: 'ultimate',
-    resourceCost: {
-      type: 'ultimate',
-      amount: 150
-    },
-    radius: 12,
-    duration: 4,
-    morphs: [
-      {
-        id: 'remembrance',
-        name: 'Remembrance',
-        description: 'Heals for more and grants damage reduction to allies.',
-        changes: 'Increased healing and allies take 20% less damage for 8 seconds.'
-      },
-      {
-        id: 'practiced-incantation',
-        name: 'Practiced Incantation',
-        description: 'Shorter channel time and restores magicka.',
-        changes: '2 second channel, restores 15% max Magicka to affected allies.'
-      }
-    ],
-    buffsApplied: ['minor_protection'],
-    debuffsApplied: [],
-    healing: {
-      baseHealing: 1161,
-      scalingFactor: 1.0,
-      isHoT: true,
-      hotTicks: 4
-    },
-    effects: [
-      {
-        id: 'immunity-channel',
-        type: 'other',
-        description: 'Immune to control effects while channeling',
-        duration: 4
-      }
-    ]
-  },
-  // Passive Skills
-  {
-    id: 'mending',
-    name: 'Mending',
-    description: 'Increases healing done and received.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'healing-done',
-        type: 'stat_increase',
-        description: 'Healing Done increased by 12%',
-        value: 12,
-        percentage: true
-      },
-      {
-        id: 'healing-received',
-        type: 'stat_increase',
-        description: 'Healing Received increased by 8%',
-        value: 8,
-        percentage: true
-      }
-    ]
-  },
-  {
-    id: 'focused-healing',
-    name: 'Focused Healing',
-    description: 'Increases critical healing chance and magicka recovery.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'critical-healing',
-        type: 'stat_increase',
-        description: 'Critical Healing increased by 12%',
-        value: 12,
-        percentage: true
-      },
-      {
-        id: 'magicka-recovery',
-        type: 'stat_increase',
-        description: 'Magicka Recovery increased by 129',
-        value: 129
-      }
-    ]
-  },
-  {
-    id: 'light-weaver',
-    name: 'Light Weaver',
-    description: 'Restoring Light abilities cost less and restore stamina.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'cost-reduction',
-        type: 'stat_increase',
-        description: 'Restoring Light ability costs reduced by 8%',
-        value: 8,
-        percentage: true
-      },
-      {
-        id: 'stamina-return',
-        type: 'other',
-        description: 'Restoring Light abilities restore 200 Stamina when cast'
-      }
-    ]
-  },
-  {
-    id: 'sacred-ground',
-    name: 'Sacred Ground',
-    description: 'Increases healing and reduces damage taken in Restoring Light areas.',
-    type: 'passive',
-    buffsApplied: [],
-    debuffsApplied: [],
-    effects: [
-      {
-        id: 'area-bonus',
-        type: 'stat_increase',
-        description: 'Healing Done increased by 25% and damage taken reduced by 6% in Restoring Light areas',
-        value: 25,
-        percentage: true
-      }
-    ]
-  },
-  {
-    id: 'master-ritualist',
-    name: 'Master Ritualist',
-    description: 'Increases max magicka for each Restoring Light ability slotted.',
-    type: 'passive',
-    buffsApplied: [],
+    buffsApplied: ['minor_endurance', 'minor_fortitude', 'minor_intellect'],
     debuffsApplied: [],
     effects: [
       {
         id: 'slotted-bonus',
         type: 'stat_increase',
-        description: 'Maximum Magicka increased by 8% per Restoring Light ability slotted',
-        value: 8,
+        description: 'Gain buffs while slotted on either bar'
+      }
+    ]
+  },
+
+  {
+    id: 'cleansing-ritual',
+    name: 'Cleansing Ritual',
+    description: 'Exalt in the sacred light of the Aedra, cleansing up to 2 harmful effects from yourself immediately and healing you and nearby allies for 843 Health every 2 seconds for 20 seconds. Allies in the area can activate the Purify synergy, cleansing all harmful effects from themselves and healing for 1912 Health.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 5400
+    },
+    duration: 20,
+    morphs: [
+      {
+        id: 'extended-ritual',
+        name: 'Extended Ritual',
+        description: 'Exalt in the sacred light of the Aedra, cleansing up to 5 harmful effects from yourself immediately and healing you and nearby allies for 844 Health every 2 seconds for 30 seconds. Allies in the area can activate the Purify synergy, cleansing all harmful effects from themselves and healing for 1912 Health.',
+        changes: 'Increases the duration and the amount of harmful effects cleansed from yourself.'
+      },
+      {
+        id: 'ritual-of-retribution',
+        name: 'Ritual of Retribution',
+        description: 'Exalt in the sacred light of the Aedra, cleansing up to 2 harmful effects from yourself immediately. While in the area, enemies take 435 Magic Damage every 2 seconds for 20 seconds which increases by 12% per tick. Allies in the area can activate the Purify synergy, cleansing all harmful effects from themselves and healing for 1912 Health.',
+        changes: 'The area now harms enemies who enter it, rather than healing allies, and reduces the cost. Damage increases over duration.'
+      }
+    ],
+    buffsApplied: [],
+    debuffsApplied: [],
+    healing: {
+      baseHealing: 843,
+      scalingFactor: 0.8
+    },
+    damage: {
+      baseDamage: 435,
+      scalingFactor: 1.0,
+      damageType: 'magic'
+    },
+    effects: [
+      {
+        id: 'cleanse',
+        type: 'other',
+        description: 'Cleanses harmful effects'
+      },
+      {
+        id: 'synergy',
+        type: 'other',
+        description: 'Allies can activate Purify synergy'
+      }
+    ]
+  },
+
+  {
+    id: 'rune-focus',
+    name: 'Rune Focus',
+    description: 'Create a rune of celestial protection and gain Major Resolve for 20 seconds, increasing your Physical Resistance and Spell Resistance by 5948. While the rune is active you heal for 319 Health every 1 second, scaling off your Max Health. Standing within the rune increases the healing done by 200%.',
+    type: 'active',
+    resourceCost: {
+      type: 'magicka',
+      amount: 4320
+    },
+    duration: 20,
+    morphs: [
+      {
+        id: 'channeled-focus',
+        name: 'Channeled Focus',
+        description: 'Create a rune of celestial protection and gain Major Resolve for 25 seconds, increasing your Physical Resistance and Spell Resistance by 5948. You also recover 242 Magicka every 1 second over the duration. While the rune is active you heal for 319 Health every 1 second, scaling off your Max Health. Standing within the rune increases the healing done by 200%.',
+        changes: 'Increases the duration and causes you to restore Magicka over the duration.'
+      },
+      {
+        id: 'restoring-focus',
+        name: 'Restoring Focus',
+        description: 'Create a rune of celestial protection and gain Major Resolve for 20 seconds, increasing your Physical Resistance and Spell Resistance by 5948. You also recover 242 Stamina every 1 second over the duration. While the rune is active you heal for 413 Health every 1 second, scaling off your Max Health. Standing within the rune increases the healing done by 200%.',
+        changes: 'Increases the healing done and causes you to restore Stamina over the duration.'
+      }
+    ],
+    buffsApplied: ['major_resolve'],
+    debuffsApplied: [],
+    healing: {
+      baseHealing: 319,
+      scalingFactor: 1.0
+    },
+    effects: [
+      {
+        id: 'rune-bonus',
+        type: 'other',
+        description: 'Standing in rune increases healing by 200%',
+        value: 200,
+        percentage: true
+      },
+      {
+        id: 'resource-restore',
+        type: 'resource_restore',
+        description: 'Restores Magicka or Stamina over time',
+        value: 242
+      }
+    ]
+  }
+];
+
+// Restoring Light Passives
+const restoringLightPassives: Skill[] = [
+  {
+    id: 'mending',
+    name: 'Mending',
+    description: 'Increases your healing done by up to 13%, in proportion to the severity of the target\'s wounds.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'healing-increase',
+        type: 'stat_increase',
+        description: 'Healing done increased up to 13% based on target wounds',
+        value: 13,
+        percentage: true
+      }
+    ]
+  },
+
+  {
+    id: 'sacred-ground',
+    name: 'Sacred Ground',
+    description: 'While standing in your own Cleansing Ritual, Rune Focus, or Rite of Passage area effects and for up to 4 seconds after leaving them you gain Minor Mending, increasing your healing done by 8%. Also increases the amount of damage you can block by 10% for the duration.',
+    type: 'passive',
+    duration: 4,
+    buffsApplied: ['minor_mending'],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'block-increase',
+        type: 'other',
+        description: 'Block mitigation increased by 10%',
+        value: 10,
+        percentage: true
+      }
+    ]
+  },
+
+  {
+    id: 'light-weaver',
+    name: 'Light Weaver',
+    description: 'When you heal an ally under 50% Health with a Restoring Light ability, you grant them 2 Ultimate. Activating an ability with a cast or channel time while in combat causes you to automatically block all attacks at no cost for 2 seconds, up to once every 15 seconds.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'ultimate-grant',
+        type: 'resource_restore',
+        description: 'Grant 2 Ultimate to allies healed under 50% Health',
+        value: 2
+      },
+      {
+        id: 'auto-block',
+        type: 'other',
+        description: 'Automatically block for 2 seconds after casting abilities'
+      }
+    ]
+  },
+
+  {
+    id: 'master-ritualist',
+    name: 'Master Ritualist',
+    description: 'Increases resurrection speed by 20%. Resurrected allies return with 100% more Health. Gives you a 50% chance to fill an empty Soul Gem after each successful resurrection.',
+    type: 'passive',
+    buffsApplied: [],
+    debuffsApplied: [],
+    effects: [
+      {
+        id: 'resurrection-bonus',
+        type: 'other',
+        description: 'Faster resurrection with more health and soul gem chance',
+        value: 20,
         percentage: true
       }
     ]
@@ -1125,7 +1026,9 @@ const restoringLightSkills: Skill[] = [
 
 // Export Templar Skills
 export const templarSkills = {
-  aedricSpear: aedricSpearSkills,
-  dawnsWrath: dawnsWrathSkills,
-  restoringLight: restoringLightSkills
+  aedricSpear: [...aedricSpearSkills, ...aedricSpearPassives],
+  dawnsWrath: [...dawnsWrathSkills, ...dawnsWrathPassives],
+  restoringLight: [...restoringLightSkills, ...restoringLightPassives]
 };
+
+export default templarSkills;
