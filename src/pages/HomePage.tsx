@@ -29,22 +29,98 @@ export const HomePage = () => {
       <div className="floating-orb floating-orb-3"></div>
       
       <div className="space-y-12 relative z-10">
-        {/* Fantasy Hero Section */}
-        <div className="fantasy-hero py-20 relative">
-          <div className="magical-particles"></div>
-          <div className="text-center space-y-8">
-            <div className="flex items-center justify-center mb-6">
-              <Crown className="w-12 h-12 text-eso-gold mr-4 animate-pulse" />
-              <h1 className="hero-title">
-                ESO Builder
-              </h1>
-              <Crown className="w-12 h-12 text-eso-gold ml-4 animate-pulse" />
+        {/* Classes Section - Now the main landing */}
+        <div className="magical-border mt-8">
+          <div 
+            className="rounded-2xl p-8 backdrop-blur-sm relative"
+            style={{
+              backgroundImage: 'url("/char_bg.png")',
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              backgroundAttachment: 'fixed',
+              backgroundColor: '#1f2937'
+            }}
+          >
+            <div className="text-center mb-8">
+              <div className="flex items-center justify-center mb-6">
+                <Crown className="w-12 h-12 text-eso-gold mr-4 animate-pulse" />
+                <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl">
+                  ESO Theory Crafter
+                </h1>
+                <Crown className="w-12 h-12 text-eso-gold ml-4 animate-pulse" />
+              </div>
+              <p className="hero-subtitle text-lg md:text-xl mb-6">
+                Master the art of character building in Elder Scrolls Online. 
+                Choose your class to explore skill lines and forge legendary builds.
+              </p>
             </div>
-            <p className="hero-subtitle mb-8">
-              Master the art of character building in Elder Scrolls Online. 
-              Forge legendary builds with ancient wisdom and mystical power across the realms of Tamriel.
-            </p>
-            
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {esoClasses.map((esoClass, index) => (
+                <Link 
+                  key={esoClass.id} 
+                  to={`/class/${esoClass.id}`}
+                  className={`card group animate-float class-card-${esoClass.id}`}
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-eso font-semibold text-eso-gold group-hover:text-yellow-400 transition-colors duration-300">
+                      {esoClass.name}
+                    </h3>
+                    <Zap className="w-6 h-6 text-eso-blue group-hover:text-blue-400 transition-colors duration-300" />
+                  </div>
+                  
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    {esoClass.description}
+                  </p>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center mb-3">
+                      <div className="w-6 h-0.5 bg-gradient-to-r from-eso-gold to-transparent mr-3"></div>
+                      <span className="text-sm font-semibold text-eso-blue">Skill Lines</span>
+                    </div>
+                    {esoClass.subclasses.map((subclass) => (
+                      <div key={subclass.id} className="flex items-center justify-between p-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 group-hover:border-eso-gold/30 transition-all duration-300">
+                        <div className="flex items-center space-x-3">
+                          <div className="flex items-center space-x-2">
+                            {getArchetypeIcon(subclass.archetype)}
+                            <span className="text-white font-medium">{subclass.name}</span>
+                          </div>
+                        </div>
+                        <span className={`archetype-badge ${getArchetypeClass(subclass.archetype)} flex items-center space-x-1`}>
+                          <span>{subclass.archetype}</span>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 pt-4 border-t border-gray-700/50">
+                    <div className="flex items-center justify-center text-eso-gold group-hover:text-yellow-400 transition-colors duration-300">
+                      <span className="text-sm font-medium">Explore Skills</span>
+                      <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Fantasy Hero Section - Now secondary */}
+        <div 
+          className="fantasy-hero py-20 relative"
+          style={{
+            backgroundImage: 'linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.8) 50%, rgba(22, 33, 62, 0.9) 100%), url("/char_bg.png")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          <div className="magical-particles"></div>
+          <div className="text-center space-y-8">            
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/builder" className="magic-button">
                 <Sparkles className="w-5 h-5" />
@@ -52,7 +128,7 @@ export const HomePage = () => {
               </Link>
               <Link to="#classes" className="magic-button-secondary">
                 <Zap className="w-5 h-5" />
-                Explore Classes
+                Explore More
               </Link>
             </div>
             
