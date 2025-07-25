@@ -462,17 +462,18 @@
     background-attachment: fixed;
   }
 
-  /* Mobile/portrait orientation: random character image contained within classes section */
+  /* Mobile/portrait orientation: random character image with JavaScript parallax */
   @media (orientation: portrait), (max-width: 768px) {
     .mobile-character-backgrounds {
       background-image: var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
       background-size: 80% auto;
-      background-position: center center;
+      background-position: center 0px;
       background-repeat: no-repeat;
-      background-attachment: local;
+      background-attachment: scroll;
       min-height: 80vh;
       position: relative;
       overflow: hidden;
+      will-change: background-position;
     }
   }
 
@@ -480,6 +481,7 @@
   @media (max-width: 480px) and (orientation: portrait) {
     .mobile-character-backgrounds {
       background-size: 90% auto;
+      background-position: center 0px;
       min-height: 70vh;
     }
   }

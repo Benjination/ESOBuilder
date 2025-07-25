@@ -24,6 +24,22 @@ export const HomePage = () => {
     // Optional: Log which character was selected (useful for testing)
     console.log(`🎮 Mobile background character: ${randomImage.replace('.png', '')}`)
 
+    // Parallax effect for mobile
+    const handleScroll = () => {
+      if (window.innerWidth <= 768 && window.innerHeight > window.innerWidth) {
+        const scrolled = window.pageYOffset
+        const parallaxElement = document.querySelector('.mobile-character-backgrounds') as HTMLElement
+        
+        if (parallaxElement) {
+          const speed = 0.5 // Adjust this value to control parallax speed (0.5 = half speed)
+          parallaxElement.style.backgroundPosition = `center ${scrolled * speed}px`
+        }
+      }
+    }
+
+    // Add scroll listener for parallax effect
+    window.addEventListener('scroll', handleScroll)
+
     // Simple visitor counter using localStorage and a free API
     const updateVisitorCount = async () => {
       try {
@@ -53,6 +69,11 @@ export const HomePage = () => {
     }
 
     updateVisitorCount()
+    
+    // Cleanup scroll listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   const getArchetypeIcon = (archetype: string) => {
