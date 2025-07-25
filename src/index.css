@@ -71,6 +71,70 @@
     z-index: 2;
   }
 
+  /* Fantasy Hero with responsive backgrounds */
+  .fantasy-hero-responsive {
+    background: 
+      linear-gradient(
+        135deg,
+        rgba(15, 15, 35, 0.9) 0%,
+        rgba(26, 26, 46, 0.8) 50%,
+        rgba(22, 33, 62, 0.9) 100%
+      ),
+      url('/images/backgrounds/char_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Mobile/portrait: use stacked images with gradient overlay */
+  @media (orientation: portrait), (max-width: 768px) {
+    .fantasy-hero-responsive {
+      background: 
+        linear-gradient(
+          135deg,
+          rgba(15, 15, 35, 0.9) 0%,
+          rgba(26, 26, 46, 0.8) 50%,
+          rgba(22, 33, 62, 0.9) 100%
+        ),
+        url('/images/backgrounds/Abbey.png'),
+        url('/images/backgrounds/Benny.png'),
+        url('/images/backgrounds/Speaks-In-Graveyards.png'),
+        url('/images/backgrounds/Zeke Zeddicus.png');
+      background-size: 
+        cover,
+        cover,
+        cover,
+        cover,
+        cover;
+      background-position: 
+        center,
+        top center,
+        center,
+        center,
+        bottom center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+  }
+
+  .fantasy-hero-responsive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 0%, rgba(15, 15, 35, 0.7) 70%);
+    z-index: 1;
+  }
+
+  .fantasy-hero-responsive > * {
+    position: relative;
+    z-index: 2;
+  }
+
   /* Class-specific fantasy backgrounds */
   .class-card-dragonknight {
     background: linear-gradient(
@@ -395,6 +459,83 @@
   .damage-bleed {
     @apply text-red-600;
     text-shadow: 0 0 5px rgba(220, 38, 38, 0.5);
+  }
+  
+  /* Mobile-responsive background system */
+  .mobile-character-backgrounds {
+    /* Desktop/landscape: use single char_bg.png */
+    background-image: url('/images/backgrounds/char_bg.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* Mobile/portrait orientation: stack the 4 character images */
+  @media (orientation: portrait), (max-width: 768px) {
+    .mobile-character-backgrounds {
+      background-image: 
+        url('/images/backgrounds/Abbey.png'),
+        url('/images/backgrounds/Benny.png'),
+        url('/images/backgrounds/Speaks-In-Graveyards.png'),
+        url('/images/backgrounds/Zeke Zeddicus.png');
+      background-size: 
+        cover,
+        cover,
+        cover,
+        cover;
+      background-position: 
+        top center,
+        center,
+        center,
+        bottom center;
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-attachment: scroll;
+      min-height: 150vh;
+    }
+  }
+
+  /* Extra small screens - adjust for better mobile viewing */
+  @media (max-width: 480px) and (orientation: portrait) {
+    .mobile-character-backgrounds {
+      background-size: 
+        100% auto,
+        100% auto,
+        100% auto,
+        100% auto;
+      background-position: 
+        top center,
+        25% center,
+        75% center,
+        bottom center;
+      min-height: 200vh;
+    }
+  }
+
+  /* Smooth scrolling parallax effect for mobile backgrounds */
+  @media (orientation: portrait), (max-width: 768px) {
+    .mobile-character-backgrounds {
+      background-attachment: local, local, local, local;
+      background-blend-mode: normal, multiply, multiply, multiply;
+    }
+    
+    /* Add a subtle overlay for better text readability on mobile */
+    .mobile-character-backgrounds::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(31, 41, 55, 0.3);
+      z-index: 1;
+      pointer-events: none;
+    }
+    
+    .mobile-character-backgrounds > * {
+      position: relative;
+      z-index: 2;
+    }
   }
 }
 

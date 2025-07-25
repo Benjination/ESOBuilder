@@ -67,13 +67,8 @@ export const HomePage = () => {
         {/* Classes Section - Now the main landing */}
         <div className="magical-border mt-8">
           <div 
-            className="rounded-2xl p-8 backdrop-blur-sm relative"
+            className="mobile-character-backgrounds rounded-2xl p-8 backdrop-blur-sm relative"
             style={{
-              backgroundImage: 'url("/char_bg.png")',
-              backgroundSize: 'contain',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat',
-              backgroundAttachment: 'fixed',
               backgroundColor: '#1f2937'
             }}
           >
@@ -155,15 +150,7 @@ export const HomePage = () => {
         </div>
 
         {/* Fantasy Hero Section - Now secondary */}
-        <div 
-          className="fantasy-hero py-20 relative"
-          style={{
-            backgroundImage: 'linear-gradient(135deg, rgba(15, 15, 35, 0.9) 0%, rgba(26, 26, 46, 0.8) 50%, rgba(22, 33, 62, 0.9) 100%), url("/char_bg.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <div className="fantasy-hero-responsive py-20 relative">
           <div className="magical-particles"></div>
           <div className="text-center space-y-8">            
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
