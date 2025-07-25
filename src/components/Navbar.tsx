@@ -30,6 +30,12 @@ export const Navbar = () => {
               Buffs & Debuffs
             </Link>
             <Link 
+              to="/gallery" 
+              className="text-white hover:text-eso-gold transition-colors font-medium"
+            >
+              Gallery
+            </Link>
+            <Link 
               to="/builder" 
               className="text-white hover:text-eso-gold transition-colors font-medium"
             >

@@ -5,6 +5,7 @@ import { ClassPage } from './pages/ClassPage'
 import { SubclassPage } from './pages/SubclassPage'
 import { BuffGlossaryPage } from './pages/BuffGlossaryPage'
 import { BuilderPage } from './pages/BuilderPage'
+import { GalleryPage } from './pages/GalleryPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/class/:classId/:subclassId" element={<SubclassPage />} />
           <Route path="/buffs" element={<BuffGlossaryPage />} />
           <Route path="/builder" element={<BuilderPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Routes>
       </main>
     </div>
