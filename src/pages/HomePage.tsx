@@ -2,11 +2,28 @@ import { Link } from 'react-router-dom'
 import { esoClasses } from '../../data/classes'
 import { Sword, Shield, Heart, Zap, Sparkles, Crown, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import React from 'react'
 
 export const HomePage = () => {
   const [visitorCount, setVisitorCount] = useState<number>(0)
+  const [randomBackground, setRandomBackground] = useState<string>('')
 
   useEffect(() => {
+    // Random background selection for mobile
+    const characterImages = [
+      'Abbey.png',
+      'Benny.png', 
+      'Speaks-In-Graveyards.png',
+      'Zeke Zeddicus.png'
+    ]
+    
+    const randomImage = characterImages[Math.floor(Math.random() * characterImages.length)]
+    const backgroundPath = `/images/backgrounds/${randomImage}`
+    setRandomBackground(backgroundPath)
+    
+    // Optional: Log which character was selected (useful for testing)
+    console.log(`🎮 Mobile background character: ${randomImage.replace('.png', '')}`)
+
     // Simple visitor counter using localStorage and a free API
     const updateVisitorCount = async () => {
       try {
@@ -57,7 +74,12 @@ export const HomePage = () => {
   }
 
   return (
-    <div className="relative min-h-screen">
+    <div 
+      className="relative min-h-screen"
+      style={{
+        '--mobile-bg-image': `url('${randomBackground}')`
+      } as React.CSSProperties}
+    >
       {/* Floating Orbs for Magical Atmosphere */}
       <div className="floating-orb floating-orb-1"></div>
       <div className="floating-orb floating-orb-2"></div>
