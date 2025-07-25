@@ -101,7 +101,7 @@
         var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
       background-size: 
         cover,
-        cover;
+        auto 80vh;
       background-position: 
         center,
         center;
@@ -466,7 +466,7 @@
   @media (orientation: portrait), (max-width: 768px) {
     .mobile-character-backgrounds {
       background-image: var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
-      background-size: cover;
+      background-size: auto 80vh;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -474,10 +474,10 @@
     }
   }
 
-  /* Extra small screens - ensure good coverage */
+  /* Extra small screens - adjust for smaller displays */
   @media (max-width: 480px) and (orientation: portrait) {
     .mobile-character-backgrounds {
-      background-size: cover;
+      background-size: auto 60vh;
       background-position: center;
     }
   }
