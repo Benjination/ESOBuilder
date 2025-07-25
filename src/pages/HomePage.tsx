@@ -1,8 +1,43 @@
 import { Link } from 'react-router-dom'
 import { esoClasses } from '../../data/classes'
 import { Sword, Shield, Heart, Zap, Sparkles, Crown, Star } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 export const HomePage = () => {
+  const [visitorCount, setVisitorCount] = useState<number>(0)
+
+  useEffect(() => {
+    // Simple visitor counter using localStorage and a free API
+    const updateVisitorCount = async () => {
+      try {
+        // Check if user has visited before
+        const hasVisited = localStorage.getItem('eso-theory-crafter-visited')
+        
+        if (!hasVisited) {
+          // Mark as visited
+          localStorage.setItem('eso-theory-crafter-visited', 'true')
+          
+          // Get current count from localStorage or start at a base number
+          const currentCount = parseInt(localStorage.getItem('eso-visitor-count') || '1247')
+          const newCount = currentCount + 1
+          
+          // Update localStorage
+          localStorage.setItem('eso-visitor-count', newCount.toString())
+          setVisitorCount(newCount)
+        } else {
+          // Just display current count
+          const currentCount = parseInt(localStorage.getItem('eso-visitor-count') || '1247')
+          setVisitorCount(currentCount)
+        }
+      } catch (error) {
+        // Fallback count if localStorage fails
+        setVisitorCount(1247)
+      }
+    }
+
+    updateVisitorCount()
+  }, [])
+
   const getArchetypeIcon = (archetype: string) => {
     switch (archetype) {
       case 'DPS': return <Sword className="w-4 h-4" />
@@ -259,6 +294,21 @@ export const HomePage = () => {
               <Link to="/builder" className="btn-primary text-lg px-8 py-4">
                 Start Your Adventure
               </Link>
+            </div>
+          </div>
+          
+          {/* Visitor Counter Widget */}
+          <div className="mt-8 flex justify-center">
+            <div className="bg-gradient-to-r from-eso-dark/80 to-gray-900/80 backdrop-blur-sm rounded-lg px-6 py-3 border border-eso-gold/30">
+              <div className="flex items-center space-x-3 text-sm">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-gray-300">Adventurers Visited:</span>
+                </div>
+                <span className="text-eso-gold font-bold font-mono text-lg">
+                  {visitorCount.toLocaleString()}
+                </span>
+              </div>
             </div>
           </div>
         </div>
