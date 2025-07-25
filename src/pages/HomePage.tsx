@@ -74,12 +74,7 @@ export const HomePage = () => {
   }
 
   return (
-    <div 
-      className="relative min-h-screen"
-      style={{
-        '--mobile-bg-image': `url('${randomBackground}')`
-      } as React.CSSProperties}
-    >
+    <div className="relative min-h-screen">
       {/* Floating Orbs for Magical Atmosphere */}
       <div className="floating-orb floating-orb-1"></div>
       <div className="floating-orb floating-orb-2"></div>
@@ -91,8 +86,9 @@ export const HomePage = () => {
           <div 
             className="mobile-character-backgrounds rounded-2xl p-8 backdrop-blur-sm relative"
             style={{
-              backgroundColor: '#1f2937'
-            }}
+              backgroundColor: '#1f2937',
+              '--mobile-bg-image': `url('${randomBackground}')`
+            } as React.CSSProperties}
           >
             <div className="text-center mb-8">
               <div className="flex items-center justify-center mb-6">

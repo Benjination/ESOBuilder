@@ -88,7 +88,7 @@
     overflow: hidden;
   }
 
-  /* Mobile/portrait: random character image with gradient overlay and parallax */
+  /* Mobile/portrait: simplified background for fantasy hero */
   @media (orientation: portrait), (max-width: 768px) {
     .fantasy-hero-responsive {
       background: 
@@ -97,27 +97,16 @@
           rgba(15, 15, 35, 0.9) 0%,
           rgba(26, 26, 46, 0.8) 50%,
           rgba(22, 33, 62, 0.9) 100%
-        );
-      background-size: cover;
-      background-position: center;
+        ),
+        url('/images/backgrounds/char_bg.png');
+      background-size: 
+        cover,
+        cover;
+      background-position: 
+        center,
+        center;
       background-repeat: no-repeat;
-      position: relative;
-    }
-    
-    /* Parallax background for fantasy hero */
-    .fantasy-hero-responsive::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120%;
-      background-image: var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      z-index: -1;
-      will-change: transform;
+      background-attachment: fixed;
     }
   }
 
@@ -473,44 +462,29 @@
     background-attachment: fixed;
   }
 
-  /* Mobile/portrait orientation: random character image with parallax */
+  /* Mobile/portrait orientation: random character image contained within classes section */
   @media (orientation: portrait), (max-width: 768px) {
     .mobile-character-backgrounds {
       background-image: var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      background-attachment: scroll;
-      min-height: 100vh;
+      background-attachment: local;
+      min-height: 80vh;
       position: relative;
-    }
-    
-    /* Create parallax effect with pseudo-element for better mobile support */
-    .mobile-character-backgrounds::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 120%;
-      background-image: var(--mobile-bg-image, url('/images/backgrounds/Abbey.png'));
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      z-index: -1;
-      will-change: transform;
+      overflow: hidden;
     }
   }
 
   /* Extra small screens - adjust for smaller displays */
   @media (max-width: 480px) and (orientation: portrait) {
-    .mobile-character-backgrounds::before {
+    .mobile-character-backgrounds {
       background-size: cover;
-      height: 110%;
+      min-height: 70vh;
     }
   }
 
-  /* Readability enhancement for mobile */
+  /* Readability enhancement for mobile within classes container */
   @media (orientation: portrait), (max-width: 768px) {
     /* Add a subtle overlay for better text readability on mobile */
     .mobile-character-backgrounds::after {
@@ -520,9 +494,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(31, 41, 55, 0.2);
+      background: rgba(31, 41, 55, 0.3);
       z-index: 1;
       pointer-events: none;
+      border-radius: 1rem;
     }
     
     .mobile-character-backgrounds > * {
