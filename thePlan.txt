@@ -27,62 +27,169 @@ Step 3: Gallery Data Management
 - [x] Create gallery management utilities
 - [x] BONUS: Automatic filename-based categorization and tagging
 
-PHASE 2: USER AUTHENTICATION SYSTEM
+PHASE 2: USER AUTHENTICATION SYSTEM [COMPLETED]
 ====================================
 
-Step 4: Authentication Infrastructure
-- [ ] Choose authentication provider (Firebase, Supabase, Auth0, or custom)
-- [ ] Set up authentication service
-- [ ] Create user registration/login components
-- [ ] Implement password reset functionality
-- [ ] Add user profile management
-- [ ] Create protected route wrapper component
+Step 4: Authentication Infrastructure [COMPLETED ✅]
+- [x] Choose authentication provider (Firebase Auth)
+- [x] Set up Firebase authentication service
+- [x] Create user registration/login components (AuthModal.tsx)
+- [x] Implement password reset functionality
+- [x] Add user profile management (UserProfile.tsx)
+- [x] Create protected route wrapper component
 
-Step 5: User Management
-- [ ] Design user profile structure
-- [ ] Create user profile page
-- [ ] Implement user settings/preferences
-- [ ] Add user avatar/profile picture upload
-- [ ] Create user directory/browse users feature
+Step 5: User Management [COMPLETED ✅]
+- [x] Design user profile structure (Firestore)
+- [x] Create user profile dropdown interface
+- [x] Implement user settings/preferences foundation
+- [x] Add user avatar support (external URLs)
+- [x] Ready for ESO-specific fields (platform, server, class)
 
-PHASE 3: DATABASE INTEGRATION
+PHASE 2.5: GITHUB STORAGE INTEGRATION [NEW - NEXT PRIORITY]
+========================================================
+
+Step 6: GitHub Storage Setup
+- [ ] Create dedicated GitHub repository for user uploads
+  Repository: "eso-theory-crafter-storage" or use main repo with /storage folder
+- [ ] Set up GitHub API integration with personal access token
+- [ ] Configure GitHub Apps for repository access (optional for advanced features)
+- [ ] Create storage directory structure:
+  /user-galleries/{userId}/
+  /build-screenshots/{buildId}/
+  /profile-avatars/{userId}/
+  /community-uploads/{category}/
+
+Step 7: GitHub Upload Service
+- [ ] Create GitHub API service for file uploads
+  - Implement file upload to GitHub via API
+  - Generate commit messages for each upload
+  - Return CDN URLs (raw.githubusercontent.com)
+- [ ] Add image compression before upload
+- [ ] Implement file naming conventions and conflict resolution
+- [ ] Add upload progress tracking
+- [ ] Create error handling for GitHub API limits
+
+Step 8: Image Upload Components
+- [ ] Create drag-and-drop upload component
+- [ ] Add image preview before upload
+- [ ] Implement batch upload for multiple images
+- [ ] Add upload queue management
+- [ ] Create upload status indicators
+- [ ] Add image metadata input (title, description, tags)
+
+Step 9: User Gallery Management
+- [ ] Create "My Gallery" interface for authenticated users
+- [ ] Implement gallery organization (folders, tags, categories)
+- [ ] Add image editing capabilities (crop, resize, filters)
+- [ ] Create image deletion and management
+- [ ] Implement privacy controls (public/private images)
+- [ ] Add sharing functionality with direct links
+
+Step 10: GitHub Storage Optimization
+- [ ] Implement lazy loading for user galleries
+- [ ] Add image caching strategies
+- [ ] Create thumbnail generation system
+- [ ] Add image search and filtering
+- [ ] Implement storage usage tracking per user
+- [ ] Add cleanup for deleted images
+
+TECHNICAL IMPLEMENTATION DETAILS:
+=================================
+
+GitHub Storage Architecture:
+```
+Repository Structure:
+/storage/
+  /users/
+    /{userId}/
+      /gallery/
+        - image1.jpg
+        - image2.png
+      /builds/
+        - build1-screenshot.jpg
+      /avatar/
+        - profile.jpg
+  /community/
+    /featured/
+    /contests/
+    /events/
+
+URL Pattern:
+https://raw.githubusercontent.com/username/eso-theory-crafter-storage/main/users/user123/gallery/image1.jpg
+```
+
+GitHub API Integration:
+```javascript
+// Upload Service Example
+const uploadToGitHub = async (file, path, userId) => {
+  const content = await fileToBase64(file)
+  const response = await octokit.repos.createOrUpdateFileContents({
+    owner: 'username',
+    repo: 'eso-theory-crafter-storage',
+    path: `users/${userId}/gallery/${file.name}`,
+    message: `Upload: ${file.name} by ${userId}`,
+    content: content
+  })
+  return response.data.content.download_url
+}
+```
+
+Benefits of GitHub Storage:
+- ✅ Completely free (no storage costs)
+- ✅ Built-in version control
+- ✅ CDN delivery via raw.githubusercontent.com
+- ✅ Easy backup and migration
+- ✅ Integrates with existing GitHub Pages deployment
+- ✅ No additional service dependencies
+- ✅ Transparent and open (users can see their files)
+
+Integration Points:
+- User authentication (already implemented)
+- Gallery page (extend existing My Gallery section)
+- Build creator (add screenshot upload)
+- User profiles (avatar upload)
+- Community features (shared galleries)
+
+PHASE 3: DATABASE INTEGRATION [UPDATED]
+PHASE 3: DATABASE INTEGRATION [FIREBASE IMPLEMENTED]
 =============================
 
-Step 6: Database Setup
-- [ ] Choose database solution (Firebase Firestore, Supabase, MongoDB)
-- [ ] Design database schema for:
-  - Users (profiles, preferences, roles)
-  - Gallery items (images, metadata, ownership)
-  - Builds (saved builds, public/private visibility)
-  - Comments (user interactions)
-  - Likes/ratings system
-- [ ] Set up database connection and configuration
-- [ ] Create database security rules/policies
+Step 11: Database Setup [COMPLETED ✅]
+- [x] Choose database solution (Firebase Firestore)
+- [x] Design database schema for:
+  - Users (profiles, preferences, roles) ✅
+  - Gallery items (images, metadata, ownership) - Ready for GitHub URLs
+  - Builds (saved builds, public/private visibility) - Next phase
+  - Comments (user interactions) - Future phase
+  - Likes/ratings system - Future phase
+- [x] Set up database connection and configuration
+- [x] Create database security rules/policies (development mode)
 
-Step 7: Data Models & Services
-- [ ] Create TypeScript interfaces for all data models
-- [ ] Implement database service layer
-- [ ] Create CRUD operations for all entities
-- [ ] Add data validation and sanitization
-- [ ] Implement error handling and logging
+Step 12: Data Models & Services [PARTIALLY COMPLETED]
+- [x] Create TypeScript interfaces for user data models
+- [x] Implement authentication service layer
+- [ ] Create CRUD operations for builds and gallery items
+- [x] Add data validation and sanitization (auth layer)
+- [x] Implement error handling and logging
 
-PHASE 4: DYNAMIC GALLERY WITH USER UPLOADS
+PHASE 4: GITHUB-BASED GALLERY WITH USER UPLOADS [UPDATED APPROACH]
 ==========================================
 
-Step 8: File Upload System
-- [ ] Set up cloud storage (Firebase Storage, Cloudinary, AWS S3)
-- [ ] Create image upload component with drag-and-drop
-- [ ] Implement image compression and optimization
-- [ ] Add file type and size validation
+Step 13: GitHub File Upload System [NEW PRIORITY]
+- [ ] Set up GitHub repository for image storage
+- [ ] Create GitHub API service integration
+- [ ] Implement image upload to GitHub via API
+- [ ] Add file compression and optimization
 - [ ] Create upload progress indicators
-- [ ] Implement multiple image upload
+- [ ] Implement multiple image upload with queue
 
-Step 9: Gallery Management
-- [ ] Create "Add to Gallery" functionality
-- [ ] Implement gallery item editing/deletion
-- [ ] Add image moderation system
+Step 14: Gallery Management with GitHub Storage
+- [ ] Extend "My Gallery" with upload functionality
+- [ ] Implement gallery item editing/deletion (Firestore + GitHub)
+- [ ] Add image organization (folders, tags in Firestore)
 - [ ] Create admin panel for content management
-- [ ] Implement reporting system for inappropriate content
+- [ ] Implement moderation system with GitHub integration
+- [ ] Add storage usage tracking per user
 
 PHASE 5: BUILD SHARING SYSTEM
 =============================
@@ -226,3 +333,80 @@ IMMEDIATE NEXT STEPS
 5. Plan database schema and data relationships
 
 This roadmap transforms ESO Theory Crafter from a build tool into a full-featured community platform where users can share, discover, and collaborate on ESO builds and content!
+
+NEXT SESSION PRIORITY: GITHUB STORAGE IMPLEMENTATION
+====================================================
+
+IMMEDIATE TASKS FOR NEXT SESSION:
+=================================
+
+1. **GitHub Repository Setup** (15 minutes)
+   - Create new repository: "eso-theory-crafter-storage" 
+   - OR use main repository with /storage folder structure
+   - Set up directory structure for organized uploads
+   - Generate GitHub Personal Access Token for API access
+
+2. **GitHub API Service** (45 minutes)
+   - Install @octokit/rest for GitHub API integration
+   - Create service: src/services/githubStorage.ts
+   - Implement upload function with base64 encoding
+   - Add error handling for API rate limits
+   - Test basic file upload functionality
+
+3. **Upload Component** (60 minutes)
+   - Create ImageUpload.tsx component
+   - Add drag-and-drop interface with react-dropzone
+   - Implement image preview before upload
+   - Add upload progress tracking
+   - Integrate with existing AuthContext
+
+4. **My Gallery Integration** (30 minutes)
+   - Extend existing GalleryPage.tsx "My Gallery" section
+   - Add upload button and interface
+   - Connect with GitHub storage service
+   - Display user's uploaded images
+   - Add basic image management (delete, rename)
+
+5. **Testing & Refinement** (30 minutes)
+   - Test upload workflow end-to-end
+   - Verify image URLs work correctly
+   - Test authentication integration
+   - Add error handling and user feedback
+
+TECHNICAL PREPARATION:
+=====================
+
+Dependencies to install:
+```bash
+npm install @octokit/rest react-dropzone
+```
+
+Environment variables to add:
+```env
+VITE_GITHUB_TOKEN=ghp_your_personal_access_token
+VITE_GITHUB_OWNER=your-github-username
+VITE_GITHUB_REPO=eso-theory-crafter-storage
+```
+
+File structure to create:
+```
+src/
+  services/
+    githubStorage.ts     # GitHub API integration
+  components/
+    ImageUpload.tsx      # Drag-drop upload component
+    ImageGallery.tsx     # User gallery management
+  types/
+    github.ts           # GitHub API types
+```
+
+SUCCESS METRICS FOR NEXT SESSION:
+=================================
+- ✅ User can drag-drop images to upload
+- ✅ Images are stored in GitHub repository
+- ✅ Uploaded images display in user's gallery
+- ✅ Image URLs work for public viewing
+- ✅ Basic error handling for failed uploads
+- ✅ Integration with existing authentication
+
+This approach will create a completely free, scalable image storage solution that integrates perfectly with your existing GitHub Pages deployment!
