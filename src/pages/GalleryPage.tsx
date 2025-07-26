@@ -3,7 +3,7 @@ import { Upload, Search, EyeOff, Eye, Image, Plus, X } from 'lucide-react'
 import { bennysGalleryData } from '../../data/auto-gallery'
 
 export const GalleryPage = () => {
-  const [showBennysGallery, setShowBennysGallery] = useState(true)
+  const [showBennysGallery, setShowBennysGallery] = useState(false) // Default to hidden
   const [searchTerm, setSearchTerm] = useState('')
   const [isDragOver, setIsDragOver] = useState(false)
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
@@ -175,38 +175,61 @@ export const GalleryPage = () => {
       {/* Benny's Gallery Section */}
       <div className="magical-border">
         <div className="card">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-3xl font-eso font-bold glowing-text">
-                Benny's Gallery
-              </h2>
-              <p className="text-sm text-gray-400 mt-1">
-                Admin curated collection • Images managed by site owner
-              </p>
-            </div>
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2 text-eso-gold">
-                <Image className="w-5 h-5" />
-                <span className="text-sm">{bennysGalleryData.length} images</span>
-              </div>
-              <button
-                onClick={() => setShowBennysGallery(!showBennysGallery)}
-                className="flex items-center space-x-2 text-gray-400 hover:text-eso-gold transition-colors duration-200"
-              >
-                {showBennysGallery ? (
-                  <>
+          {showBennysGallery ? (
+            <>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-3xl font-eso font-bold glowing-text">
+                    Benny's Gallery
+                  </h2>
+                  <p className="text-sm text-gray-400 mt-1">
+                    Admin curated collection • Images managed by site owner
+                  </p>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center space-x-2 text-eso-gold">
+                    <Image className="w-5 h-5" />
+                    <span className="text-sm">{bennysGalleryData.length} images</span>
+                  </div>
+                  
+                  {/* Fixed Hide Gallery button using div instead of button */}
+                  <div
+                    onClick={() => {
+                      console.log('Hide Gallery clicked');
+                      setShowBennysGallery(false);
+                    }}
+                    className="flex items-center space-x-2 text-gray-400 hover:text-eso-gold transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95 rounded-lg px-3 py-2 hover:bg-gray-800/30"
+                    style={{ zIndex: 99999, position: 'relative' }}
+                  >
                     <EyeOff className="w-5 h-5" />
-                    <span>Hide Gallery</span>
-                  </>
-                ) : (
-                  <>
-                    <Eye className="w-5 h-5" />
-                    <span>Show Gallery</span>
-                  </>
-                )}
-              </button>
+                    <span className="font-medium">Hide Gallery</span>
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div 
+              className="flex items-center justify-between py-4 cursor-pointer hover:bg-gray-800/50 rounded-lg transition-all duration-200 group"
+              onClick={() => {
+                console.log('Show Gallery clicked');
+                setShowBennysGallery(true);
+              }}
+              style={{ zIndex: 99999, position: 'relative' }}
+            >
+              <div className="flex items-center space-x-3">
+                <h2 className="text-xl font-eso font-bold text-gray-400 group-hover:text-eso-gold transition-colors duration-200">
+                  Benny's Gallery
+                </h2>
+                <span className="text-sm text-gray-500 group-hover:text-gray-400 transition-colors duration-200">
+                  ({bennysGalleryData.length} images)
+                </span>
+              </div>
+              <div className="flex items-center space-x-2 text-gray-400 group-hover:text-eso-gold transition-colors duration-200">
+                <Eye className="w-5 h-5" />
+                <span className="text-sm">Click to show</span>
+              </div>
             </div>
-          </div>
+          )}
 
           {showBennysGallery && (
             <div className="space-y-6">
