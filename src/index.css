@@ -578,6 +578,58 @@
     overflow: hidden;
   }
 
+  /* Mobile Navbar Consistency */
+  .navbar-mobile-menu {
+    /* Ensure mobile menu aligns with main content container */
+    max-width: calc(100vw - 2rem);
+    margin: 0 auto;
+  }
+  
+  /* Mobile Container Alignment */
+  @media (max-width: 1024px) {
+    /* Ensure navbar and main content have same horizontal constraints */
+    .container {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  /* Mobile Navbar and Container Consistency */
+  .navbar-logo-text {
+    font-size: 1.125rem; /* text-lg */
+    line-height: 1.75rem;
+    font-family: 'Cinzel', serif; /* font-eso */
+    font-weight: 700; /* font-bold */
+    color: #d4af37; /* text-eso-gold */
+  }
+  
+  /* Ensure navbar and main content containers align properly on mobile */
+  @media (max-width: 1024px) {
+    nav .container,
+    main .container {
+      max-width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .navbar-logo-text {
+      font-size: 1.25rem; /* text-xl */
+      line-height: 1.75rem;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .navbar-logo-text {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
 }
 
 /* Custom animations */
