@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Upload, Search, EyeOff, Eye, Image, Plus, X } from 'lucide-react'
 import { bennysGalleryData } from '../../data/auto-gallery'
 
@@ -7,6 +7,7 @@ export const GalleryPage = () => {
   const [searchTerm, setSearchTerm] = useState('')
   const [isDragOver, setIsDragOver] = useState(false)
   const [showComingSoonModal, setShowComingSoonModal] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<typeof bennysGalleryData[0] | null>(null)
 
   // Placeholder for user authentication status - will be implemented in Phase 2
   const isLoggedIn = false // This will be replaced with actual auth state
@@ -32,6 +33,28 @@ export const GalleryPage = () => {
     // TODO: Handle file selection when authentication is implemented
     console.log('File selection detected - will implement with user accounts')
   }
+
+  // Handle ESC key to close lightbox and body scroll
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && selectedImage) {
+        setSelectedImage(null)
+      }
+    }
+
+    // Prevent body scroll when lightbox is open
+    if (selectedImage) {
+      document.body.classList.add('lightbox-open')
+    } else {
+      document.body.classList.remove('lightbox-open')
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.classList.remove('lightbox-open')
+    }
+  }, [selectedImage])
 
   return (
     <div className="min-h-screen p-6 space-y-12">
@@ -199,6 +222,7 @@ export const GalleryPage = () => {
                     <div
                       key={image.id}
                       className="group relative bg-gray-800 rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 cursor-pointer"
+                      onClick={() => setSelectedImage(image)}
                     >
                       <div className="aspect-square relative overflow-hidden">
                         <img
@@ -276,6 +300,88 @@ export const GalleryPage = () => {
           )}
         </div>
       </div>
+
+      {/* Image Lightbox Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 lightbox-backdrop flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-5xl max-h-full w-full h-full flex items-center justify-center lightbox-content">
+            {/* Close button */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                setSelectedImage(null)
+              }}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-black bg-opacity-50 hover:bg-opacity-75 rounded-full flex items-center justify-center text-white transition-all duration-200"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Image container */}
+            <div 
+              className="relative max-w-full max-h-full flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Main image */}
+              <img
+                src={selectedImage.fullSize}
+                alt={selectedImage.title}
+                className="max-w-full max-h-[80vh] object-contain rounded-lg lightbox-image"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = selectedImage.thumbnail;
+                }}
+              />
+
+              {/* Image info */}
+              <div className="bg-gray-900 bg-opacity-95 rounded-lg p-4 mt-4 max-w-lg">
+                <h3 className="text-xl font-eso font-bold text-eso-gold mb-2">
+                  {selectedImage.title}
+                </h3>
+                <p className="text-gray-300 text-sm mb-3">
+                  {selectedImage.description}
+                </p>
+                
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`text-xs px-2 py-1 rounded ${
+                    selectedImage.category === 'builds' ? 'bg-eso-gold/20 text-eso-gold' :
+                    selectedImage.category === 'screenshots' ? 'bg-eso-blue/20 text-eso-blue' :
+                    selectedImage.category === 'art' ? 'bg-purple-500/20 text-purple-400' :
+                    'bg-green-500/20 text-green-400'
+                  }`}>
+                    {selectedImage.category}
+                  </span>
+                  <span className="text-xs text-gray-400">
+                    {new Date(selectedImage.uploadDate).toLocaleDateString()}
+                  </span>
+                </div>
+
+                {selectedImage.tags && (
+                  <div className="flex flex-wrap gap-1">
+                    {selectedImage.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 py-1 bg-gray-700 text-gray-300 rounded"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Navigation hints */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
+              <p className="text-white text-sm opacity-75">
+                Click outside image or press ESC to close
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Coming Soon Modal */}
       {showComingSoonModal && (

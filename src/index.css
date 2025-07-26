@@ -545,6 +545,38 @@
       0 8px 25px rgba(212, 175, 55, 0.3),
       0 0 0 1px rgba(212, 175, 55, 0.4);
   }
+
+  /* Lightbox styles */
+  .lightbox-backdrop {
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  .lightbox-content {
+    animation: zoomIn 0.3s ease-out;
+  }
+
+  .lightbox-image {
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.8),
+      0 0 0 1px rgba(212, 175, 55, 0.1);
+  }
+
+  @keyframes zoomIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Prevent body scroll when lightbox is open */
+  .lightbox-open {
+    overflow: hidden;
+  }
 }
 
 /* Custom animations */
