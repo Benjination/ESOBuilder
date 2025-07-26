@@ -1,42 +1,31 @@
 import { useState, useEffect } from 'react'
-import { Upload, Search, EyeOff, Eye, Image, Plus, X } from 'lucide-react'
+import { Upload, Search, EyeOff, Eye, Image, X } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 import { AuthModal } from '../components/AuthModal'
+import { ImageUpload } from '../components/ImageUpload'
+import { useUserGallery } from '../hooks/useGitHubUpload'
 import { bennysGalleryData } from '../../data/auto-gallery'
 
 export const GalleryPage = () => {
   const { user } = useAuth()
   const [showBennysGallery, setShowBennysGallery] = useState(false) // Default to hidden
   const [searchTerm, setSearchTerm] = useState('')
-  const [isDragOver, setIsDragOver] = useState(false)
   const [selectedImage, setSelectedImage] = useState<typeof bennysGalleryData[0] | null>(null)
   const [showAuthModal, setShowAuthModal] = useState(false)
   const [authMode, setAuthMode] = useState<'login' | 'signup'>('signup')
 
+  // User gallery management
+  const { gallery: userGallery, loading: galleryLoading, loadUserGallery, deleteImage } = useUserGallery()
+
   // Placeholder for user authentication status - will be implemented in Phase 2
   const isLoggedIn = !!user // This will be replaced with actual auth state
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragOver(true)
-  }
-
-  const handleDragLeave = (e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragOver(false)
-  }
-
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault()
-    setIsDragOver(false)
-    // TODO: Handle file upload when authentication is implemented
-    console.log('File drop detected - will implement with user accounts')
-  }
-
-  const handleFileSelect = (_e: React.ChangeEvent<HTMLInputElement>) => {
-    // TODO: Handle file selection when authentication is implemented
-    console.log('File selection detected - will implement with user accounts')
-  }
+  // Load user gallery when user logs in
+  useEffect(() => {
+    if (user) {
+      loadUserGallery()
+    }
+  }, [user, loadUserGallery])
 
   // Handle ESC key to close lightbox and body scroll
   useEffect(() => {
@@ -81,7 +70,7 @@ export const GalleryPage = () => {
             </h2>
             <div className="flex items-center space-x-2 text-eso-gold">
               <Image className="w-5 h-5" />
-              <span className="text-sm">0 images</span>
+              <span className="text-sm">{userGallery.length} images</span>
             </div>
           </div>
 
@@ -117,7 +106,7 @@ export const GalleryPage = () => {
               </div>
             </div>
           ) : (
-            // Logged in state (will be shown when auth is implemented)
+            // Logged in state with new upload functionality
             <div className="space-y-6">
               {/* Search Bar */}
               <div className="relative">
@@ -131,52 +120,85 @@ export const GalleryPage = () => {
                 />
               </div>
 
-              {/* Upload Area */}
-              <div
-                className={`border-2 border-dashed rounded-lg p-8 text-center transition-all duration-300 ${
-                  isDragOver
-                    ? 'border-eso-gold bg-eso-gold/5'
-                    : 'border-gray-600 hover:border-eso-gold/50'
-                }`}
-                onDragOver={handleDragOver}
-                onDragLeave={handleDragLeave}
-                onDrop={handleDrop}
-              >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-eso-blue to-blue-600 rounded-full flex items-center justify-center mx-auto">
-                    <Plus className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-lg font-medium text-eso-gold">
-                      Drag and drop images here
-                    </p>
-                    <p className="text-gray-400 mt-1">
-                      or click to browse files
-                    </p>
-                  </div>
-                  <input
-                    type="file"
-                    multiple
-                    accept="image/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                    id="file-upload"
-                  />
-                  <label
-                    htmlFor="file-upload"
-                    className="btn-secondary inline-flex items-center space-x-2 cursor-pointer"
-                  >
-                    <Upload className="w-4 h-4" />
-                    <span>Choose Files</span>
-                  </label>
-                </div>
-              </div>
+              {/* Image Upload Component */}
+              <ImageUpload
+                onUploadComplete={(urls) => {
+                  console.log('Images uploaded:', urls)
+                  // Refresh gallery after upload
+                  loadUserGallery()
+                }}
+                onUploadError={(error) => {
+                  console.error('Upload error:', error)
+                }}
+                category="gallery"
+                className="mb-6"
+              />
 
-              {/* User's Images Grid (empty for now) */}
-              <div className="text-center py-8 text-gray-400">
-                <Image className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                <p>No images uploaded yet. Start building your gallery!</p>
-              </div>
+              {/* User's Images Grid */}
+              {galleryLoading ? (
+                <div className="text-center py-8">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-eso-gold mx-auto mb-4"></div>
+                  <p className="text-gray-400">Loading your gallery...</p>
+                </div>
+              ) : userGallery.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {userGallery
+                    .filter((image: any) => 
+                      !searchTerm || 
+                      image.name.toLowerCase().includes(searchTerm.toLowerCase())
+                    )
+                    .map((image: any, index: number) => (
+                      <div
+                        key={image.sha}
+                        className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-eso-gold transition-all duration-300 cursor-pointer"
+                        onClick={() => setSelectedImage({
+                          id: index,
+                          title: image.name,
+                          description: `Uploaded image from your gallery`,
+                          thumbnail: image.download_url,
+                          fullSize: image.download_url,
+                          category: 'screenshots',
+                          uploadDate: new Date().toISOString() // GitHub doesn't provide this in list view
+                        })}
+                      >
+                        <div className="aspect-square overflow-hidden">
+                          <img
+                            src={image.download_url}
+                            alt={image.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="absolute bottom-3 left-3 right-3">
+                            <h3 className="text-white font-medium text-sm truncate">
+                              {image.name}
+                            </h3>
+                            <p className="text-gray-300 text-xs">
+                              Your Gallery
+                            </p>
+                          </div>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              if (window.confirm('Are you sure you want to delete this image?')) {
+                                deleteImage(image.name, image.sha)
+                              }
+                            }}
+                            className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white p-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              ) : (
+                <div className="text-center py-8 text-gray-400">
+                  <Image className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                  <p>No images uploaded yet. Start building your gallery!</p>
+                </div>
+              )}
             </div>
           )}
         </div>
