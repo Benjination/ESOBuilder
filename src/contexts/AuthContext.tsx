@@ -91,6 +91,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [])
 
   const signInWithGoogle = async () => {
+    // Check if we're in demo mode
+    const isDemoConfig = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_FIREBASE_API_KEY === "demo-api-key"
+    if (isDemoConfig) {
+      throw new Error('Authentication is not configured. This is a demo version of the site. Sign-in features will be available once Firebase is properly configured.')
+    }
+
     try {
       const result = await signInWithPopup(auth, googleProvider)
       await createUserProfile(result.user)
@@ -104,6 +110,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   const signInWithGithub = async () => {
+    // Check if we're in demo mode
+    const isDemoConfig = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_FIREBASE_API_KEY === "demo-api-key"
+    if (isDemoConfig) {
+      throw new Error('Authentication is not configured. This is a demo version of the site. Sign-in features will be available once Firebase is properly configured.')
+    }
+
     try {
       const result = await signInWithPopup(auth, githubProvider)
       await createUserProfile(result.user)
@@ -117,6 +129,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   const signInWithEmail = async (email: string, password: string) => {
+    // Check if we're in demo mode
+    const isDemoConfig = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_FIREBASE_API_KEY === "demo-api-key"
+    if (isDemoConfig) {
+      throw new Error('Authentication is not configured. This is a demo version of the site. Sign-in features will be available once Firebase is properly configured.')
+    }
+
     try {
       const result = await signInWithEmailAndPassword(auth, email, password)
       await createUserProfile(result.user)
@@ -130,6 +148,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }
 
   const signUpWithEmail = async (email: string, password: string, displayName: string) => {
+    // Check if we're in demo mode
+    const isDemoConfig = !import.meta.env.VITE_FIREBASE_API_KEY || import.meta.env.VITE_FIREBASE_API_KEY === "demo-api-key"
+    if (isDemoConfig) {
+      throw new Error('Authentication is not configured. This is a demo version of the site. Sign-in features will be available once Firebase is properly configured.')
+    }
+
     try {
       const result = await createUserWithEmailAndPassword(auth, email, password)
       await updateProfile(result.user, { displayName })
