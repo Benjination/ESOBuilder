@@ -116,7 +116,7 @@ export const GalleryPage = () => {
                   placeholder="Search your images..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-eso-gold focus:outline-none"
+                  className="w-full pl-10 pr-4 py-3 liquid-glass border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:border-eso-gold focus:outline-none"
                 />
               </div>
 
@@ -150,7 +150,7 @@ export const GalleryPage = () => {
                     .map((image: any, index: number) => (
                       <div
                         key={image.sha}
-                        className="group relative bg-gray-800 rounded-lg overflow-hidden border border-gray-700 hover:border-eso-gold transition-all duration-300 cursor-pointer"
+                        className="group relative liquid-glass rounded-lg overflow-hidden border border-gray-700 hover:border-eso-gold transition-all duration-300 cursor-pointer"
                         onClick={() => setSelectedImage({
                           id: index,
                           title: image.name,
@@ -276,7 +276,7 @@ export const GalleryPage = () => {
                   {bennysGalleryData.map((image) => (
                     <div
                       key={image.id}
-                      className="group relative bg-gray-800 rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 cursor-pointer"
+                      className="group relative liquid-glass rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 cursor-pointer"
                       onClick={() => setSelectedImage(image)}
                     >
                       <div className="aspect-square relative overflow-hidden">

@@ -177,7 +177,7 @@ export const BuilderPage = () => {
           {/* Left Column - Build Configuration */}
           <div className="lg:col-span-2 space-y-6">
             {/* Build Name */}
-            <div className="bg-eso-dark rounded-lg p-6 border border-eso-gold/20">
+            <div className="liquid-glass rounded-lg p-6 border border-eso-gold/20">
               <label className="block text-eso-gold font-semibold mb-2">
                 Build Name
               </label>
@@ -185,14 +185,14 @@ export const BuilderPage = () => {
                 type="text"
                 value={currentBuild.name}
                 onChange={(e) => handleBuildNameChange(e.target.value)}
-                className="w-full px-4 py-2 bg-eso-darker border border-eso-gold/30 
+                className="w-full px-4 py-2 liquid-glass border border-eso-gold/30 
                          rounded text-white focus:border-eso-gold focus:outline-none"
                 placeholder="Enter build name..."
               />
             </div>
 
             {/* Class Selection */}
-            <div className="bg-eso-dark rounded-lg p-6 border border-eso-gold/20">
+            <div className="liquid-glass rounded-lg p-6 border border-eso-gold/20">
               <h2 className="text-xl font-eso font-bold text-eso-gold mb-4">
                 Select Classes ({selectedClasses.length}/3)
               </h2>
@@ -227,7 +227,7 @@ export const BuilderPage = () => {
             </div>
 
             {/* Subclass Selection */}
-            <div className="bg-eso-dark rounded-lg p-6 border border-eso-gold/20">
+            <div className="liquid-glass rounded-lg p-6 border border-eso-gold/20">
               <h2 className="text-xl font-eso font-bold text-eso-gold mb-4">
                 Select Subclasses ({currentBuild.selectedSubclasses.length}/3)
               </h2>
@@ -480,7 +480,7 @@ export const BuilderPage = () => {
           {/* Right Column - Build Analysis */}
           <div className="space-y-6">
             {/* Build Scores */}
-            <div className="bg-eso-dark rounded-lg p-6 border border-eso-gold/20">
+            <div className="liquid-glass rounded-lg p-6 border border-eso-gold/20">
               <h3 className="text-lg font-eso font-bold text-eso-gold mb-4">
                 Build Analysis
               </h3>

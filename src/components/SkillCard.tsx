@@ -35,12 +35,12 @@ export const SkillCard = ({ skill, isSelected, canAdd, onSkillToggle, selectedMo
   return (
     <div className="relative">
       <div
-        className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
+        className={`liquid-glass p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
           isSelected 
-            ? 'border-eso-gold bg-eso-gold/10 text-eso-gold'
+            ? 'border-eso-gold text-eso-gold'
             : canAdd 
-              ? 'border-gray-600 bg-eso-darker text-gray-300 hover:border-eso-gold/50'
-              : 'border-gray-700 bg-gray-800 text-gray-500 cursor-not-allowed'
+              ? 'border-gray-600 text-gray-300 hover:border-eso-gold/50'
+              : 'border-gray-700 text-gray-500 cursor-not-allowed'
         }`}
         onClick={handleSkillClick}
       >
@@ -109,7 +109,7 @@ export const SkillCard = ({ skill, isSelected, canAdd, onSkillToggle, selectedMo
 
       {/* Morph Selection Modal */}
       {showMorphs && skill.morphs && (
-        <div className="absolute top-0 left-0 right-0 z-10 bg-eso-dark border border-eso-gold rounded-lg p-4 shadow-xl">
+        <div className="absolute top-0 left-0 right-0 z-10 liquid-glass border border-eso-gold rounded-lg p-4 shadow-xl">
           <div className="text-sm font-semibold text-eso-gold mb-3">
             Choose a morph for {skill.name}:
           </div>
@@ -120,7 +120,7 @@ export const SkillCard = ({ skill, isSelected, canAdd, onSkillToggle, selectedMo
                 key={morph.id}
                 onClick={() => handleMorphSelect(morph.id)}
                 className="w-full text-left p-3 rounded border border-gray-600 hover:border-eso-gold/50 
-                         bg-eso-darker hover:bg-eso-gold/5 transition-all duration-200"
+                         liquid-glass transition-all duration-200"
               >
                 <div className="font-semibold text-gray-200 mb-1">{morph.name}</div>
                 <div className="text-xs text-gray-400 mb-2">{morph.description}</div>

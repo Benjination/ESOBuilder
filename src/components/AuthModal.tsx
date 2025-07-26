@@ -95,7 +95,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, initialMo
       className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 overflow-y-auto"
       onClick={handleBackdropClick}
     >
-      <div className="bg-gradient-to-br from-eso-dark to-gray-900 rounded-xl shadow-2xl w-full max-w-md border border-eso-gold/30 max-h-[90vh] overflow-y-auto">
+      <div className="liquid-glass rounded-xl shadow-2xl w-full max-w-md border border-eso-gold/30 max-h-[90vh] overflow-y-auto">
         {/* Header - Sticky */}
         <div className="sticky top-0 bg-gradient-to-r from-eso-gold/20 to-eso-blue/20 p-6 border-b border-eso-gold/30 z-10">
           <div className="flex items-center justify-between">

@@ -116,7 +116,7 @@ export const UserProfile: React.FC = () => {
           <div className="fixed inset-0 bg-black bg-opacity-50 z-[59] sm:hidden"></div>
           
           {/* Dropdown */}
-          <div className={`absolute w-64 bg-gradient-to-br from-eso-dark to-gray-900 rounded-lg border border-eso-gold/30 shadow-2xl z-[60] max-h-[calc(100vh-5rem)] overflow-y-auto transform transition-all duration-200 
+          <div className={`absolute w-64 liquid-glass rounded-lg border border-eso-gold/30 shadow-2xl z-[60] max-h-[calc(100vh-5rem)] overflow-y-auto transform transition-all duration-200 
             ${dropdownPosition.includes('bottom') ? 'top-full mt-2' : 'bottom-full mb-2'} 
             ${dropdownPosition.includes('right') ? 'right-0' : 'left-0'}
             max-sm:fixed max-sm:top-16 max-sm:right-2 max-sm:left-2 max-sm:w-auto max-sm:max-h-[calc(100vh-6rem)]

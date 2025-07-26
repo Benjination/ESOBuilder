@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { esoClasses } from '../../data/classes'
-import { Sword, Shield, Heart, Zap, Sparkles, Crown, Star } from 'lucide-react'
+import { Sword, Shield, Heart, Zap, Sparkles, Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import React from 'react'
 
@@ -105,15 +105,14 @@ export const HomePage = () => {
         {/* Classes Section - Now the main landing */}
         <div className="magical-border mt-8">
           <div 
-            className="mobile-character-backgrounds rounded-2xl p-8 backdrop-blur-sm relative"
+            className="liquid-glass-container mobile-character-backgrounds rounded-2xl p-8 relative"
             style={{
-              backgroundColor: '#1f2937',
+              backgroundColor: 'rgba(31, 41, 55, 0.05)',
               '--mobile-bg-image': `url('${randomBackground}')`
             } as React.CSSProperties}
           >
             <div className="text-center mb-8">
               <div className="flex items-center justify-center mb-6">
-                <Crown className="w-12 h-12 text-eso-gold mr-4 animate-pulse" />
                 <img 
                   src="/images/icons/esotc-logo.png" 
                   alt="ESO Theory Crafter Logo" 
@@ -127,7 +126,6 @@ export const HomePage = () => {
                   alt="ESO Theory Crafter Logo" 
                   className="w-16 h-16 object-contain ml-4"
                 />
-                <Crown className="w-12 h-12 text-eso-gold ml-4 animate-pulse" />
               </div>
               <p className="hero-subtitle text-lg md:text-xl mb-6">
                 Master the art of character building in Elder Scrolls Online. 
@@ -140,7 +138,7 @@ export const HomePage = () => {
                 <Link 
                   key={esoClass.id} 
                   to={`/class/${esoClass.id}`}
-                  className={`card group animate-float class-card-${esoClass.id}`}
+                  className={`liquid-glass liquid-glass-enhanced liquid-glass-particles liquid-glass-ripple group animate-float class-card-${esoClass.id} p-6`}
                   style={{ animationDelay: `${index * 200}ms` }}
                 >
                   <div className="flex items-center justify-between mb-4">
@@ -237,7 +235,7 @@ export const HomePage = () => {
           <div className="card group">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 bg-gradient-to-br from-eso-purple to-purple-600 rounded-full flex items-center justify-center mr-4">
-                <Crown className="w-6 h-6 text-white" />
+                <Sparkles className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-eso font-semibold text-eso-gold">Build Creator</h3>
             </div>
