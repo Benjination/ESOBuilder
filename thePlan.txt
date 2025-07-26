@@ -5,25 +5,27 @@ PHASE 1: BASIC GALLERY IMPLEMENTATION
 ======================================
 
 Step 1: Create Gallery Page Structure
-- [ ] Create new Gallery page component (src/pages/GalleryPage.tsx)
-- [ ] Add Gallery route to App.tsx router
-- [ ] Update Navbar with Gallery link
-- [ ] Create basic gallery layout with grid system
-- [ ] Add fantasy-themed styling consistent with site design
+- [x] Create new Gallery page component (src/pages/GalleryPage.tsx)
+- [x] Add Gallery route to App.tsx router
+- [x] Update Navbar with Gallery link
+- [x] Create basic gallery layout with grid system
+- [x] Add fantasy-themed styling consistent with site design
 
 Step 2: Static Gallery Implementation
-- [ ] Create public/images/gallery/ directory structure
-- [ ] Implement image display grid with thumbnails
-- [ ] Add lightbox/modal for full-size image viewing
-- [ ] Add image metadata display (title, description, uploader)
-- [ ] Implement filtering by categories (builds, screenshots, art, etc.)
-- [ ] Add search functionality for gallery items
+- [x] Create public/images/gallery/ directory structure
+- [x] Implement image display grid with thumbnails
+- [x] Add lightbox/modal for full-size image viewing (basic version)
+- [x] Add image metadata display (title, description, uploader)
+- [x] Implement filtering by categories (builds, screenshots, art, etc.)
+- [x] Add search functionality for gallery items
+- [x] BONUS: Auto-discovery of images from folder (any image added automatically creates gallery tile)
 
 Step 3: Gallery Data Management
-- [ ] Create gallery data structure (JSON or TypeScript)
-- [ ] Implement gallery item interface/types
-- [ ] Add sample gallery content for testing
-- [ ] Create gallery management utilities
+- [x] Create gallery data structure (JSON or TypeScript)
+- [x] Implement gallery item interface/types
+- [x] Add sample gallery content for testing
+- [x] Create gallery management utilities
+- [x] BONUS: Automatic filename-based categorization and tagging
 
 PHASE 2: USER AUTHENTICATION SYSTEM
 ====================================

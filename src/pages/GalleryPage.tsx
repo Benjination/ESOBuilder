@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import { Upload, Search, EyeOff, Eye, Image, Plus } from 'lucide-react'
-import { bennysGalleryData } from '../../data/gallery'
+import { Upload, Search, EyeOff, Eye, Image, Plus, X } from 'lucide-react'
+import { bennysGalleryData } from '../../data/auto-gallery'
 
 export const GalleryPage = () => {
   const [showBennysGallery, setShowBennysGallery] = useState(true)
   const [searchTerm, setSearchTerm] = useState('')
   const [isDragOver, setIsDragOver] = useState(false)
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false)
 
   // Placeholder for user authentication status - will be implemented in Phase 2
   const isLoggedIn = false // This will be replaced with actual auth state
-
-  // Benny's Gallery data - imported from data file
-  const bennysGalleryImages = bennysGalleryData
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault()
@@ -71,10 +69,16 @@ export const GalleryPage = () => {
                 Sign up to upload your own ESO screenshots, build showcases, and share your adventures with the community.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-                <button className="btn-primary">
+                <button 
+                  className="btn-primary"
+                  onClick={() => setShowComingSoonModal(true)}
+                >
                   Create Account
                 </button>
-                <button className="btn-secondary">
+                <button 
+                  className="btn-secondary"
+                  onClick={() => setShowComingSoonModal(true)}
+                >
                   Sign In
                 </button>
               </div>
@@ -149,13 +153,18 @@ export const GalleryPage = () => {
       <div className="magical-border">
         <div className="card">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-3xl font-eso font-bold glowing-text">
-              Benny's Gallery
-            </h2>
+            <div>
+              <h2 className="text-3xl font-eso font-bold glowing-text">
+                Benny's Gallery
+              </h2>
+              <p className="text-sm text-gray-400 mt-1">
+                Admin curated collection • Images managed by site owner
+              </p>
+            </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-eso-gold">
                 <Image className="w-5 h-5" />
-                <span className="text-sm">{bennysGalleryImages.length} images</span>
+                <span className="text-sm">{bennysGalleryData.length} images</span>
               </div>
               <button
                 onClick={() => setShowBennysGallery(!showBennysGallery)}
@@ -179,21 +188,42 @@ export const GalleryPage = () => {
           {showBennysGallery && (
             <div className="space-y-6">
               <p className="text-gray-300 text-center">
-                Curated images and builds by the site creator. Check back for new additions!
+                Curated collection of ESO screenshots and builds by the site creator. 
+                <br />
+                <span className="text-sm text-gray-400">Note: Only the site admin can add images to this gallery</span>
               </p>
               
-              {bennysGalleryImages.length > 0 ? (
+              {bennysGalleryData.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {bennysGalleryImages.map((image) => (
+                  {bennysGalleryData.map((image) => (
                     <div
                       key={image.id}
                       className="group relative bg-gray-800 rounded-lg overflow-hidden hover:scale-105 transform transition-all duration-300 cursor-pointer"
                     >
-                      <div className="aspect-square bg-gray-700 flex items-center justify-center">
-                        <Image className="w-12 h-12 text-gray-500" />
-                        <span className="absolute bottom-2 left-2 text-xs text-gray-400">
-                          Placeholder
-                        </span>
+                      <div className="aspect-square relative overflow-hidden">
+                        <img
+                          src={image.thumbnail}
+                          alt={image.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          onError={(e) => {
+                            // Fallback to placeholder if image fails to load
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `
+                                <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                                  <div class="text-center">
+                                    <svg class="w-12 h-12 text-gray-500 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                    <span class="text-xs text-gray-400">Image loading...</span>
+                                  </div>
+                                </div>
+                              `;
+                            }
+                          }}
+                        />
                       </div>
                       <div className="p-4">
                         <h3 className="font-semibold text-white mb-1 group-hover:text-eso-gold transition-colors">
@@ -202,14 +232,36 @@ export const GalleryPage = () => {
                         <p className="text-sm text-gray-400 line-clamp-2">
                           {image.description}
                         </p>
-                        <div className="flex items-center justify-between mt-2">
-                          <span className="text-xs px-2 py-1 bg-eso-blue/20 text-eso-blue rounded">
+                        <div className="flex items-center justify-between mt-3">
+                          <span className={`text-xs px-2 py-1 rounded ${
+                            image.category === 'builds' ? 'bg-eso-gold/20 text-eso-gold' :
+                            image.category === 'screenshots' ? 'bg-eso-blue/20 text-eso-blue' :
+                            image.category === 'art' ? 'bg-purple-500/20 text-purple-400' :
+                            'bg-green-500/20 text-green-400'
+                          }`}>
                             {image.category}
                           </span>
                           <span className="text-xs text-gray-500">
                             {new Date(image.uploadDate).toLocaleDateString()}
                           </span>
                         </div>
+                        {image.tags && (
+                          <div className="flex flex-wrap gap-1 mt-2">
+                            {image.tags.slice(0, 3).map((tag) => (
+                              <span
+                                key={tag}
+                                className="text-xs px-1.5 py-0.5 bg-gray-700 text-gray-300 rounded"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
+                            {image.tags.length > 3 && (
+                              <span className="text-xs text-gray-500">
+                                +{image.tags.length - 3} more
+                              </span>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -224,6 +276,59 @@ export const GalleryPage = () => {
           )}
         </div>
       </div>
+
+      {/* Coming Soon Modal */}
+      {showComingSoonModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 modal-backdrop flex items-center justify-center z-50 p-4">
+          <div className="bg-gray-900 rounded-lg border border-eso-gold/30 max-w-md w-full mx-4 modal-content">
+            <div className="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-xl font-eso font-bold text-eso-gold">
+                  Coming Soon!
+                </h3>
+                <button
+                  onClick={() => setShowComingSoonModal(false)}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-eso-gold to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Upload className="w-8 h-8 text-eso-darker" />
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    User Accounts Coming Soon
+                  </h4>
+                  <p className="text-gray-300 mb-4">
+                    We're working hard to bring you user accounts, personal galleries, and community features. 
+                    Stay tuned for updates!
+                  </p>
+                </div>
+                
+                <div className="bg-gray-800 rounded-lg p-4 border-l-4 border-eso-blue">
+                  <h5 className="font-semibold text-eso-blue mb-2">What's Coming:</h5>
+                  <ul className="text-sm text-gray-300 space-y-1">
+                    <li>• Personal gallery uploads</li>
+                    <li>• Build sharing and saving</li>
+                    <li>• User profiles and social features</li>
+                    <li>• Community interactions</li>
+                  </ul>
+                </div>
+                
+                <button
+                  onClick={() => setShowComingSoonModal(false)}
+                  className="w-full btn-primary"
+                >
+                  Got it!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
