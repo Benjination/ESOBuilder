@@ -1,16 +1,20 @@
 import { useState, useEffect } from 'react'
 import { Upload, Search, EyeOff, Eye, Image, Plus, X } from 'lucide-react'
+import { useAuth } from '../contexts/AuthContext'
+import { AuthModal } from '../components/AuthModal'
 import { bennysGalleryData } from '../../data/auto-gallery'
 
 export const GalleryPage = () => {
+  const { user } = useAuth()
   const [showBennysGallery, setShowBennysGallery] = useState(false) // Default to hidden
   const [searchTerm, setSearchTerm] = useState('')
   const [isDragOver, setIsDragOver] = useState(false)
-  const [showComingSoonModal, setShowComingSoonModal] = useState(false)
   const [selectedImage, setSelectedImage] = useState<typeof bennysGalleryData[0] | null>(null)
+  const [showAuthModal, setShowAuthModal] = useState(false)
+  const [authMode, setAuthMode] = useState<'login' | 'signup'>('signup')
 
   // Placeholder for user authentication status - will be implemented in Phase 2
-  const isLoggedIn = false // This will be replaced with actual auth state
+  const isLoggedIn = !!user // This will be replaced with actual auth state
 
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault()
@@ -94,13 +98,19 @@ export const GalleryPage = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
                 <button 
                   className="btn-primary"
-                  onClick={() => setShowComingSoonModal(true)}
+                  onClick={() => {
+                    setAuthMode('signup')
+                    setShowAuthModal(true)
+                  }}
                 >
                   Create Account
                 </button>
                 <button 
                   className="btn-secondary"
-                  onClick={() => setShowComingSoonModal(true)}
+                  onClick={() => {
+                    setAuthMode('login')
+                    setShowAuthModal(true)
+                  }}
                 >
                   Sign In
                 </button>
@@ -406,58 +416,12 @@ export const GalleryPage = () => {
         </div>
       )}
 
-      {/* Coming Soon Modal */}
-      {showComingSoonModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 modal-backdrop flex items-center justify-center z-50 p-4">
-          <div className="bg-gray-900 rounded-lg border border-eso-gold/30 max-w-md w-full mx-4 modal-content">
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xl font-eso font-bold text-eso-gold">
-                  Coming Soon!
-                </h3>
-                <button
-                  onClick={() => setShowComingSoonModal(false)}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-              
-              <div className="space-y-4">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-eso-gold to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Upload className="w-8 h-8 text-eso-darker" />
-                  </div>
-                  <h4 className="text-lg font-semibold text-white mb-2">
-                    User Accounts Coming Soon
-                  </h4>
-                  <p className="text-gray-300 mb-4">
-                    We're working hard to bring you user accounts, personal galleries, and community features. 
-                    Stay tuned for updates!
-                  </p>
-                </div>
-                
-                <div className="bg-gray-800 rounded-lg p-4 border-l-4 border-eso-blue">
-                  <h5 className="font-semibold text-eso-blue mb-2">What's Coming:</h5>
-                  <ul className="text-sm text-gray-300 space-y-1">
-                    <li>• Personal gallery uploads</li>
-                    <li>• Build sharing and saving</li>
-                    <li>• User profiles and social features</li>
-                    <li>• Community interactions</li>
-                  </ul>
-                </div>
-                
-                <button
-                  onClick={() => setShowComingSoonModal(false)}
-                  className="w-full btn-primary"
-                >
-                  Got it!
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Authentication Modal */}
+      <AuthModal
+        isOpen={showAuthModal}
+        onClose={() => setShowAuthModal(false)}
+        initialMode={authMode}
+      />
     </div>
   )
 }

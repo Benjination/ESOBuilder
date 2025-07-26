@@ -1,14 +1,23 @@
-# ESO Build Helper Website
+# ESO Theory Crafter Website
 
-A comprehensive Elder Scrolls Online build helper website built with TypeScript, React, and Tailwind CSS.
+A comprehensive Elder Scrolls Online build helper website built with TypeScript, React, Tailwind CSS, and Firebase Authentication.
 
 ## Features
 
-- **Class Directory**: Browse all ESO classes and subclasses
+### 🎯 Current Features
+- **Class Directory**: Browse all ESO classes and subclasses with detailed skill trees
 - **Detailed Skill Information**: View skills, morphs, costs, and effects
 - **Buffs & Debuffs Glossary**: Complete reference with stacking rules
-- **Build Creator**: Create and share custom builds (coming soon)
-- **DPS Calculators**: Theoretical damage calculations (coming soon)
+- **User Authentication**: Sign in with Google, GitHub, or Email/Password
+- **Image Gallery**: Benny's curated gallery with lightbox viewer
+- **Fantasy Theming**: Immersive ESO-inspired design with parallax backgrounds
+- **Mobile Optimized**: Responsive design for all screen sizes
+
+### 🚧 Coming Soon
+- **Build Creator**: Create, save, and share custom builds
+- **User Galleries**: Upload and manage personal build screenshots
+- **DPS Calculators**: Theoretical damage calculations
+- **Community Features**: Comments, ratings, and discussions
 
 ## Setup Instructions
 
@@ -18,9 +27,10 @@ A comprehensive Elder Scrolls Online build helper website built with TypeScript,
 
 ### Installation
 
-1. Navigate to the project directory:
+1. Clone the repository:
 ```bash
-cd /Users/necro/Desktop/ESOBuilder
+git clone https://github.com/benjination/ESOBuilder.git
+cd ESOBuilder
 ```
 
 2. Install dependencies:
@@ -28,14 +38,42 @@ cd /Users/necro/Desktop/ESOBuilder
 npm install
 ```
 
-3. Start the development server:
+3. Set up Firebase (for authentication features):
+```bash
+cp .env.example .env
+# Edit .env with your Firebase configuration (see FIREBASE_SETUP.md)
+```
+
+4. Start the development server:
 ```bash
 npm run dev
 ```
 
-4. Open your browser and go to `http://localhost:3000`
+5. Open your browser and go to `http://localhost:3005` (port may vary)
 
-## 🚀 Live Demo
+## � Firebase Authentication
+
+This project includes a complete authentication system with Firebase:
+
+### Supported Sign-in Methods
+- 🔵 **Google**: Quick social login for gaming communities
+- 🐙 **GitHub**: Perfect for developers and tech-savvy gamers  
+- 📧 **Email/Password**: Traditional account creation
+
+### User Features
+- Automatic user profile creation
+- Persistent login state
+- Beautiful ESO-themed authentication modals
+- Mobile-responsive profile management
+- Ready for ESO-specific data (platform, server, favorite class)
+
+### Setup
+1. Follow the detailed guide: [`FIREBASE_SETUP.md`](FIREBASE_SETUP.md)
+2. Get your Firebase config from Firebase Console
+3. Add your config to `.env` file
+4. Authentication works immediately!
+
+## �🚀 Live Demo
 
 **Live Site**: https://benjination.github.io/ESOBuilder/
 
@@ -64,16 +102,34 @@ npm run build
 ESOBuilder/
 ├── data/                    # Game data files
 │   ├── classes.ts          # ESO classes and subclasses
-│   ├── skills.ts           # Skills, buffs, and debuffs interfaces
-│   └── sample-skills.ts    # Sample Dragonknight skills
+│   ├── nightblade-skills.ts # Class-specific skill trees
+│   ├── necromancer-skills.ts
+│   ├── gallery.ts          # Gallery image data
+│   └── auto-gallery.ts     # Auto-generated gallery helpers
 ├── src/
 │   ├── components/         # Reusable React components
+│   │   ├── AuthModal.tsx   # Firebase authentication modal
+│   │   ├── UserProfile.tsx # User profile dropdown
+│   │   └── Navbar.tsx      # Navigation with auth integration
+│   ├── contexts/           # React contexts
+│   │   └── AuthContext.tsx # Firebase authentication state
+│   ├── config/            # Configuration files
+│   │   └── firebase.ts    # Firebase configuration
 │   ├── pages/             # Page components
-│   ├── App.tsx            # Main app component
+│   │   ├── HomePage.tsx   # Landing page with class showcase
+│   │   └── GalleryPage.tsx # Image gallery with lightbox
+│   ├── App.tsx            # Main app component with routing
 │   ├── main.tsx           # Entry point
-│   └── index.css          # Global styles with Tailwind
-├── package.json           # Dependencies and scripts
-└── README.md             # This file
+│   └── index.css          # Global styles with ESO theme
+├── public/
+│   ├── images/
+│   │   ├── backgrounds/   # Parallax background images
+│   │   └── gallery/       # Gallery image collections
+│   └── favicon.ico        # Custom ESO-themed favicon
+├── .env.example           # Firebase config template
+├── FIREBASE_SETUP.md      # Detailed Firebase setup guide
+├── thePlan.txt           # Development roadmap
+└── package.json          # Dependencies and scripts
 ```
 
 ## Data Structure
@@ -88,10 +144,14 @@ The website uses a modular data structure with TypeScript interfaces:
 ## Tech Stack
 
 - **Frontend**: React 18 with TypeScript
+- **Authentication**: Firebase Auth (Google, GitHub, Email/Password)
+- **Database**: Firestore (ready for user data)
+- **Storage**: Firebase Storage (ready for image uploads)
 - **Routing**: React Router 6
 - **Styling**: Tailwind CSS with custom ESO theme
 - **Build Tool**: Vite
 - **Icons**: Lucide React
+- **Deployment**: GitHub Pages with GitHub Actions
 
 ## Development
 
